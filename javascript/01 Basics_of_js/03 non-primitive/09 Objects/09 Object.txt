@@ -1,0 +1,59 @@
+Q6. explore objects and methods based on that. create symbol and use that in object.
+const _id = Symbol('uniqueId')
+const obj = {[_id]:1, name: 'birender', wife: 'maya'}
+console.log(obj)
+
+diff between obj.name and obj["name"]
+Dot Notation: Use when accessing known properties with valid identifiers.
+Bracket Notation: Use for dynamic keys, Symbols, or keys with special characters.
+
+
+
+what is single ton object and non single ton object
+### **Singleton Object**  
+- **Single Memory Space:** All instances point to the same memory.  
+- **Shared State:** Changes in one instance reflect in all.  
+- **Use Case:** Global configurations, logging, caching.
+
+### **Non-Singleton Object**  
+- **Multiple Memory Spaces:** Each instance has its own memory.  
+- **Independent State:** Changes in one instance don’t affect others.  
+- **Use Case:** Independent entities like users or data models.
+
+
+object.assign({}, obj1, obj2, obj3) //{} it is the target and rest are the source
+### Methods to Merge Objects in JavaScript:
+
+1. **`Object.assign(target, ...sources)`**  
+   Copies properties from source objects to the target.  
+   ```javascript
+ 
+
+   const target = Object.assign({}, obj1, obj2);
+   ```
+
+2. **Spread Operator (`{...obj}`)**  
+   Cleaner and modern alternative to `Object.assign`.  
+   ```javascript
+   const target = { ...obj1, ...obj2 };
+   ```
+
+3. **`Object.create()`**  
+   Creates a new object with the prototype of another.  
+   ```javascript
+   const target = Object.create(Object.getPrototypeOf(obj1));
+   Object.assign(target, obj1, obj2);
+   ```
+
+4. **`JSON.parse(JSON.stringify(obj))`**  
+   Deep copies objects but removes methods or non-serializable data.  
+   ```javascript
+   const target = JSON.parse(JSON.stringify(obj1));
+   ```
+
+
+
+     
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++

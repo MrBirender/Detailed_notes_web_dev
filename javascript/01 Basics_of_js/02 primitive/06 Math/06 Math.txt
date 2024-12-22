@@ -1,0 +1,54 @@
+JavaScript Math Library - Interview Questions:
+How do you round a number to the nearest integer in JavaScript?
+Answer: To round a number to the nearest integer, you can use the Math.round() method.
+
+What is the difference between 'Math.round()' and 'Math.floor()'?
+Answer: Math.round() rounds a number to the nearest integer, while Math.floor()
+rounds a number down to the nearest integer.
+
+How do you round a number up to the nearest integer in JavaScript?
+Answer: To round a number up to the nearest integer, you can use the Math.ceil() method.
+
+What does 'Math.random()' return? 
+Answer: Math.random() returns a random number between 0 (inclusive) and 1 (exclusive).
+
+How can you generate a random number between a given range (e.g., 1 and 100)?
+Answer: To generate a random number between a given range, you can use the Math.floor() method.
+ex: Math.floor(Math.random() * 100) + 1;
+
+How would you calculate the square root of a number in JavaScript? Which method would you use?
+Answer: To calculate the square root of a number, you can use the Math.sqrt() method.
+
+What is the result of 'Math.pow(2, 3)'? What does the 'Math.pow()' function do?
+Answer: Math.pow(2, 3) returns the result of 2 raised to the power of 3, which is 8.
+
+How would you find the minimum or maximum value from a set of numbers in JavaScript?
+Answer: To find the minimum or maximum value from a set of numbers, you can use the Math.min()
+or Math.max() methods.\
+ex: Math.min(1, 2, 3); // 1
+    Math.max(1, 2, 3); // 3
+
+How do you convert a number to a specific base in JavaScript, such as binary or hexadecimal?
+Answer: To convert a number to a specific base, you can use the toString() method.
+ex: 10.toString(2); // "1010"
+    10.toString(16); // "a"
+
+For a **MERN stack developer**, binary, octal, and hexadecimal conversions are relevant in the
+ following contexts:
+
+1. **Web Development (Hex Colors):** Hexadecimal values are used for color codes in CSS/HTML.
+ Developers may convert them to decimal RGB for dynamic themes or UI manipulation.  
+2. **Cryptography and Security:** Hexadecimal tokens (e.g., JWTs, API keys) are used in
+ authentication and security, requiring parsing or manipulation.  
+3. **Database Debugging (MongoDB):** MongoDB IDs (ObjectId) are in hexadecimal format,
+ and developers might convert them for readability or debugging.
+
+What is the difference between 'Math.sin()' and 'Math.cos()' in JavaScript? 
+Give an example of each.
+Answer: Math.sin() returns the sine of a number, while Math.cos() returns the cosine of a number.
+ex: Math.sin(Math.PI / 2); // 1
+
+How do you calculate the logarithm of a number in JavaScript? What is the difference between 
+'Math.log()' and 'Math.log10()'?
+Answer: To calculate the logarithm of a number, you can use the Math.log() method.
+ex: Math.log(10); // 2.3025850929940457

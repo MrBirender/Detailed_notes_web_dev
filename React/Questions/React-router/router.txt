@@ -1,0 +1,1 @@
+do we using link in place of a tag? and what is the effect of a tag in page reloading.

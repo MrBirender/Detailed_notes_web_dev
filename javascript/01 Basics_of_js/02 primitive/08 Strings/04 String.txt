@@ -1,0 +1,21 @@
+const str = "Hello World";
+
+const str1 = new String("Hello World");
+* using this customProperty can be added:
+srt1.customProperty = "Birender";
+console.log(str1.customProperty)// Birender this is more of like an object.
+
+console.log(typeof str); // Output: "string"
+console.log(typeof str1); // Output: "object" [String: 'Hello World']
+
+**In summary, new String() creates a string object, while string literals are primitive strings.
+ The need for new String() is extremely rare in modern JavaScript. Stick to literals unless
+ an object-specific behavior is required.
+ string literal are sufficent in most of the cases.
+
+ string has two things in console.log
+1. length
+2. methods
+
+These can be directly accessed by using dot notation.
+ex. console.log(str.length)

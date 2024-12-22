@@ -1,0 +1,175 @@
+
+#=> Types of Control Flow in JavaScript
+Control flow can be broadly categorized as:
+
+1. Sequential Execution: Code runs line by line.
+2. Conditional Execution: Code runs based on conditions.
+3. Loops and Iteration: Code runs repeatedly while a condition is true.
+4. Error Handling: Code manages exceptions gracefully.
+
+Q1. Sequential Execution: Code runs line by line?
+Answer: As we write the code it will run line by line from top to bottom and then it will move 
+to next line. 
+
+Q2. Conditional Execution: Code runs based on conditions?
+Answer: Conditional statement is a control flow that allows you to execute a block of code 
+if a certain condition is met.
+
+example: 1. if else conditions
+    2. switch case conditions
+    3. ternary operator
+    4. null coalescing operator
+
+    => subtopics: 
+    What’s the difference between if-else and switch statements?
+    Answer: if-else is used for multiple conditions, while switch is used for single condition.
+
+    When would you use switch over if-else?
+    Answer: When you have a single condition to check, switch is more efficient than if-else.
+
+    Can you nest if-else inside a switch?
+    Answer: No, nested if-else statements are not allowed in switch statements.
+
+
+Q3. Loops and Iteration: Code runs repeatedly while a condition is true.
+Answer: Loops and Iteration is a control flow that allows you to execute a block of code 
+repeatedly until a certain condition is met.
+
+   => subtopics:
+   types of loops with there code example:
+   forLoop, whileLoop, doWhileLoop, forEachLoop, forOfLoop, forInLoop
+
+   => aboutLoops:
+   What’s the difference between for and while loops?
+    Answer: A for loop is used when you know the number of iterations, while a while loop is used
+    when you don't know the number of iterations.
+
+
+    When should you use for...of vs for...in?
+    Answer: for...of is used when you want to iterate over an iterable object, such as an array
+    or a string, while for...in is used when you want to iterate over the properties of an object 
+    or an array.
+
+
+    How does a do-while loop differ from a while loop?
+    Answer: A do-while loop is executed at least once, even if the condition is false, while a while
+    loop is executed only when the condition is true.
+
+
+    Can you break or continue a loop? Demonstrate.
+    Answer: Yes, you can break or continue a loop.
+    Demonstration: 
+
+    for (let i = 0; i < 5; i++) {
+        if (i === 3) {
+            break;
+            console.log(i);
+        }
+    }
+
+    for continue: 
+
+    for (let i = 0; i < 5; i++) {
+        if (i === 3) {
+            continue;
+            console.log(i);
+        }
+    }
+
+    => continue, break , return:
+    What’s the difference between break and continue?
+    Answer: break is used to exit a loop, while continue is used to skip the current iteration 
+    of a loop.
+
+    Can you use break and continue in nested loops?
+    Answer: Yes, you can use break and continue in nested loops.
+    example: 
+
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            if (j === 3) {
+                break;
+            }
+        }
+    }
+    What does the return statement do, and where is it used?
+    Answer: The return statement is used to exit a function and return a value to the caller.
+ 
+
+Q4. Error Handling: Code manages exceptions gracefully.
+Answer: Error handling is a process of handling unexpected errors that occur in a program.
+
+    try catch finally and throw:
+
+    try catch finally with an example write a simple code which gives an output in it:
+
+    try {
+        // Code that may throw an error
+        const result = 10 / 0;
+    } catch (error) {
+        console.error("An error occurred:", error);
+    } finally {
+        console.log("Execution finished");
+    }
+
+    throw:
+    function checkNumber(num) {
+  if (num < 0) throw new Error("Number must be positive");
+}
+
+  subtopics:
+    What is the difference between try-catch and if-else for handling errors?
+    Answer: try-catch is used to handle errors gracefully, while if-else is used to handle errors
+    ungracefully.
+
+
+    Can you nest try-catch blocks?
+    Answer: Yes, you can nest try-catch blocks.
+
+    What is the purpose of the finally block?
+    Answer: The finally block is used to execute code that should be executed regardless
+    of whether a try block throws an error or not.
+
+Q. Asynchronous Control Flow: Code executes asynchronously.
+Answer: methods to do asynchronous taks in js:
+
+   callback: its types = setInterval, setTimeout, setImmediate
+   promises: its type = then, catch, finally
+   async await: its type = async await
+
+
+Question to practice this topic:
+FizzBuzz Problem: Print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.
+Nested Loops with Break: Implement a matrix search that exits all loops upon finding an element.
+Asynchronous Data Fetching: Show loading, fetch data, and handle errors.
+
+
+
+
+   
+
+
+
+
+
+if esle if and else: conditional statement.
+what is need of conditonal statement in js
+
+switch case: conditional statement: what is difference between if else and switch case
+what if we miss one of the break keyword
+truthy and falsy values 
+
+const email = "birender@google.com"; // "", []
+
+if(email){
+    console.log("valid email");
+    // we have supposed that everting in email is a truthy value. but its not the case
+    "" gives invalid email , [] gives valid email 
+}else{
+    console.log("invalid email");
+}
+
+FASLY VALUES: false, 0, "", null, undefined, NaN, bigint 0n
+TRUTHY VALUES: true, 1, "0", " ", [], {}, function(){} 
+
+null colisens operator and ternary operator are different in js

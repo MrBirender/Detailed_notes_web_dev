@@ -1,0 +1,79 @@
+Q1. what are the conversion in js and how they behaves?
+****converting to number using inbuilt convertor in js:
+let score = '33';
+let numberScore = Number(score);
+
+console.log(score) // 33
+console.log(numberScore) // 33 but it is number on type check:
+
+1. "33" => 33 as in number
+2. "33abc" => NaN print in console but it shows number in its type check because nan is unique number in js memory.
+3. true  => 1, and false = 0;
+
+*****converting to boolean:
+let number = 1; if number is = {}, [], then it will give true inspite of they are empty.
+let booleanNumber = Boolean(number);
+
+console.log(number) //1
+console.log(booleanNumber) // true
+console.log(typeOf booleanNumber) // boolean
+
+1. 1=> true;
+2. 0=> false;
+3. ""=> false;
+4. "Birender"=> true;
+if any data is here than it will give true otherwise it will give false:
+
+*****converting to string :
+
+let randomNum = 78;
+let stringNum = String(randomNum);
+
+console.log(randomNum)
+console.log(stringNum) // 78 but it is string on type check
+
+************************************ Operations  *******************************:
+
+console.log(1 + "2") // 12 as string
+console.log("1" + 2) // 12 as string
+
+console.log("1" + 2 + 2) // 122 as string
+console.log(1 + 2 + "2") //   32 as string
+
+
+console.log("1" + 2 - 2) // 10 as number
+console.log(1 - 2 + "2") // -12 as string
+
+
+Q2. what are the difference between *prefix and postfix operator:
+let score = 10;
+score++;
+console.log(score)
+
+let newScore = 10;
+++newScore
+cosnole.log(newScore)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+### Difference Between `score++` and `++score`
+
+- **Post-increment (`score++`)**: 
+  - Uses the current value of `score` in the expression first, then increments `score` by 1.
+  - Example:  
+    ```javascript
+    let score = 5;
+    let result = score++; // result = 5, score = 6
+    ```
+
+- **Pre-increment (`++score`)**: 
+  - Increments `score` first, then uses the updated value in the expression.
+  - Example:  
+    ```javascript
+    let score = 5;
+    let result = ++score; // result = 6, score = 6
+    ```
+
+- **As standalone statements**:  
+  Both `score++` and `++score` increase `score` by 1, so their effect is the same.
+
+it also depends on higher Operator_precedence. which one has higher will go first.
+like exponential has higher than binray operators

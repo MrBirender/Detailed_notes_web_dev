@@ -1,0 +1,89 @@
+JavaScript Date Methods - Interview Questions:
+How can you create a new Date object in JavaScript? What are the different ways to initialize
+a Date object?
+Answer: const date = new Date();
+
+What is the difference between getDate() and getDay() methods in JavaScript?
+Answer: getDate() returns the day of the month (1-31), while getDay() returns the day of the 
+week (0-6).
+
+How can you extract the current year, month, day, hours, minutes, and seconds using JavaScript's
+Date object?
+Answer: const currentDate = new Date();
+console.log(currentDate.getFullYear()); // Current year
+console.log(currentDate.getMonth()); // Current month (0-11)
+console.log(currentDate.getDate()); // Current day of the month
+console.log(currentDate.getHours()); // Current hour
+console.log(currentDate.getMinutes()); // Current minute
+console.log(currentDate.getSeconds()); // Current second
+
+
+What does the getTime() method return? How is it different from getDate() or getFullYear()?
+Answer: getTime() returns the number of milliseconds since January 1, 1970, 00:00:00 UTC 
+and getFullYear() returns the current year.   
+
+What does setDate() do in JavaScript? Can you set a specific day in a given month using the Date
+object?
+Answer: setDate() sets the day of the month for the Date object. You can set a specific day
+in a given month using the Date object.
+ex: const date = new Date();
+    date.setDate(15); // Set the day to 15
+
+How would you convert a Date object into a string representation? How is the string format
+different from toISOString() and toLocaleString()?
+Answer: const date = new Date();
+console.log(date.toString()); // "Thu Jan 01 1970 00:00:00 GMT+0000 (UTC)"
+console.log(date.toISOString()); // "1970-01-01T00:00:00.000Z"
+console.log(date.toLocaleString()); // "1/1/1970, 12:00:00 AM"
+
+What is the Date.now() method, and how does it differ from using new Date().getTime()?
+Answer: Date.now() returns the current time in milliseconds since the Unix epoch, while
+new Date().getTime() returns the current time in milliseconds since the Unix epoch.
+ex ; console.log(Date.now()); // Current time in milliseconds, e.g., 1640995200000
+      console.log(new Date().getTime()); // Current time in milliseconds, e.g., 1640995200000
+
+What is the difference between local time and UTC time in JavaScript? How do you convert a date
+ to UTC?
+Answer: Local time refers to the time zone of the user's device or browser, while UTC time
+refers to the time zone of the Unix epoch.
+
+what is unix epoch time?
+Answer: Unix epoch time is the number of seconds that have passed since January 1, 1970,
+00:00:00 UTC. It is also known as the Unix time or Unix timestamp.
+
+Does the name unix refers to the os unix?
+Answer: Yes, Unix refers to the Unix operating system, which is a free and open-source
+operating system that was created by the Bell Laboratories in the early 1970s. It is an
+operating system that is based on the UNIX operating system, which was created by AT&T
+in the early 1970s.
+
+How can you perform date arithmetic, such as adding or subtracting days from a given date?
+Answer: const date = new Date();
+const futureDate = new Date(date.getTime() + 24 * 60 * 60 * 1000); // Add 24 hours in milliseconds
+
+How can you format a date in JavaScript to display a specific format (like DD/MM/YYYY or 
+YYYY-MM-DD)?
+Answer: const date = new Date();
+const formattedDate = date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+})
+
+// to indian format
+const formattedDate = date.toLocaleDateString('en-IN', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+})
+How would you compare two Date objects to see if one is earlier than the other?
+Answer: const date1 = new Date('2022-01-01');
+const date2 = new Date('2022-02-01');
+if (date1 < date2) {
+    console.log('Date 1 is earlier than Date 2');   
+}
+What is the purpose of Date.parse() in JavaScript, and what kind of formats does it accept?
+Answer: Date.parse() is a static method of the Date object that returns the number of
+milliseconds that have passed since January 1, 1970, 00:00:00 UTC. It accepts a string
+representation of a date and returns the number of milliseconds that have passed since
+January 1, 1970, 00:00:00 UTC.

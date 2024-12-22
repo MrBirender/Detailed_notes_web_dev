@@ -1,0 +1,23 @@
+how to use spread operator while passing parameter to a function?
+what are clousers in js?
+when function are declared as normal stntax:
+foo() // it will execute because of hoisting:
+function foo(){
+    return "hello";
+}
+
+foo()// but in this case it will give refrence error because of hoisting. because fucntion 
+hoist fully but variable hoist partially:
+
+const foo = function(){
+    return "hello";
+}
+
+
+what is window object?  
+what is this keyword?
+
+what is implicit return in arrow function?
+
+what is IIFE (immediately invoked function expression)? what is the need of it?
+iffi issue with semicolon when there are consiquitive two function.

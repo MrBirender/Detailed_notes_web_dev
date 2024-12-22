@@ -1,0 +1,11 @@
+Q1. Explore about DOM and its methods.
+setattribute always overwrites the attribute
+Q3. what is the diffrence between innerhtml, innerText and textContent?
+study all selectors and methods
+
+Q4. what is the diffrence between nodeList and array?
+how to do conversion in these and how to use these?
+
+Q5. what is node in js. when we check parent.childNodes
+what is the differnce between tree traversing and inseting the text 
+node directly while creating and inseting a li in ul    

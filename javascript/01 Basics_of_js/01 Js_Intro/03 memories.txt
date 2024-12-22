@@ -1,0 +1,90 @@
+Q1.what are the types of memories in js stacks and heap. which one works for primitive 
+data types and for refrence data types?
+Answer:
+### **Types of Memory in JavaScript:**
+
+1. **Stack:**
+   - Used for **primitive data types** (`number`, `string`, `boolean`, etc.).
+   - Stores data in a **Last In, First Out (LIFO)** manner.
+   - Memory is fixed and managed automatically.
+   - Example:
+     ```javascript
+     let a = 10; // Stored directly in the stack
+     let b = a;  // Copy of `a` stored in a separate stack location
+     b = 20;
+     console.log(a); // Output: 10
+     console.log(b); // Output: 20
+     ```
+
+2. **Heap:**
+   - Used for **reference data types** (`object`, `array`, etc.).
+   - Stores objects in dynamically allocated memory, while the stack holds the reference (pointer) to the heap.
+   - Example:
+     ```javascript
+     let obj1 = { name: "Alice" }; // Object stored in the heap
+     let obj2 = obj1;              // Reference to the same heap object
+     obj2.name = "Bob";
+     console.log(obj1.name); // Output: Bob
+     ```
+
+---
+
+Q2. How js Executes the code?
+Answer:
+- **Stack:** Works for **primitive data types** (direct storage).  
+- **Heap:** Works 
+JavaScript executes code in several phases during its runtime. Here's an overview of how it works:
+
+1. Global Execution Context (GEC) Creation
+Every JavaScript program starts with the Global Execution Context, which has two phases:
+
+Memory Creation Phase (Hoisting)
+Execution Phase
+
+**Memory Creation Phase (Hoisting)
+In this phase:
+
+Variables and Functions are Allocated in Memory:
+
+Variables are assigned a default value of undefined.
+Entire function declarations are stored in memory.
+No Code Execution Happens:
+
+
+**Execution Phase
+Code is Executed Line by Line:
+
+The JavaScript engine assigns actual values to variables and executes function calls.
+If a variable or function is accessed before it’s initialized, its hoisted value is used (undefined for variables).
+Function Calls Push New Execution Contexts onto the Stack:
+
+Each function call creates its own Function Execution Context (FEC).
+Example:
+
+2. Function Execution Context (FEC)
+When a function is called, a new Function Execution Context is created. It has the same two phases:
+
+***Memory Creation Phase (Hoisting):
+Parameters are stored as local variables.
+Local variables and nested functions are hoisted.
+
+**Execution Phase:
+The function body is executed line by line.
+JavaScript executes code in several phases during its runtime. Here's an overview of how it works:
+
+ 
+******************** strings and its methods ******************************
+let myName = new String("birender") // "birender";
+
+console.log(myName.length)
+console.log(myName.toUpperCase())
+// just type myName with a dot then it will going to 
+//sugggest all the available methods pending
+
+
+
+
+
+Q5. try all methods with the array? and go for interview questions like diff between splice and slice?
+spread operator flat, Array.isArray and Array.from(str, obj) check
+

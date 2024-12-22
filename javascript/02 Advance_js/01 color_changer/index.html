@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Color_changer</title>
+</head>
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-[70vh] gap-10">
+        <div id="green" class="box flex justify-center items-center border-2 h-24 w-24 border-black">1</div>
+        <div id="red" class="box flex justify-center items-center border-2 h-24 w-24 border-black">2</div>
+        <div id="blue" class="box flex justify-center items-center border-2 h-24 w-24 border-black">3</div>
+    </div>
+</body>
+<script>
+    const boxes = document.querySelectorAll('.box')
+    const body = document.querySelector('body')
+
+    boxes.forEach((box)=> {
+        box.addEventListener('click', (e)=> {
+            body.style.backgroundColor = e.target.id
+        })
+    })
+
+</script>
+</html>

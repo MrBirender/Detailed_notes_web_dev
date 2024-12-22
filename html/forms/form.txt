@@ -1,0 +1,11 @@
+8. Questions That Can Be Asked in Interviews
+What are the differences between GET and POST methods in forms?
+Explain the enctype attribute in forms.
+How do you validate forms on the client-side and server-side?
+How can you submit a form without reloading the page?
+What is the purpose of the <label> element in forms?
+How do you upload a file using an HTML form?
+What is the difference between action and method in forms?
+What is the use of hidden inputs in forms?
+How can you handle forms with JavaScript or AJAX?
+Explain the use of required, pattern, and other validation attributes.

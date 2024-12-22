@@ -1,0 +1,136 @@
+JavaScript Array Methods - Interview Questions:
+***** what is the use of this arg in the mehtods on array?   ****
+let person = {
+  name: 'John',
+  age: 30
+};
+
+let numbers = [1, 2, 3];
+
+numbers.forEach(function(num) {
+  console.log(this.name + ' is ' + this.age + ' years old. Number: ' + num);
+}, person);
+
+What is the difference between push() and unshift() methods in JavaScript?
+Answer: push() adds elements to the end of an array, while unshift() adds elements
+to the beginning.
+
+How do pop() and shift() work in JavaScript? What are their return values?
+Answer: pop() removes the last element of an array, while shift() removes the first element.
+How can you find the index of a specific element in an array in JavaScript?
+
+
+What is the difference between indexOf() and includes() methods in JavaScript?
+How would you loop through an array and create a new array where all elements are doubled using map()?
+What is the purpose of filter() method in JavaScript? Can you give an example of its use?
+How do you reduce an array to a single value using the reduce() method? 
+What are the argument passed to the callback function.
+What does concat() do in JavaScript, and how is it different from push()?
+
+
+
+Q8.How do you sort an array in ascending order? How do you sort it in descending order?
+**Summary of Use Cases for sort()
+Default sorting (alphabetical): arr.sort()
+Numeric ascending order: arr.sort((a, b) => a - b)
+Numeric descending order: arr.sort((a, b) => b - a)
+String sorting (case-insensitive): arr.sort((a, b) => a.localeCompare(b))
+example: 
+        const arr = ['Banana', 'apple', 'Cherry', 'banana'];
+arr.sort();
+console.log(arr);  // ['Banana', 'Cherry', 'apple', 'banana']
+
+Sorting objects by a property: arr.sort((a, b) => a.property - b.property) (or localeCompare()
+ for strings)
+
+
+What is the result of calling reverse() on an array? Does it modify the original array?
+let reversedArr = arr3.reverse()
+console.log(reversedArr)
+console.log(arr3) // arrmutated it is the same array
+
+
+How can you create a shallow copy of an array using the slice() method in JavaScript?
+const sliced = arr3.slice(1, 4)
+console.log(sliced)
+console.log(arr3)// it will not mutate the original array it just gives the slice of the array.
+
+** but in splice it mutates the original array gives the required portion of the array..
+const spliced = arr3.splice(1, 2)
+console.log(spliced)
+console.log(arr3)
+
+
+How would you find the first element in an array that matches a condition using the find() method?
+const finded = arr3.find(x => x % 2 === 0)
+console.log(finded) // it gives the value if true otherwise undefined and gives the first value only.
+
+
+How do you check if any elements in the array meet a certain condition using the some() method?
+console.log(arr3.some(x=> x > 10)) // true or false
+
+
+What is the difference between forEach() and map() methods in JavaScript? When would you 
+use one over the other?
+Answer:1. **Purpose**:  
+   - `forEach`: Executes a function on each array element for side effects (e.g., logging or modifying the array).  
+   - `map`: Transforms the array and returns a new array with the results.  
+
+2. **Return Value**:  
+   - `forEach`: Does **not** return anything (undefined).  
+   - `map`: Returns a new array with modified elements.  
+
+3. **Mutability**:  
+   - `forEach`: Can modify the original array (side effects).  
+   - `map`: Does not mutate the original array (pure transformation).  
+
+Example:
+// const maped = arr3.map((value, index, array)=> {
+//     return value * 2
+// } )
+
+arr3.forEach((value, index, arr)=> {
+   arr3[index] = value * 2
+})
+console.log(arr3)
+// console.log(forEached)
+
+How do you split a string into an array using the split() method? Can you use a regular 
+expression with split()?
+Notes: Why Both /[{/*/^/;/%]/ and /[{/*^;%]/ Work the Same in split()?
+Character Set [ ] in Regular Expressions:
+
+Inside [ ], most characters are treated literally (e.g., {, /, *, ^, ;, %), so they don’t need escaping.
+Symbols are interpreted as individual characters to match.
+Special Cases in [ ]:
+
+- (hyphen): Represents a range (e.g., [a-z] for all lowercase letters). Escape as \- if used literally.
+] (closing bracket): Must be escaped if used inside the set.
+Why Both Patterns Work:
+
+/[{/*/^/;/%]/: Includes unnecessary / separators (treated literally).
+/[{/*^;%]/: A cleaner version that lists all characters directly without extra /.
+Key Takeaway:
+
+Use the minimal and clean version: /[{/*^;%]/.
+Extra separators like / inside [ ] are redundant and don’t affect the result.
+
+
+
+How would you check if an array contains a specific value using includes()? 
+What is its return value?
+const arr = [1, 2, 3, 4, 5,  7,8]
+
+const status = arr.includes(8)
+
+console.log(status); // it return true or false
+
+
+How can you merge two or more arrays into one using JavaScript?
+concat(): Ideal for merging arrays without modifying the original arrays.
+Spread Operator (...): Modern, concise, and flexible way to merge arrays.
+push(): Adds elements from one array to another (mutates the first array).
+unshift(): Adds elements to the beginning of an array (mutates the first array).
+reduce(): A more complex but flexible approach to merge multiple arrays.
+
+

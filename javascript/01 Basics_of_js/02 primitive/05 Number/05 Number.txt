@@ -1,0 +1,51 @@
+JavaScript Number Methods - Interview Questions:
+
+✔What is the difference between 'isNaN' and 'isFinite' methods in JavaScript?
+Answer: isNaN() checks if the value is not a number, while isFinite() checks 
+if the value is a finite number.
+
+What does the 'Number.isInteger()' method do? How is it different from the 'isNaN()' method?
+Answer: Number.isInteger() checks if the value is an integer( An integer is a -
+whole number without a fractional part. It can be positive, negative, or zero.), while isNaN() 
+checks if the value is not a number.
+
+
+How can you convert a string to a number in JavaScript? What is the difference 
+between 'parseInt' and 'Number'?
+Answer: parseInt() converts a string to an integer, while Number() converts 
+a string to a number.
+
+What is the result of the expression 'Number("123.45")'?
+Answer: 123.45
+
+What about 'parseInt("123.45")'?
+Answer: 123
+
+What is 'NaN' in JavaScript and how can you check if a value is 'NaN'?
+Answer: NaN (Not a Number) is a special value in JavaScript that represents an
+invalid number. You can check if a value is NaN using the isNaN() function.
+
+How do you handle precision errors when dealing with floating-point numbers 
+in JavaScript?
+Answer: To handle precision errors, you can use the toFixed() method to format
+a number to a specific number of decimal places.
+
+How do you format a number to two decimal places in JavaScript? 
+Answer: To format a number to two decimal places, you can use the toFixed() 
+method.
+Which method would you use to get the number as a string with fixed decimal
+places?
+Answer: toFixed() method.
+
+What are 'Infinity' and '-Infinity' in JavaScript? How do they behave in 
+arithmetic operations?
+Answer: Infinity and -Infinity are special values in JavaScript that represent
+infinity. They are used to represent positive and negative infinity respectively.
+
+What does 'Number.MAX_VALUE' represent in JavaScript?
+Answer: Number.MAX_VALUE is a constant in JavaScript that represents the 
+maximum value that can be represented by a JavaScript number.
+
+What does 'Number.MIN_VALUE' represent in JavaScript?
+Answer: Number.MIN_VALUE is a constant in JavaScript that represents the
+minimum value that can be represented by a JavaScript number.

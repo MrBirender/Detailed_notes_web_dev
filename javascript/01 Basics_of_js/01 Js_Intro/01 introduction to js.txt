@@ -1,0 +1,277 @@
+/*************  ✨ Codeium Command 🌟  *************/
+1. // why we use nodejs in the vs code . give at least one replacment for nodejs.
+-- Answer: we use nodejs in vs Code to run js outside the browser, earlier it was only
+possible in the browser itself. but now it has opened the door for server side development.
+[Deno is the replacment for node.]
+
+-- type node in the console and hit enter then it will give me the nodejs enviorment where i can perfrom operation 
+in the cosnole on vs code outside the browser.
+
+
+
+2. // what is vs code is there any other replacment for it.
+-- Answer: vsCode is a free code editor by Microsoft. Sublime and Atom- (by github) are the alternatives.
+
+3. / what is git and github and the codespace option in git is for what and why to stop git machine after use?
+-- Answer:  git is a local version control of your project, it allows you to create versions of your project
+on your computer.Git allows you to create branches to try out new features withtout affecting the main
+project. Git works offline so, all of your changes will be availble locally unless you share them.
+
+
+->  Github: it is a cloud based storage of your local git repositry and it acts as a central repostiry where
+anyone can clone and contribute to it. with it's bakcup of the local repositry we can access it from anywhere
+and from any machine.
+
+--> codespace in github is the develpment enviorment.
+
+4. what is difference between git and gitBash?
+--Answer: Git bash is a command line application that gives user , access to unix like shell making it
+easier to use git.
+
+-- gitbash is a unix like interface because unix/linux was one of the oldest OS for develpors which provided
+a complete control over sytem , it was used by reseachers, scientists and develpers but windows was build for
+the different customers, it was for general people, it was bases on GUI. this is why we use gitbash to create
+the same interface for the develpers.
+
+
+5. // what is the difference between var, const, let and why i should not use var in my code
+Answer: it is in index.js file:" var is outdated now , it should not be used now because of its inexpected
+scopping behaviour.
+
+** let and const respects the blockscope but var doen't if we declare another varibale with the same name
+in the diffrent scope , then the prvious one gets updated.
+function myFunction() {
+    var name = 'john'
+    if(4< 5) {
+        var name = 'birender'
+
+        console.log(name)
+    }
+    console.log(name)
+    
+
+}
+
+myFunction() // birender // birender
+
+6. // can i store a variable in the memeory without using var, let and const
+Answer: yes data can be stored but it is bad practice it will give error in usesrict mode in js;
+
+/* tc39.es ecma script is the offical documentaion for js.
+mdn is from mozilla group. */
+
+7. what are the data types in js and what if we do type check on them.  
+Answer: There are mainly two types of data types in js:
+primitive and non-primitive.
+
+1. primitive - These data types are immutable and stored by value in memeory.
+- 7types in total: 
+number:
+let age = 25; // Integer
+let price = 19.99; // Float
+let infinity = Infinity; // Special numeric value
+let notANumber = NaN; // "Not a Number"
+
+string, boolean,
+
+ bigInt: it starts after 2**52, before that we can use number
+ let bigNumber = 123456789012345678901234567890n; // Add 'n' for BigInt
+
+
+ undefined:
+let unassigned;
+console.log(unassigned); // undefined
+
+ 
+ null:
+ let emptyValue = null;
+
+  symbol:
+  let id = Symbol("uniqueId");
+
+
+2. non-primitive - These data types are mutable and stored by refrence in memeory.
+- 3 types in total: objects, arrays and functions.
+
+
+
+** How stored by value and store by refrence works:
+This applies to primitive data types (Number, String, Boolean, Undefined, Null, Symbol, and BigInt).
+
+How It Works
+When a variable is assigned a primitive value, the value itself is stored in the variable.
+ If the variable is copied to another variable, a new copy of the value is created. 
+ Both variables operate independently.
+
+Stored by vlaue: 
+let a = 10; // Primitive value stored in 'a'
+let b = a;  // 'b' gets a copy of the value of 'a'
+
+b = 20;     // Changing 'b' does not affect 'a'
+
+console.log(a); // 10 (unchanged)
+console.log(b); // 20\
+
+
+Stored by refrence:
+This applies to non-primitive (reference) data types such as Objects, Arrays, and Functions.
+
+How It Works
+When a variable is assigned a reference type (like an object or array), 
+the variable stores a reference (or memory address) pointing to the location of the actual data in memory.
+ If the variable is copied to another variable, both variables point to the same memory location. 
+ Modifying the data via one variable affects the other
+
+
+let obj1 = { name: "Alice" }; // Reference to an object
+let obj2 = obj1;             // Both 'obj1' and 'obj2' point to the same object
+
+obj2.name = "Bob";           // Modifying 'obj2' affects 'obj1'
+
+console.log(obj1.name); // "Bob"
+console.log(obj2.name); // "Bob"
+
+***when the value is reassigned in the refrence type, it doesn't affect the previous value:
+
+let arr1 = [1, 2, 3];
+let arr2 = arr1; // Both 'arr1' and 'arr2' reference the same array
+
+arr2.push(4);    // Modify the array via 'arr2'
+
+console.log(arr1); // [1, 2, 3, 4] (affected)
+console.log(arr2); // [1, 2, 3, 4] (affected)
+
+arr2 = [5, 6, 7]; // Reassign 'arr2' to a new array
+
+console.log(arr1); // [1, 2, 3, 4] (unchanged)
+console.log(arr2); // [5, 6, 7] (new array)
+
+Shallow Copy: Use for flat structures (objects/arrays without nested elements).
+ Ideal for minor modifications or performance-sensitive tasks.
+ Spread Operator (...)
+Object.assign()
+Array methods: slice(), concat(), Array.from()
+
+
+Deep Copy: Use when working with nested structures that require full independence from the original object.
+ Essential for complex, real-world applications.
+
+ JSON.parse(JSON.stringify())
+structuredClone()
+Recursive cloning
+Lodash’s cloneDeep()
+Custom cloning utilities or libraries
+
+8.unusual results after type check on data types in js.
+Answer: 
+console.log(typeof null); // Output: "object"
+null is a primitive data types but it gives obj on type check due to a historical bug in js.
+
+Internally, JavaScript uses a specific internal type tag (a number) to represent different types. 
+For most objects, this tag was a unique identifier that indicated it was an object. However, for null, 
+the tag that was used was the same tag used for objects. As a result, when the typeof operator was implemented,
+ it would return "object" because the internal tag for null was mistakenly treated the same as for regular 
+ objects.
+
+Thus, typeof null was returned as "object", even though null was not actually an object.
+
+2. console.log(typeof []); // Output: "object"
+Explanation: Arrays are technically objects in JavaScript, so typeof returns "object", which might be
+ misleading when you're trying to differentiate between plain objects and arrays.
+console.log(Array.isArray([])); // true
+console.log(Array.isArray({})); // false
+
+3.console.log(typeof function() {}); // Output: "function"
+Explanation: Functions are a special type of object, and typeof returns "function" for them. This can be useful
+ for checking if a variable is a function.
+
+4.console.log(typeof NaN); // Output: "number"
+Explanation: NaN (Not-a-Number) is technically of type "number" in JavaScript, even though it is not a valid
+ number. This can be confusing.
+console.log(Number.isNaN(NaN)); // true
+console.log(Number.isNaN(42));  // false
+
+5.let x;
+console.log(typeof x); // Output: "undefined"
+Explanation: undefined is a primitive value and typeof correctly identifies it as "undefined".
+ However, you need to ensure that avariable is not unintentionally undefined in your checks.
+let x;
+console.log(x === undefined); // true
+
+6.console.log(NaN === NaN); // Output: false
+Explanation: NaN is the only value in JavaScript that is not equal to itself, due to the fact that it's 
+considered "Not a Number."
+
+7.console.log(0 == false); // Output: true
+console.log(0 === false); // Output: false
+Explanation: == performs type coercion (changing data types to perform an operation), so 0 and false are 
+considered equal in loose comparison, but they are different types and unequal when compared strictly (===).
+
+8.console.log("" == 0); // Output: true
+console.log("" === 0); // Output: false
+Explanation: When comparing with ==, an empty string is coerced to 0, which can lead to unexpected results.
+ However, with strict equality ===, the comparison correctly returns false.
+
+9.console.log([] == false); // Output: true
+console.log([] == 0);     // Output: true
+Explanation: Empty arrays ([]) are coerced to an empty string when compared with ==, and then the empty string
+ is coerced to false or 0. This can lead to confusing results.
+
+10.Explanation: Empty arrays ([]) are coerced to an empty string when compared with ==, and then the empty 
+string is coerced to false or 0. This can lead to confusing results.
+Explanation: Even though Infinity represents an infinitely large number, it is still of type "number".
+
+11.console.log(0 === -0); // Output: true
+console.log(Object.is(0, -0)); // Output: false
+Explanation: JavaScript considers 0 and -0 to be the same value when compared using ===, but they are
+ distinct when checked with Object.is().
+
+12.const arr1 = [];
+const arr2 = [];
+
+but if :const arr1 = [];
+const arr2 = arr1;
+
+console.log(arr1 == arr2) // it will give true
+
+console.log(arr1 == arr2);  // Output: false
+console.log(arr1 === arr2); // Output: false
+In JavaScript, when comparing two arrays (or objects) using either == or ===, reference comparison is performed
+not value comparison. This means that even though arr1 and arr2 are both empty arrays, they are still two 
+separate objects in memory, and JavaScript will consider them different because they reference different 
+locations in memory.
+
+
+9. How js works from writing the code till the execution?
+
+### Example revision based on these suggestions:
+---
+
+**1. Parsing Phase**:  
+This phase involves **syntax analysis**, **hoisting**, and **scope determination**. The JavaScript engine 
+scans the code and converts it into an **Abstract Syntax Tree (AST)**, which represents the logical structure
+ of the code. During this phase, **hoisting** occurs, meaning that variable and function declarations are moved to the
+  top of their scope before the code starts executing. For example:  
+
+let name = 'Sachin';
+
+The AST will break it down into nodes like `let`, `name`, `=`, `'Sachin'`, and `;`. The `let` declaration is hoisted,
+ but its value assignment happens later.
+
+---
+
+**2. JIT Compilation Phase**:  
+In this phase, the JavaScript engine converts the **Abstract Syntax Tree** into **bytecode** or **machine code** that 
+can be understood by the computer. **Just-In-Time (JIT) compilation** means that the code is compiled **during runtime**. 
+The engine optimizes the code by **inlining functions**, removing unused code, and making other adjustments to make it
+  more efficient.
+
+---
+
+**3. Execution Phase**:  
+This is where the compiled code runs step by step. During execution, **variables are resolved**, and functions are
+ called. The **call stack** keeps track of the functions being executed, and the **event loop** ensures asynchronous 
+ code like `setTimeout` or Promises is handled properly. The code runs according to the scope and context determined 
+ earlier.
+
+
