@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess_a_number</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-200 flex flex-col gap-5">
+    <h1 class="text-3xl text-center mt-10">Number Guessing Game</h1>
+    <div class="flex bg-neutral-400 text-white flex-col gap-10 border-2 border-black h-[500px] mx-auto w-[700px] items-center">
+      <p class="text-lg my-5 capitalize font-mono">
+        try and guess a number between 1 and 100 <br />
+        your have <span class="text-red-500 text-2xl">10</span> attempts to guess the right number
+      </p>
+  
+      <form class="flex flex-col gap-8">
+        <label for="guess" class="text-5xl font-serif "> Guess a number</label>
+        <input id="userInput" type="text" class="border-4 py-2 text-black border-gray-600">
+        <input type="submit" id="sbmt" value="Check your guess" class="bg-black w-fit mx-auto font-mono px-4 rounded-lg text-white py-2 border-gray-600">
+      </form>
+
+      <div id="results">
+        <p id="previusguesses" class="capitalize text-lg leading-loose font-mono">previous Guess: <span></span></p>
+        <p class="capitalize text-lg leading-loose font-mono">attempts left: <span></span></p>
+        <p id="win"></p>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
