@@ -1,0 +1,18 @@
+js in syncronous and single threaded language.
+Being slow why it doesn't feel slow while working
+
+differenc use cases of blocking and non-blocking code>?
+ex: entring data to dat base or sending data to server. and giving response
+ to user. that it was succesfull. and later it can have error so here blocking
+ code will work better
+ 4:08:05 TIME STAMP
+ JS ENGINE DESIGNED IN WHICH language?
+ answer: c++ js is written in c++
+
+ Q5. while programing asyncronously the methods like settimeout 
+ and setinterval, setimmediate take the code out of the call stack. and then 
+ it will be added to the task queue and will be executed later. and in the the cases
+ of fetch it is added to the differnt queue which is higlhly prioritized queue.
+ and then after time allocated it will introduce the code to the running call stack
+ and then it will be executed
+ Answer: yes

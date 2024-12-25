@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click_color_changer</title>
+  </head>
+  <body style="background-color: rgb(217, 213, 213)">
+    <h1 style="margin-left: 40%; font-style: italic">
+      Change Color On Every Click
+    </h1>
+    <button
+      style="margin-left: 40%; font-style: italic; font-size: xx-large"
+      id="start"
+    >
+      Start
+    </button>
+    <button style="font-size: xx-large" id="stop">Stop</button>
+  </body>
+  <script>
+    const body = document.querySelector("body");
+    const start = document.querySelector("#start");
+    const stop = document.querySelector("#stop");
+
+    function randomColor() {
+      const hex = "123456789ABCDEF";
+      let color = "#";
+
+      for (let i = 0; i < 6; i++) {
+        let randomNum = Math.floor(Math.random() * 15);
+        color += hex[randomNum];
+      }
+      return color;
+    }
+    console.log(randomColor());
+    let intervalId;
+    start.addEventListener("click", () => {
+       //Adding `if (!intervalId)` ensures that only one interval runs at
+       //  a time, preventing redundant timers from starting when the 
+       // "Start" button is clicked multiple times. This improves efficiency
+       // , avoids rapid unintended changes, and makes the code more 
+       // predictable and easier to maintain. Without the check, multiple
+       //  intervals can overlap, wasting resources and causing inconsistent
+       //  behavior.
+      if (!intervalId) {
+        intervalId = setInterval(function () {
+          body.style.backgroundColor = randomColor();
+        }, 1000);
+      }
+    });
+
+    stop.addEventListener("click", () => {
+      clearInterval(intervalId);
+      intervalId = null; // for more optimal code
+    });
+  </script>
+</html>

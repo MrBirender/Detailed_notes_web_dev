@@ -3,3 +3,4 @@ what are the varios methods of routing in react router dom
 
 what is Loader and loaderData hook in react-router what is the use of it
 what is the use of outlet in rect
+

@@ -1,0 +1,18 @@
+Q1. all types of events in js.
+Q2. what is the third argument in addEventListener? true or false?
+Answer. when it set to true is captures the outer elements which is capturgin. first and when it is false
+it checks the inner elements first which is bubbling.
+e.stopPropagation() with false
+Q3. what is attach event.
+study e.target every thing it has and which is used oftenly in projects
+Q4. what is event object. most used event properties in js
+practice event based interview questions
+
+Q4.what is event spillover.
+Answer: event spillover is the process of passing an event from one 
+element to another element.
+
+### a completely event based project can be done
+
+Q5. what is event delegation . event bubbling and event capturing event propogation
+study more about prevent default and stop propogation

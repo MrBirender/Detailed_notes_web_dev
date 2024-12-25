@@ -1,0 +1,11 @@
+Q1. why everytag in css considered as text like button, heading tags. why there 
+is no pre css with button tag why it appears as a text in the browser.
+Answer: Every HTML element is considered a text element in CSS. This means 
+that any element you create in HTML will also be displayed as text in CSS.
+
+it is html problem when i write html in htmlfile and when it comes to right html
+in jsx file it treat tag as a text.
+Answer: The main difference between HTML and CSS is that HTML is used to 
+structure the content of a webpage, while CSS is used to style the webpage.
+
+setTimeout(), clearTimeout(), setInterval(), clearInterval():
