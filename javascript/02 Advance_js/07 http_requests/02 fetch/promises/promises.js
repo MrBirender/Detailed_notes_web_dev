@@ -1,7 +1,7 @@
 // https request using all three tools of asyncronous code:
 
 // 1. callbacks
-// Yes, that's correct! If you're using XMLHttpRequest (XHR) and want to
+// If you're using XMLHttpRequest (XHR) and want to
 //  handle asynchronous behavior without Promises (like with fetch), you 
 // would typically use a callback function to handle the response.
 function fetchDataWithXHR(url, callback) {

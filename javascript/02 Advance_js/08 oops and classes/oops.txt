@@ -1,0 +1,17 @@
+Q1. does js really have classes or its an sytactic sugar over its existing prototyp
+based inheritance mechanism?
+Answer: Yes, JavaScript has classes, but it's a syntactic sugar over its 
+existing prototype-based inheritance mechanism.
+
+Q2. what is object oriented programming and what are its four pillars?
+Answer: Object-Oriented Programming (OOP) is a programming paradigm that
+uses objects and their interactions to model real-world entities and
+problems. It emphasizes the idea of encapsulation, inheritance, polymorphism,
+and abstraction. The four pillars of OOP are:
+Encapsulation, Inheritance, Polymorphism, and Abstraction
+
+Q3.what is object literal?
+
+Q4. what is this and current context.
+
+Q5. what are constructor functions? 

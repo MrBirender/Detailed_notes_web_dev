@@ -120,3 +120,4 @@ Here’s a summarized version for your text notes:
 This summarized version highlights all the essential points. Let me know 
 if you want to add or clarify anything!
 
+Q. a visualiazation of the asynchronous code for fetching data from an API

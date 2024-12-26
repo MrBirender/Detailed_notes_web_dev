@@ -1,0 +1,11 @@
+Q1. does fetch has its priority queeue in the async operation?
+Q2. if i hit a newtwork request and i got a 404 error then it will count in
+fullfilment of request or rejection of request?
+Answer: it will count in fullfilment of request because it is given by the server side
+ request
+
+Q3.when i hit a newtwork request using fetch then two things happen one handles the
+api side request and another handles the memory allocation. if is it so then provide
+the complete process what happens on onfullfilemnt and onrejection and then these gives the
+value to the global memory data recived or not?
+Answer: yes it is so.
