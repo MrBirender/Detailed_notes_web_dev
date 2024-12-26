@@ -1,22 +1,48 @@
-import React, {createContext, useContext} from "react";
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-// creating context:
-const TodoContext = createContext();
+export const TodoContext = createContext();
 
-//defining the provider:
 
-const TodoProvider = ({children})=> {
-   const [todos, setTodos] = useState([]);
+// custom hook:
 
-   const value = {todos, setTodos}
-
-   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>
-}
-
-//custom hook to use the context:
-const useTodo = ()=> {
+export const useTodo = ()=>{
    return useContext(TodoContext)
 }
+export const TodoProvider = ({ children }) => {
+  const [todos, setTodos] = useState([]);
 
-export {TodoProvider, TodoContext, useTodo}
+  // createTodo:
+  const createTodo = (newTodo) => {
+    setTodos((pre) => [...pre, newTodo]);
+  };
+
+  const editTodo = (id, todoMsg) => {
+    setTodos((pre) => pre.map((todo) => (todo.id === id ? {...todo, text:todoMsg} : todo)));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos((pre) => pre.filter((todo) => todo.id !== id));
+  };
+
+  const toggleCompleted = (id) => {
+    setTodos((pre) =>
+      pre.map((todo) =>
+        todo.id === id ? {...todo, completed : !todo.completed} : todo
+      )
+    );
+  };
+
+
+  const value = {
+    todos,
+    setTodos,
+    createTodo, 
+    editTodo,
+    deleteTodo, 
+    toggleCompleted
+  };
+
+  return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
+};
+
+

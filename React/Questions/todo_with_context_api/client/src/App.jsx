@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import TodoForm from "./components/TodoForm";
+import { useTodo } from "./context/todoContext";
 import TodoItem from "./components/TodoItems";
 
 
+
 const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [todo, setTodo] = useState({
-    id: '1233',
-    title: "go to sleep",
-    completed: false
-  })
+  
+  const {todos, setTodos} = useTodo()
+  
+  // getting data from local storage:
+  useEffect(()=> {
+    const storedTodo = localStorage.getItem('todos');
+    if(setTodos){
+      setTodos(JSON.parse(storedTodo))
+    }
+  },[setTodos])
+  
+  useEffect(()=> {
+     localStorage.setItem('todos', JSON.stringify(todos))
+  },[todos])
+
 
   return (
     <div className="bg-[#172842] min-h-screen py-8">
@@ -22,7 +33,10 @@ const App = () => {
         </div>
         <div className="flex flex-wrap gap-y-3">
           {/*Loop and Add TodoItem here */}
-          <TodoItem todo={todo}/>
+          {todos.map((todo)=> (
+            <TodoItem key={todo.id} todo={todo}/>
+          ))}
+         
         </div>
       </div>
     </div>

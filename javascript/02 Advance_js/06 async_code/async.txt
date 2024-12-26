@@ -16,3 +16,12 @@ ex: entring data to dat base or sending data to server. and giving response
  and then after time allocated it will introduce the code to the running call stack
  and then it will be executed
  Answer: yes
+
+ Q6. is console part of core js or it is injected by the browser engine?
+ Answer: it is injected by the browser engine.
+ Q7. what are the things which core js contains and what are the apis it used
+ to do operations?
+ Answer: core js contains the basic apis to do operations.
+
+ is js a rapper over c++?
+ answer: yes

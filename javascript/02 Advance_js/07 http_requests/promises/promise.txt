@@ -1,0 +1,64 @@
+Q1.what are asyncronous programming paradigms in JavaScript.
+Answer: 
+
+### Summary of Callbacks, Promises, and `async/await`
+
+#### **1. Callback**
+- **What:** Function passed as an argument to another function.
+- **Use:** Handles asynchronous operations like fetching data or timers.
+- **Problems:** Leads to **callback hell**, messy error handling, and poor readability.
+- **Example:**
+  ```javascript
+  fetchData((data) => {
+    console.log(data);
+  });
+  ```
+
+---
+
+#### **2. Promise**
+- **What:** Object representing the result of an asynchronous operation.
+- **Why:** Solves callback hell with `.then()` and `.catch()`.
+- **Problems:** `.then()` chaining can get lengthy and less readable.
+- **Example:**
+  ```javascript
+  fetchData()
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+  ```
+
+---
+
+#### **3. `async/await`**
+- **What:** Syntactic sugar over Promises for cleaner asynchronous code.
+- **Why:** Makes code look synchronous, simplifies chaining, and uses `try/catch` for error handling.
+- **Problems:** Relies on Promises and pauses at each `await`, which may affect efficiency.
+- **Example:**
+  ```javascript
+  async function fetchData() {
+    try {
+      const data = await fetchPromise();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  ```
+
+---
+
+### **Why Introduced?**
+1. **Callbacks** were unmanageable for complex operations.
+2. **Promises** improved error handling and readability.
+3. **`async/await`** made asynchronous code easier to write and maintain.
+
+---
+
+### **When to Use?**
+- Use **Promises** for parallel tasks or chaining multiple operations.
+- Use **`async/await`** for cleaner and synchronous-looking sequential code.
+
+
+
+
+

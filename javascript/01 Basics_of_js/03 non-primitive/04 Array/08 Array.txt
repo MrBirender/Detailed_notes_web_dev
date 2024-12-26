@@ -134,3 +134,7 @@ unshift(): Adds elements to the beginning of an array (mutates the first array).
 reduce(): A more complex but flexible approach to merge multiple arrays.
 
 
+Q9. What are higher order funtions in JavaScript?
+Answer: Functions that take functions as arguments or return functions as 
+their result.
+example_name: map(), filter(), reduce(), forEach(), sort(), 
