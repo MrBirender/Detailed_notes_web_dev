@@ -1,0 +1,25 @@
+Q1. what are prototypes in js?
+Answer: Prototypes are a mechanism in JavaScript that allows objects to inherit properties 
+and methods from other objects, creating a hierarchy of objects.
+It is a way to reuse code and create a more modular and reusable structure for your code.
+Q2. what is prototype chain and why evrthing is an object.
+Q3. can every data type including function behave like an object. like accessing property using
+dot notation.
+
+function sayHai(name){
+    console.log(`Hai ${name}`)
+}
+
+sayHai.age = 25
+
+const result = sayHai('Birender')
+console.log(result) // Hello Birender
+console.log(sayHai.age) //25
+
+#@#$ => EVERTHING non-primitve data type in js . when consoled in the boroser.
+firstly gives the prototype of its self having fucntion and properties what it can do
+after that it give prototypes of objects and in the end of those it gives setProto()
+and setProto() to further increase the chain.
+
+
+
