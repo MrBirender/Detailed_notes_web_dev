@@ -2,18 +2,30 @@
 will set the context of this. */
 
 // setting this refrence using this:
-function SetFuelType(fuel){
-    this.fuel = fuel
+// A reusable function to set fuel type for any vehicle
+function SetFuelType(fuel) {
+    this.fuel = fuel;
 }
 
-function MakeCar(model, enginePower, fuel){
-    SetFuelType.call(this, fuel)
-    this.model = model
-    this.enginePower = enginePower
- 
-
+// Constructor function for creating car objects
+function MakeCar(model, enginePower, fuel) {
+    // Reuse SetFuelType and bind `this` to the current car object
+    SetFuelType.call(this, fuel);
+    this.model = model; // Unique to the car
+    this.enginePower = enginePower; // Unique to the car
 }
 
-const car1 = new MakeCar(2024, "2500cc", "Hydrogen")
+// Constructor function for creating bike objects
+function MakeBike(model, engineCapacity, fuel) {
+    // Reuse SetFuelType and bind `this` to the current bike object
+    SetFuelType.call(this, fuel);
+    this.model = model; // Unique to the bike
+    this.engineCapacity = engineCapacity; // Unique to the bike
+}
 
-console.log(car1)
+// Create specific vehicles
+const car1 = new MakeCar("Sedan", "2500cc", "Petrol");
+const bike1 = new MakeBike("Cruiser", "500cc", "Diesel");
+
+console.log(car1); // { fuel: 'Petrol', model: 'Sedan', enginePower: '2500cc' }
+console.log(bike1); // { fuel: 'Diesel', model: 'Cruiser', engineCapacity: '500cc' }

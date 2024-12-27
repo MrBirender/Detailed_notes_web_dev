@@ -13,21 +13,22 @@ const AddTodo = () => {
         setTodoText('')
     }
   return (
-    <form className="flex w-full max-w-6xl mx-auto">
+    <form className="flex justify-center gap-8 w-full max-w-4xl mx-auto  text-white text-xl font-medium">
       <input
         value={todoText}
         onChange={(e) => setTodoText(e.target.value)}
         type="text"
         placeholder="Write Todo..."
-        className="w-full border border-black/80 rounded-l-lg px-3 outline-none
-       duration-150 bg-white/20 py-4 text-xl"
+        className="bg-gray-950 px-8 py-4 w-[60%] rounded-lg"
+        
       />
       <button
         onClick={handleSubmit}
         type="submit"
-        className="rounded-r-lg px-4 py-4 border border-black/80 bg-green-600 text-white shrink-0"
+        className="w-[40%] bg-blue-600 rounded-lg hover:scale-105"
+        
       >
-        Add
+        Add Todo
       </button>
     </form>
   );
