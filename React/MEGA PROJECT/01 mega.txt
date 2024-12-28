@@ -1,0 +1,19 @@
+Q1.what is firebase and beckend as a service? and all replacement for firebase.
+
+*******************.env file setup:******************************
+
+REACT_APP_ANY_VARIABLE = "Hello World"
+// THIS IS THE USE CASE WHEN THE PROJECT IS SETUP USING CRA.
+
+# HOW WE ARE GOING TO ACCES IN THIS METHOD WITH CRA
+process.env.REACT_APP_ANY_VARIABLE  
+
+
+
+VITE_ANY_VARIABLE = "Hello World"
+// THIS IS THE USE CASE WHEN THE PROJECT IS SETUP USING VITE
+
+# HOW WE ARE GOING TO ACCES IN THIS METHOD WITH VITE
+import.meta.env.VITE_ANY_VARIABLE
+
+// always use env in string to avoid future errors .it can work without string also.
