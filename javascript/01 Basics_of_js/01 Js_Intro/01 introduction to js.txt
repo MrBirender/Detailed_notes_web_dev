@@ -4,6 +4,12 @@
 possible in the browser itself. but now it has opened the door for server side development.
 [Deno is the replacment for node.]
 
+what is nodejs?
+
+Node.js is an open-source, cross-platform, runtime environment built on Google Chrome's V8 JavaScript engine.
+It allows developers to use JavaScript to write server-side applications, which means you can build the backend of web 
+applications or even entire software solutions using JavaScript.
+
 -- type node in the console and hit enter then it will give me the nodejs enviorment where i can perfrom operation 
 in the cosnole on vs code outside the browser.
 
@@ -39,7 +45,7 @@ Answer: it is in index.js file:" var is outdated now , it should not be used now
 scopping behaviour.
 
 ** let and const respects the blockscope but var doen't if we declare another varibale with the same name
-in the diffrent scope , then the prvious one gets updated.
+in the diffrent scope , then the previous one gets updated.
 function myFunction() {
     var name = 'john'
     if(4< 5) {
@@ -55,7 +61,7 @@ function myFunction() {
 myFunction() // birender // birender
 
 6. // can i store a variable in the memeory without using var, let and const
-Answer: yes data can be stored but it is bad practice it will give error in usesrict mode in js;
+Answer: yes data can be stored but it is bad practice it will give error in usestrict mode in js;
 
 /* tc39.es ecma script is the offical documentaion for js.
 mdn is from mozilla group. */
@@ -64,7 +70,7 @@ mdn is from mozilla group. */
 Answer: There are mainly two types of data types in js:
 primitive and non-primitive.
 
-1. primitive - These data types are immutable and stored by value in memeory.
+1. primitive - These data types are immutable and stored by value in memory.
 - 7types in total: 
 number:
 let age = 25; // Integer
@@ -146,6 +152,8 @@ arr2 = [5, 6, 7]; // Reassign 'arr2' to a new array
 console.log(arr1); // [1, 2, 3, 4] (unchanged)
 console.log(arr2); // [5, 6, 7] (new array)
 
+
+********************************************** know more about deep and shallow copy*****************************************************************************
 Shallow Copy: Use for flat structures (objects/arrays without nested elements).
  Ideal for minor modifications or performance-sensitive tasks.
  Spread Operator (...)
@@ -161,6 +169,9 @@ structuredClone()
 Recursive cloning
 Lodash’s cloneDeep()
 Custom cloning utilities or libraries
+
+****************************************************************************************************************************************************************************************
+
 
 8.unusual results after type check on data types in js.
 Answer: 
@@ -229,17 +240,19 @@ Explanation: JavaScript considers 0 and -0 to be the same value when compared us
 12.const arr1 = [];
 const arr2 = [];
 
-but if :const arr1 = [];
-const arr2 = arr1;
-
-console.log(arr1 == arr2) // it will give true
-
 console.log(arr1 == arr2);  // Output: false
 console.log(arr1 === arr2); // Output: false
 In JavaScript, when comparing two arrays (or objects) using either == or ===, reference comparison is performed
 not value comparison. This means that even though arr1 and arr2 are both empty arrays, they are still two 
 separate objects in memory, and JavaScript will consider them different because they reference different 
 locations in memory.
+
+
+but if :const arr1 = [];
+const arr2 = arr1;
+
+console.log(arr1 == arr2) // it will give true
+console.log(arr1 === arr2) // it will give true
 
 
 9. How js works from writing the code till the execution?
@@ -251,7 +264,7 @@ locations in memory.
 This phase involves **syntax analysis**, **hoisting**, and **scope determination**. The JavaScript engine 
 scans the code and converts it into an **Abstract Syntax Tree (AST)**, which represents the logical structure
  of the code. During this phase, **hoisting** occurs, meaning that variable and function declarations are moved to the
-  top of their scope before the code starts executing. For example:  
+  top of their scope before the code starts execution. For example:  
 
 let name = 'Sachin';
 
@@ -275,3 +288,79 @@ This is where the compiled code runs step by step. During execution, **variables
  earlier.
 
 
+****=> cloning and the complete execution process with stack que, priority que and call stack. and events.
+1. what is single threaded means does it means it has a sinle call stack?
+Answer: it means it has a sinle call stack. explore.....
+2. Is stack a data structure?
+Answer: Yes.
+
+3. what is the anonimous function in the call stack?
+Answer: main() is the anonimous function in the call stack. explore.....
+
+ex.function foo(){
+  threw new Error('error');
+}
+
+function boo(){
+  foo();
+}
+
+function too(){
+  boo();
+}
+
+too();
+
+
+.. this gives the stack trace:
+v Uncaught Error: Oops!
+foo
+bar
+baz
+(anonymous function)
+1
+oops. js: 2
+oops. js: 2
+oops. js: 7
+oops. js:11
+oops. js:14
+
+Range Error: Maximum call stack size exceeded explore
+
+Q.does it really when i do asyn operation in js then it is handled by web api acting as an another thread and the process the 
+request and return the result in the call stack of the main thread?
+Answer: yes it is so.
+that means js behaves as multi threaded using web api's as another thread.
+
+what are the vaious api's in the web api?
+Answer: fetch, xhr, and event loop and setTimeout, setInterval, and requestAnimationFrame.
+
+Q.does event loop checks regularly for the tasks in the call stack are they 
+completed or not and then push the callback from the tasksqueue to the call stack?
+Answer1: yes
+
+Q. what if i have a setTimeout with 0 seconds then what will happen?
+Answer: it will be pushed to the call stack after the call stack is empty. because event loops check the call stack 
+if it is empty then it will push the setTimeout to the call stack.
+
+Q. setTimeout is not a gurranted time for execution it is the minimum time to be executed?
+Answer: it is not a gurranted time for execution it is the minimum time to be executed.
+for ex: setTimeout(()=> {
+  console.log('hello');
+}, 1000)
+for ex: setTimeout(()=> {
+  console.log('hello');
+}, 1000)
+for ex: setTimeout(()=> {
+  console.log('hello');
+}, 1000)
+for ex: setTimeout(()=> {
+  console.log('hello');
+}, 1000)
+// firstly js will go through all the call stack and push them to the web api section and once it is done the event loop  
+will check if the call stack is empty then it will push the setTimeout to the call stack.
+
+when the call stack is executing how rendering works and after how much miliseconds of time the things from the render
+queue pushed to the call stack?
+Answer: it will render the things from the render queue pushed to the call stack after the call stack is empty.
+every 16 miliseconds
