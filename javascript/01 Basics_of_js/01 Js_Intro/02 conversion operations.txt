@@ -7,7 +7,8 @@ console.log(score) // 33
 console.log(numberScore) // 33 but it is number on type check:
 
 1. "33" => 33 as in number
-2. "33abc" => NaN print in console but it shows number in its type check because nan is unique number in js memory.
+2. "33abc" => NaN print in console but it shows number in its type check because nan is unique number 
+in js memory.
 3. true  => 1, and false = 0;
 
 *****converting to boolean:
@@ -34,46 +35,69 @@ console.log(stringNum) // 78 but it is string on type check
 
 ************************************ Operations  *******************************:
 
-console.log(1 + "2") // 12 as string
-console.log("1" + 2) // 12 as string
+console.log("hello" - 5);
+console.log("5a" - 3);
+console.log("10" - null);
+console.log(undefined + 2);
+Answer:
+"hello" - 5:
 
+"hello" cannot be coerced to a number, so the result is NaN.
+Output: NaN.
+"5a" - 3:
+
+"5a" cannot be fully coerced to a number, so the result is NaN.
+Output: NaN.
+"10" - null:
+
+"10" is coerced to 10, and null is coerced to 0.
+10 - 0 → 10.
+Output: 10.
+undefined + 2:
+
+undefined cannot be coerced to a number, so the result is NaN.
+Output: NaN.
+
+
+predictable resutls: 
+JavaScript evaluates operations left-to-right for +: ex:
+console.log(1 + "2" + 2) // 122 as string
+
+When one operand is a string, + concatenates instead of adding.ex:
 console.log("1" + 2 + 2) // 122 as string
-console.log(1 + 2 + "2") //   32 as string
 
+These operators ( -, *, /)coerce strings to numbers if possible:ex:
+ex:
+console.log("1" - 2 + 2) // 1 as number
 
-console.log("1" + 2 - 2) // 10 as number
-console.log(1 - 2 + "2") // -12 as string
-
-
+*************************************************************************************************************
 Q2. what are the difference between *prefix and postfix operator:
-let score = 10;
-score++;
-console.log(score)
+Here’s a concise summary:
 
-let newScore = 10;
-++newScore
-cosnole.log(newScore)
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
-### Difference Between `score++` and `++score`
+---
 
-- **Post-increment (`score++`)**: 
-  - Uses the current value of `score` in the expression first, then increments `score` by 1.
-  - Example:  
-    ```javascript
-    let score = 5;
-    let result = score++; // result = 5, score = 6
-    ```
+### **1. Postfix Increment (`index++`)**
+- **Behavior**: Uses the original value in the condition, then increments it.
+- **Example**:
+  ```javascript
+  let index = 0;
+  while (index++ < 5) {
+      console.log(index); // Logs: 1, 2, 3, 4, 5
+  }
+  ```
 
-- **Pre-increment (`++score`)**: 
-  - Increments `score` first, then uses the updated value in the expression.
-  - Example:  
-    ```javascript
-    let score = 5;
-    let result = ++score; // result = 6, score = 6
-    ```
+### **2. Prefix Increment (`++counter`)**
+- **Behavior**: Increments first, then uses the incremented value in the condition.
+- **Example**:
+  ```javascript
+  let counter = 0;
+  while (++counter <= 5) {
+      console.log(counter); // Logs: 1, 2, 3, 4, 5
+  }
+  ```
 
-- **As standalone statements**:  
-  Both `score++` and `++score` increase `score` by 1, so their effect is the same.
+---
 
-it also depends on higher Operator_precedence. which one has higher will go first.
-like exponential has higher than binray operators
+### **Key Difference**:
+- `index++`: Condition checks original value; logged value is incremented.
+- `++counter`: Condition checks incremented value; logged value is the same.

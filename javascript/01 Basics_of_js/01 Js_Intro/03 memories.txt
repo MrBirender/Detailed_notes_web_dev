@@ -18,7 +18,8 @@ Answer:
 
 2. **Heap:**
    - Used for **reference data types** (`object`, `array`, etc.).
-   - Stores objects in dynamically allocated memory, while the stack holds the reference (pointer) to the heap.
+   - Stores objects in dynamically allocated memory, while the STACK holds the reference (pointer) to the
+    heap.
    - Example:
      ```javascript
      let obj1 = { name: "Alice" }; // Object stored in the heap
@@ -27,64 +28,147 @@ Answer:
      console.log(obj1.name); // Output: Bob
      ```
 
+---**** Primitives: Stored by value in the stack.
+Non-primitives: Stored by reference in the stack, but the actual data (like objects or arrays) is stored in
+the heap.
+Your understanding is correct: 
+primitives store the original value in the stack, while non-primitives store a reference to the data in 
+the heap.
+****-----
+
+
+******************************************************************************************************************************
+Q2. How js Executes the code?
+Here's a **detailed step-by-step** breakdown of how JavaScript processes code from the moment you write it 
+to its final output, including both major and minor steps:
+
 ---
 
-Q2. How js Executes the code?
-Answer:
-- **Stack:** Works for **primitive data types** (direct storage).  
-- **Heap:** Works 
-JavaScript executes code in several phases during its runtime. Here's an overview of how it works:
+### **1. Writing Code (Source Code)**:
+You write JavaScript code in a file, for example:
+```javascript
+var globalVar = 10;
 
-1. Global Execution Context (GEC) Creation
-Every JavaScript program starts with the Global Execution Context, which has two phases:
+function firstFunction() {
+    let firstVar = 20;
+    function nestedFunction() {
+        const nestedVar = 30;
+        console.log(globalVar, firstVar, nestedVar);
+    }
+    nestedFunction();
+}
 
-Memory Creation Phase (Hoisting)
-Execution Phase
+firstFunction();
+```
 
-**Memory Creation Phase (Hoisting)
-In this phase:
+---
 
-Variables and Functions are Allocated in Memory:
+### **2. Parsing and Compilation**:
+The JavaScript engine (like V8) reads and **parses** the source code to understand its structure. 
+This phase doesn't execute any code yet; it merely prepares the code.
 
-Variables are assigned a default value of undefined.
-Entire function declarations are stored in memory.
-No Code Execution Happens:
+- **Syntax Parsing**: The code is parsed into an **Abstract Syntax Tree (AST)**, which represents the 
+structure of the program.
+- **Hoisting**: The JavaScript engine prepares **variable and function declarations** for execution by 
+moving them to the top of their respective scopes (hoisting).
 
+---
 
-**Execution Phase
-Code is Executed Line by Line:
+### **3. Memory Allocation Phase (Creation Phase)**:
+The engine begins allocating memory for variables and functions.
 
-The JavaScript engine assigns actual values to variables and executes function calls.
-If a variable or function is accessed before it’s initialized, its hoisted value is used (undefined for variables).
-Function Calls Push New Execution Contexts onto the Stack:
+1. **Global Execution Context (GEC)**:
+   - Created to manage the global scope (the entire program).
+   - **Global variables** (`var globalVar`) are hoisted and initialized to `undefined`.
+   - **Function declarations** (`function firstFunction`) are hoisted with their definitions 
+   (the function body).
 
-Each function call creates its own Function Execution Context (FEC).
-Example:
+   **Memory allocation in GEC**:
+   - `globalVar: undefined`
+   - `firstFunction: function definition`
 
-2. Function Execution Context (FEC)
-When a function is called, a new Function Execution Context is created. It has the same two phases:
+2. **Inside Functions** (if any functions exist):
+   - When a function is defined, its **function declaration** is hoisted with its definition, 
+   but the **actual code inside the function is not executed** yet.
+   - **`let` and `const` declarations** are hoisted but are **not initialized**, 
+   leaving them in a **"temporal dead zone"** until the actual execution.
 
-***Memory Creation Phase (Hoisting):
-Parameters are stored as local variables.
-Local variables and nested functions are hoisted.
+---
 
-**Execution Phase:
-The function body is executed line by line.
-JavaScript executes code in several phases during its runtime. Here's an overview of how it works:
+### **4. Execution Phase**:
+Once the memory allocation is done, the **execution phase** begins, and the engine starts executing the code.
 
- 
-******************** strings and its methods ******************************
-let myName = new String("birender") // "birender";
+1. **Global Execution Context (GEC)**:
+   - The **GEC** is pushed onto the **call stack** and begins executing the code.
+   - The `globalVar` is assigned its actual value (`10`).
+   - The `firstFunction` is found in memory, and the engine proceeds to look for function calls.
 
-console.log(myName.length)
-console.log(myName.toUpperCase())
-// just type myName with a dot then it will going to 
-//sugggest all the available methods pending
+2. **Function Call (`firstFunction()`)**:
+   - When `firstFunction()` is called, a **new Function Execution Context (FEC)** is created and pushed 
+   onto the stack.
+   - Inside `firstFunction`, `firstVar` is declared and assigned a value of `20`.
+   - Then, `nestedFunction()` is called, creating another **FEC** for the nested function and pushing it 
+   onto the stack.
 
+3. **Execution of `nestedFunction()`**:
+   - Inside `nestedFunction`, `nestedVar` is declared and assigned a value of `30`.
+   - The `console.log` prints the following values:
+     - `globalVar = 10` (from the global scope)
+     - `firstVar = 20` (from `firstFunction`)
+     - `nestedVar = 30` (from `nestedFunction`)
 
+4. **Return from `nestedFunction()`**:
+   - The **FEC for `nestedFunction`** is popped off the call stack after execution.
 
+5. **Return from `firstFunction()`**:
+   - The **FEC for `firstFunction`** is popped off the call stack.
 
+6. **Global Execution Context**:
+   - Execution returns to the **Global Execution Context (GEC)**, and the program completes.
 
-Q5. try all methods with the array? and go for interview questions like diff between splice and slice?
-spread operator flat, Array.isArray and Array.from(str, obj) check
+---
 
+### **Detailed Breakdown** of the **Execution Contexts**:
+
+- **Global Execution Context (GEC)**:
+  - Created first in the heap memory.
+  - Manages the global scope.
+  - Contains **hoisted declarations**: `globalVar` (initialized to `undefined`) and `firstFunction` 
+  (with its full definition).
+  - When execution starts, it is pushed onto the **call stack**.
+
+- **Function Execution Context (FEC)** for `firstFunction()`:
+  - Created when `firstFunction()` is called.
+  - Contains `firstVar` (initialized to `undefined` and then set to `20`).
+  - Nested function (`nestedFunction`) is declared and stored in memory.
+
+- **Function Execution Context (FEC)** for `nestedFunction()`:
+  - Created when `nestedFunction()` is called inside `firstFunction()`.
+  - Contains `nestedVar` (initialized to `undefined` and then set to `30`).
+  - Executes and logs the values of `globalVar`, `firstVar`, and `nestedVar`.
+
+---
+
+### **Summary of Key Steps**:
+
+1. **Code Parsing**: Code is read and parsed into an Abstract Syntax Tree (AST).
+2. **Memory Allocation (Hoisting)**:
+   - The Global Execution Context (GEC) is created and stores references to variables and functions 
+   (hoisted).
+   - `var` variables are initialized to `undefined`; `let` and `const` variables are hoisted without
+    initialization (temporal dead zone).
+3. **Execution Phase**:
+   - The GEC is pushed onto the call stack.
+   - Code is executed in order, assigning actual values to variables.
+   - When functions are called, new **FECs** are created and pushed onto the stack.
+4. **Function Execution**:
+   - Inside each function's **execution context**, variables are assigned, and code is executed.
+   - When a function returns, its **FEC** is popped off the stack.
+5. **Final Output**:
+   - After all functions have returned and the stack is empty, the program finishes execution.
+
+---
+
+This is the complete **detailed process** of how JavaScript code is executed, from the writing of the
+ code to its final output, including all major and minor steps. Let me know if you need further
+  clarification!
