@@ -1,0 +1,3 @@
+wha is max-width and min-width?
+min-width: minimum width and over it
+max-width: maximum width and under it the css will apply

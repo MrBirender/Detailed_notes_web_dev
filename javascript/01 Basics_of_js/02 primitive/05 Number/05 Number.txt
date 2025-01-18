@@ -12,8 +12,24 @@ checks if the value is not a number.
 
 How can you convert a string to a number in JavaScript? What is the difference 
 between 'parseInt' and 'Number'?
-Answer: parseInt() converts a string to an integer, while Number() converts 
-a string to a number.
+Answer: const str = 'birender'
+const num = Number(str)
+const num2 = parseInt(str)  
+
+console.log(num, num2)
+console.log(typeof num, typeof num2)
+
+console.log(num === num2)
+/* Why isn't NaN equal to itself?
+The behavior of NaN is defined by the IEEE 754 floating-point standard, which JavaScript follows. 
+According to this standard:
+
+NaN is not equal to any value, including itself.
+This design choice was made because NaN represents an undefined or unrepresentable value, and comparing 
+two NaN values would not make sense. They don't signify the same "value" but rather the concept of an 
+invalid number. */
+
+*************************************************************************************************************
 
 What is the result of the expression 'Number("123.45")'?
 Answer: 123.45

@@ -1,0 +1,37 @@
+what is pixles?
+the px unit is a measurement
+of length that is relative to the
+expected viewing distance
+of the device being used.
+
+what are all the important units?
+em, rem, %, vw, vh, px
+
+which one is the smalleqst unit?
+px
+
+
+Q3.what is the difference between em and rem?
+answer: em is relative to the parent element and rem is relative to
+ the root element
+ root element means html element means the browsers defalut font size
+ we have to use rem everywhere in the project for font size , then it will
+ increase the font based on the browser font size. which is 16px by default
+ or can be changed by user.
+
+ em should be used for other thing than font size.
+
+ if we use em for the font size on evrthing then it wil be relative
+ to the parent element. and it will become very hard to get the real font size
+ of the element.
+
+ what is difference between vw and vh and percentage?
+ answer: vw is relative to the width of the viewport and vh is relative
+ to the height of the viewport and percentage is relative to the
+ parent element.
+ view port will responsive to the width and height of the screen
+ so, can we make web responsive without media queries.
+
+ what is the use of ch in the para and text thing?
+ answer: ch defines the max-width in characters. it will be easy to stick to
+ the thumb rule of 45-75 char per line

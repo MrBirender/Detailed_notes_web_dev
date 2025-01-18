@@ -1,0 +1,14 @@
+Q.How css calulate specificity?
+Answer: CSS specificity is a system for determining which style rules apply to a given element. 
+It is based on three factors: inline styles, ID selectors, element selectors and class selectors.
+
+order of selectros: inline styles > ID selectors > element selectors > class selectors
+which ever selector is used it will become one and rest will become 0. that will be the score.
+the higher the score the more specific the selector is.
+for ex: i have used inline styles: 1 > 0 > 0 > 0
+for ex: i have used ID selector: 0 > 1 > 0 > 0
+for ex: i have used class selector: 0 > 0 > 1 > 0
+for ex: i have used element selector: 0 > 0 > 0 > 1
+
+if the same thing is targeted consiqutively and with the same slelector then later one will be
+appliead because css reads from top to bottom.

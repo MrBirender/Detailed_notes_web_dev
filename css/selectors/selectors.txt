@@ -1,0 +1,6 @@
+Q1. What are the different types of selectors in CSS ?
+Answer: There are three main types of selectors in CSS:
+
+1. Element Selectors: Select elements by their tag name, class, or ID.
+2. ID Selectors: Select elements by their unique ID.
+3. Class Selectors: Select elements by their class attribute.  

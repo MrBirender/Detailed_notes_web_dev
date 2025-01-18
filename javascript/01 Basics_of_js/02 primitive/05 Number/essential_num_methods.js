@@ -45,3 +45,17 @@
 // let num = 233.4523423
 // let sum = num.toFixed(2)
 // console.log(typeof(sum)) // string
+
+/* */
+/* 
+parseInt() converts a string to an integer and binary and hexadecimal numbers also.
+it parse untill it encounters something not part of a valid number.
+*/
+const str = 'b123' //it stops where it finds a non numerical value
+const num = parseInt(str)
+console.log(num) // nan
+
+/* but in the case of Number() it will parse the whole str in  an number it can't filter out the num from the str */
+const str2 = '123b'
+const num2 = Number(str)
+console.log(num2) // it will give nan but parseInt will give 123.

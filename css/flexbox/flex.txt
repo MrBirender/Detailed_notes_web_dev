@@ -1,0 +1,19 @@
+align-content becomes active when the flex-wrap property is set to 
+
+2. justify content align the items along the main axis
+
+what align items baseline does?
+
+what flex grow does and what are the other properties which a flex contaner direct children have access ?
+#flex shrink takes a unit less value and if value is set to 0 that item will not shrink when the screen size is reduced and if the
+if it has the value comparativly more than the other direct children the it will strat to shirk comparativly before or after
+
+what is flex basis ?
+it is the initial size of the flex item before any flex-grow or flex-shrink is applied it is used to overwrite the given widht and height.
+
+what is the combined method to use all three (flex grow flex shrink flex basis) at a time?
+answer: flex: 1 1 200px; the other two values are optional
+
+align self is used to align a flex item along the cross axis
+
+order is used to change the order of flex items: but it is rearely used because it messes with the semantics and accesiblity of the page

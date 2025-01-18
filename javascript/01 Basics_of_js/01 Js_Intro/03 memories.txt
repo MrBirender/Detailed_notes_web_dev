@@ -172,3 +172,6 @@ Once the memory allocation is done, the **execution phase** begins, and the engi
 This is the complete **detailed process** of how JavaScript code is executed, from the writing of the
  code to its final output, including all major and minor steps. Let me know if you need further
   clarification!
+
+explore this link
+  https://dev.to/bhattpawan/javascript-behind-the-scenes-the-execution-context-call-stack-4m64

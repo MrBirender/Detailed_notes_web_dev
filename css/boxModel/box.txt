@@ -1,0 +1,47 @@
+everthing in the web is a box, 
+it has a width, height, margin, padding, border and content
+
+what is padding?
+Answer: it is space inside the element, between the border and the content.
+
+what is margin?
+Answer: In short, margin is the space outside an element's border in CSS. It creates distance between the element and its surroundings.
+
+what is border?
+Answer: it is an edge or outlin of an element. between content and the margin.
+
+what is content?
+it  is the actual material of the element. In short it is the width and height of the element.
+
+what is inline, block and inline-block?
+
+how padding values works when given collectively?
+
+what is the imaginative box model when i apply margin it takes the whole margin with the box and when we hover over it it takes the whole margin?
+when is display is set to inline then why it doesnt take the margin from top and bottom but takes from left and right
+
+
+what is the difference between border-box and content-box?
+
+while calulating the element size it doesn't take the margin in account.
+
+does every element has box-sizing default value to content-box?
+Answer: No, every element has box-sizing default value to content-box.
+
+who has default to border-box name them?:
+Answer: 
+
+does tailwind css sets automatically the border-box or marigin-0 or padding-0?
+Answer: tailwind css sets automatically the border-box or marigin-0 or padding-0
+
+    *, this is the morew efficent way,
+        *::before,
+        *::after{
+            box-sizing: border-box;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:content-box;
+        }
