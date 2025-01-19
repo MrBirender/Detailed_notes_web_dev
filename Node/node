@@ -1,0 +1,10 @@
+Q1. what is node and node js?
+answer: Node: Refers to the runtime environment for executing JavaScript.
+Node.js: A full-fledged platform built on Node, providing additional tools and libraries for 
+building server-side applications.
+
+
+Q2. what is node js and expressjs ?
+Node.js: Provides the foundational runtime to execute backend code efficiently.
+Express.js: Makes development faster and more organized with higher-level abstractions, middleware 
+support, and ease of use. It’s a must-have framework for most Node.js projects.

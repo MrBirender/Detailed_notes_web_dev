@@ -1,0 +1,142 @@
+Got it, Saarthi is ready to help you deep dive into Node.js! Since you're aiming for 
+interview-level understanding and already have experience, we’ll focus on **advanced 
+concepts, internals, and practical applications** that often come up in interviews.
+
+Here's a roadmap to guide your learning for today:
+
+---
+
+### **1. Node.js Basics Refresher (Quick Review)**  
+Just to ensure there's no gap:  
+- **What is Node.js?** Event-driven, non-blocking I/O, single-threaded JavaScript runtime built on Chrome's V8 engine.  
+- **Core Modules**: `fs`, `path`, `http`, `os`, `events`, `stream`.  
+- **REPL** (Read-Eval-Print Loop): Basics of testing small code snippets in Node.js.  
+
+---
+
+### **2. Key Concepts to Explore**
+**(Focus on these for interviews)**  
+
+#### **a. Node.js Architecture**  
+- Event Loop (phases: timers, I/O callbacks, idle/prepare, poll, check, close callbacks).  
+- V8 Engine (compilation and optimization).  
+- Libuv library (handles async operations, thread pool).  
+- Call Stack vs Task Queue vs Microtask Queue.  
+- What does "single-threaded" mean in Node.js? How does it handle concurrency?  
+
+📌 **Questions to think about:**  
+- Explain how Node.js is non-blocking.  
+- How does the Event Loop work?  
+- What happens when an async operation is executed?  
+
+#### **b. Module System**  
+- CommonJS vs ES Modules (`require` vs `import`).  
+- How does the `require` function work under the hood? (Module caching, paths resolution).  
+- Implementing your own modules.  
+- `exports` vs `module.exports`—differences and usage.  
+
+📌 **Interview Question:**  
+- What happens if you require a module twice?  
+
+#### **c. Streams**  
+- Types of streams: Readable, Writable, Duplex, and Transform.  
+- Stream methods: `.pipe()`, `.on()`.  
+- Use cases: File I/O, real-time data handling, large data processing.  
+- Difference between Streams and Buffers.  
+
+📌 **Interview Question:**  
+- What are streams, and how do they improve performance?  
+
+#### **d. EventEmitter**  
+- The `events` module: Understanding `.emit()`, `.on()`, `.once()`.  
+- Building your own EventEmitter.  
+
+📌 **Interview Question:**  
+- How is `EventEmitter` used in real-world scenarios?  
+
+#### **e. Middleware & Express.js**  
+- Middleware concepts: Custom middleware, error-handling middleware.  
+- Built-in middleware vs third-party middleware (`body-parser`, `cors`, etc.).  
+- Understanding the request-response lifecycle in Express.js.  
+
+📌 **Interview Question:**  
+- Explain the middleware concept and its role in Express.js.  
+
+#### **f. Asynchronous Programming**  
+- Callbacks vs Promises vs Async/Await.  
+- Avoiding callback hell.  
+- Error handling in async code (`try...catch`, `.catch()`).  
+
+📌 **Interview Question:**  
+- What are the advantages of `Async/Await` over Promises?  
+
+#### **g. Error Handling**  
+- `try...catch` vs Centralized error handling in Express.  
+- Global error handling with `process.on('uncaughtException')` and `process.on('unhandledRejection')`.  
+
+📌 **Interview Question:**  
+- How do you handle unhandled promise rejections in Node.js?  
+
+#### **h. Security**  
+- Preventing vulnerabilities:  
+  - SQL Injection.  
+  - NoSQL Injection.  
+  - Cross-Site Scripting (XSS).  
+  - Rate Limiting.  
+- Common security packages: `helmet`, `dotenv`, `cors`.  
+- OWASP best practices for Node.js.  
+
+📌 **Interview Question:**  
+- How do you secure a Node.js application?  
+
+#### **i. Clustering and Load Balancing**  
+- Using the `cluster` module to scale Node.js apps.  
+- Difference between scaling vertically and horizontally.  
+- PM2 (Process Manager) for production.  
+
+📌 **Interview Question:**  
+- How does Node.js handle scalability?  
+
+---
+
+### **3. Under-the-Hood Insights**  
+#### **a. How Node.js Manages Asynchronous Operations**  
+- Explain the relationship between the Event Loop, Libuv, and Thread Pool.  
+- Tasks handled by the Event Loop (e.g., `setTimeout`) vs Thread Pool (e.g., `crypto`).  
+
+#### **b. Garbage Collection in Node.js**  
+- V8 Engine's memory management.  
+- Mark-and-sweep algorithm.  
+- Memory leaks and tools to detect them (`heapdump`, Chrome DevTools).  
+
+---
+
+### **4. Hands-On Practice for Interviews**  
+#### **a. Code Challenges**  
+1. Write a custom implementation of `EventEmitter`.  
+2. Build a simple stream-based file read/write program.  
+3. Create a middleware in Express that logs requests.  
+4. Use Promises to chain asynchronous operations and handle errors properly.  
+
+#### **b. Debugging in Node.js**  
+- Debugging tools: `node inspect`, Chrome DevTools, `console.log`.  
+
+---
+
+### **5. Bonus: Mock Questions**  
+1. How does `require` work internally in Node.js?  
+2. What are the differences between `setTimeout` and `setImmediate`?  
+3. Explain the lifecycle of an HTTP request in Node.js.  
+4. What is the difference between process.nextTick() and setImmediate()?  
+
+---
+
+### **6. Resources to Learn**  
+1. **Official Docs**: [Node.js Documentation](https://nodejs.org/en/docs/)  
+2. **Deep Dives**: [Node.js Design Patterns](https://www.nodejsdesignpatterns.com/)  
+3. **YouTube Channels**: Academind, Fireship, Traversy Media.  
+4. **Practice Sites**: LeetCode, HackerRank, Codewars (for async programming challenges).  
+
+---
+
+Would you like me to dive deeper into any specific topic or guide you with code snippets for any of the concepts?
