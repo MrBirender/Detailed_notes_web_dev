@@ -1,3 +1,0 @@
-what is state managment in react?
-what is context api , redux, react-redux, redux-toolkit?
-what is i make a gobal.js file to store variable and states and replace the context api

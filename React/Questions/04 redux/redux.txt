@@ -1,5 +1,0 @@
-Q1.what is react redux?
-what is redux toolkit? 
-Q2.what are the diffrent frameworks in which we can use redux?
-Answer: react, vue, angular
-Q3. history of state mangement libraries?
