@@ -1,0 +1,12 @@
+How to setup Router ?
+How to make custom Error page ?
+difference between a tag and Link?
+How to do dynamic routing using route parameters?
+How to use vlaue from params using useParams.
+How to do routing as a child.
+Use outlet to render child
+difference between use case of Link and Navlink.
+Navlink gives the active status which can be further used to style active link
+
+Read documentation for alot more features of reat-router.
+Make contactbook from documentation to explore all feautres of it.
