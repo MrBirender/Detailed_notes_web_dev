@@ -1,0 +1,8 @@
+ Q1. In how many ways can we attach react-router to the react-app ?
+
+
+
+ Q2. What is the difference between react-router and react-router-dom ?
+
+
+ Q3. What is the difference between the use case of Link and a tag ?
