@@ -2,12 +2,46 @@ JavaScript Math Library - Interview Questions:
 How do you round a number to the nearest integer in JavaScript?
 Answer: To round a number to the nearest integer, you can use the Math.round() method.
 
+what is the role of Math.abs() in JavaScript?
+Answer: Math.abs() returns the absolute value of a number, which
+ is the positive value of the number.
+ console.log(Math.abs(-10));        // 10
+console.log(Math.abs(10));         // 10
+console.log(Math.abs(0));          // 0
+console.log(Math.abs("-42"));      // 42
+console.log(Math.abs("foo"));      // NaN
+console.log(Math.abs(undefined));  // NaN
+console.log(Math.abs([5]));        // 5
+console.log(Math.abs([1, 2]));     // NaN
+
+
 What is the difference between 'Math.round()' and 'Math.floor()'?
 Answer: Math.round() rounds a number to the nearest integer, while Math.floor()
 rounds a number down to the nearest integer.
+console.log(Math.round('10.5')); // 11
+console.log(Math.round('-10.5')); // -10
+console.log(Math.round(-10.5)); // -10 
+// in minus case -0.5 is bigger than -0.6 so it will return -10
+console.log(Math.round(-10.6)); // -11
 
 How do you round a number up to the nearest integer in JavaScript?
 Answer: To round a number up to the nearest integer, you can use the Math.ceil() method.
+console.log(Math.ceil('1.2'));
+console.log(Math.ceil('-1.2'));
+console.log(Math.ceil(''));
+console.log(Math.ceil(12.2));
+
+what math.floor() do?
+console.log(Math.floor('1.2'));
+console.log(Math.floor('-1.2'));
+console.log(Math.floor(''));
+console.log(Math.floor(12.9));
+
+what trunc() do?
+console.log(Math.trunc('1.2'));
+console.log(Math.trunc('-1.2'));
+console.log(Math.trunc(''));
+console.log(Math.trunc(12.9));
 
 What does 'Math.random()' return? 
 Answer: Math.random() returns a random number between 0 (inclusive) and 1 (exclusive).

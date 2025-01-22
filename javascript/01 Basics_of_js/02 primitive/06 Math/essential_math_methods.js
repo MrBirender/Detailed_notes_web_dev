@@ -31,3 +31,5 @@ console.log(Math.cos(0)); // 1
 console.log(Number("101", 2)); // 5 (binary to decimal)
 console.log(Number("377", 8)); // 255 (octal to decimal)
 console.log(Number("FF", 16)); // 255 (hexadecimal to decimal)
+
+
