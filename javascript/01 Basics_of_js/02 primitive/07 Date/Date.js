@@ -5,7 +5,7 @@ console.log(currentDate); // Current date and time
 // getTime()
 const timestamp = currentDate.getTime();
 // it gives the timestamp in milliseconds from January 1, 1970, 00:00:00 UTC
-
+console.log(timestamp)
 
 // Get the current year
 console.log(currentDate.getFullYear()); // Current year

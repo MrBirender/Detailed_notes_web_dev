@@ -1,0 +1,30 @@
+Q1.what is redux?
+
+Q2.History of state management?
+
+Q3.pros and cons of redux?
+
+Q4.Does redux should be chosen for every project?
+
+Q5. what are the famous programming paradigm?
+
+Q6. What is the use of Lodash library in functional programming?
+
+Q7. What is currying in functional programming?
+
+Q8. I should not mutate data in redux because it is the fundamental of redux.
+
+Q9. What are the benefits of immutability in functional programming?
+
+Q10. what are the famous libraries for immutability?
+
+=> js in it self don't is pure functional programming language and it its mutalble
+but we can make it immutable by using the libraries like immer, immutable.js.
+
+=> redux is build based on functional programming paradigm and its is immutable
+so , to keep its  immutability either we use immer or immutable.js like libraries or
+should use spread operator.
+
+//=> steps to inject redux in react-app
+1. Design store
+  a. npm i redux
