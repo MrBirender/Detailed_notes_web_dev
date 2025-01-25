@@ -1,7 +1,6 @@
-
-// -----------------------------------
-// Essential JavaScript String Methods
-// -----------------------------------
+                                /*-----------------------------------
+                                Essential JavaScript String Methods
+                                ----------------------------------- */
 
 // STRING MANIPULATION
 
