@@ -1,7 +1,10 @@
 import React from "react";
+import Counter from "./features/counter/Counter";
 
 const App = () => {
-  return <div className="text-3xl bg-red-500">App</div>;
+  return <div>
+    <Counter/>
+  </div>;
 };
 
 export default App;

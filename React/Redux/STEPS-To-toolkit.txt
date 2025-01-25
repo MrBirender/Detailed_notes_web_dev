@@ -1,0 +1,33 @@
+step1. create Store
+step2. import that store in index.js and import provider from react-redux and then
+wrap the app in provider and pass the store as a prop to provider.
+
+
+step3. 
+ a. create featuers directroy
+ b. create counter directroy with in it.
+ c. inside it create counterSlice.js using createSlice method of toolkit.
+ d. define initialState and then define counterSlice which is also an object.
+ e. inside counterSlice {
+export const counterSlice = createSlice({
+    name: 'counter',
+    initialState,
+    reducers:{
+        increment: (state) => {
+            state.count += 1
+        },
+
+        decrement: (state) => {
+            state.count -= 1
+        },
+
+    }
+})
+f. and at last exprot them
+{
+    
+export const {increment, decrement} = counterSlice.actions;
+export default counterSlice.reducer
+}}
+
+step4. configure that counterReducer in store.
