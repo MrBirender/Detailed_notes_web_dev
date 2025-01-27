@@ -28,3 +28,17 @@ should use spread operator.
 //=> steps to inject redux in react-app
 1. Design store
   a. npm i redux
+
+=> in the following methods it seems like i am mutating the state using push.
+but it is not like that in tookit imeer js in background handles the operation 
+without mutating the state.
+
+const postsSlice = createSlice({
+    name: 'posts',
+    initialState,
+    reducers: {
+       postAdded: (state, action) => {
+           state.push(action.payload)
+       }
+    }
+})
