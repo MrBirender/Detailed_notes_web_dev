@@ -35,46 +35,53 @@ function findLongestWord(sentence) {
 
 console.log(findLongestWord("JavaScript is amazing")); // Output: "JavaScript"
 
-/* start here  */
-/* 
-Question: How do you determine if a string is a palindrome? Answer:
+function checkPalindrome(input){
+const cleanedStr = input.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+/* this above line checks if the input has other then A-Z , a-z, 0-9 then remove that from the input.
+g insures that the process will be done throughout the complete arr, not just to the first one.
+and passing empty string "" doen't mean it will replace them but it wiil remove them.
+ex: Hello World = HelloWorld => toLowerCase() => helloworld
 
-javascript
-Copy
-Edit
-function isPalindrome(str) {
-    let cleaned = str.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-    return cleaned === cleaned.split("").reverse().join("");
+*/
+console.log(cleanedStr)
+const reversedStr = cleanedStr.split('').reverse().join('')
+console.log(reversedStr)
+return cleanedStr === reversedStr
 }
 
-console.log(isPalindrome("A man, a plan, a canal, Panama")); // Output: true
-console.log(isPalindrome("hello")); // Output: false
-Question: How do you find all substrings of a string? Answer:
+const result = checkPalindrome('A man a plan a canal Panama')
+console.log(result)
 
-javascript
-Copy
-Edit
-function getAllSubstrings(str) {
-    let substrings = [];
-    for (let i = 0; i < str.length; i++) {
-        for (let j = i + 1; j <= str.length; j++) {
-            substrings.push(str.slice(i, j));
+let str6 = 'Maya';
+// console.log(str6.indexOf("a"))
+// console.log(str6.lastIndexOf("a"))
+
+function findFirstNonRepeatedChar(input){
+    input = input.toLowerCase()
+    for(let i=0; i<input.length; i++){
+        console.log(input.indexOf(input[i]))
+        console.log(input.lastIndexOf(input[i]))
+        if(input.indexOf(input[i]) === input.lastIndexOf(input[i])){
+            return `This is Char: ${input[i]}`
         }
+        return null
+       
     }
-    return substrings;
+
+}
+const result1 = findFirstNonRepeatedChar('maya')
+console.log(result1)
+
+console.log("below it")
+
+function countOccurence(str, subStr){
+let count = 0;
+let position = str.indexOf(subStr)
+while(position !== -1){
+    count++;
+    position = str.indexOf(subStr, position+1)
+}
+return count;
 }
 
-console.log(getAllSubstrings("abc")); 
-// Output: ["a", "ab", "abc", "b", "bc", "c"]
-Question: How do you check if a string starts and ends with the same character? Answer:
-
-javascript
-Copy
-Edit
-function startsAndEndsWithSameChar(str) {
-    if (str.length === 0) return false;
-    return str[0] === str[str.length - 1];
-}
-
-console.log(startsAndEndsWithSameChar("radar")); // Output: true
-console.log(startsAndEndsWithSameChar("hello")); // Output: false */
+console.log(countOccurence('Hai my name is maya and maya is my name', 'maya'))
