@@ -9,3 +9,6 @@ Answer: The main difference between HTML and CSS is that HTML is used to
 structure the content of a webpage, while CSS is used to style the webpage.
 
 setTimeout(), clearTimeout(), setInterval(), clearInterval():
+
+Q2. steps to work on a tailwind project.
+step1. create layout
