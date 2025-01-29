@@ -5,13 +5,13 @@ const initialState = [
     id: "1",
     title: "Learn React",
     content: "Go to the website and learn react.",
-    userId: 'birender'
+   
   },
   {
     id: "2",
     title: "Learn Node",
     content: "Go to the dev classes and learn node.",
-    userId: 'Maya'
+  
   },
 ];
 

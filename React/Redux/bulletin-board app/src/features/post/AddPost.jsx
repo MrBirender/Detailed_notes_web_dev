@@ -18,6 +18,8 @@ const AddPostForm = () => {
     setTitle('')
   };
 
+  const canSave = Boolean(userId) && Boolean(title) && Boolean(content)
+
   return (
     <div className=" max-w-3xl  pt-10 p-6 bg-slate-600  rounded-lg">
       <h1 className="text-2xl font-bold mb-4 text-center">Add New Post</h1>
@@ -41,10 +43,10 @@ const AddPostForm = () => {
         </div>
 
         {/* Author: */}
-        <select onChange={(e) => setUserId(e.target.value)} className="mt-1 block text-black w-full bg-white px-3 py-2 border border-gray-300 rounded-lg " >
-          <option  value="">Select Author</option>
+        <select value={userId } onChange={(e) => setUserId(Number(e.target.value))} className="mt-1 block text-black w-full bg-white px-3 py-2 border border-gray-300 rounded-lg " >
+          <option  value=""></option>
           {users.map((user) => (
-            <option key={user.id} value={user.name}>
+            <option key={user.id} value={user.id}>
               {user.name}
             </option>
           ))}
@@ -67,8 +69,9 @@ const AddPostForm = () => {
         </div>
         {/* Submit Button */}
         <button
+          disabled= {!canSave}
           type="submit"
-          className="w-full bg-slate-700 text-white py-2 px-4 rounded-lg shadow-md  focus:outline-none"
+          className="disabled:bg-neutral-300 w-full bg-slate-700 text-white py-2 px-4 rounded-lg shadow-md  focus:outline-none"
         >
           Add Post
         </button>
