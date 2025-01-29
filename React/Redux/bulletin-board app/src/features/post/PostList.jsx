@@ -7,13 +7,14 @@ const PostList = () => {
   const posts = useSelector(selectAllPosts);
 
   return (
-    <section className="ml-20 pt-10 text-white ">
+    <section className="mx-20 py-10 text-white  ">
       <h1 className="mb-5 text-5xl">Posts</h1>
-      <div className="flex flex-col gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 ">
       {posts.map((post, index) => (
-        <article className="flex flex-col gap-4 border-2 border-white max-w-[500px] h-40 px-10 py-8 rounded-xl" key={index}>
+        <article className="flex flex-col gap-1 border-2 border-white max-w-[500px] px-10 py-8 rounded-xl" key={index}>
           <h3 className="text-4xl font-semibold">{post.title}</h3>
-          <p className="text-2xl ">{post.content}</p>
+          <p className="text-3xl font-mono">{post.userId}</p>
+          <p className="text-2xl ">{post.content.substring(0, 100)}</p>
         </article>
       ))}
       </div>
