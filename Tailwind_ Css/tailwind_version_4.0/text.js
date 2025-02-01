@@ -1,1 +1,0 @@
-/* Get stated with the new react video of js mastery */
