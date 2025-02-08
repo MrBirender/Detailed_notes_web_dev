@@ -31,3 +31,9 @@ export default counterSlice.reducer
 }}
 
 step4. configure that counterReducer in store.
+
+
+Q. how to async operations in redux?
+answer: use thunk
+what does thunk mean? 
+    A peace of code that does some delayed work.
