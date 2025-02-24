@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Attack Demo</title>
+</head>
+<body>
+    <h2>🚨 XSS Attack Demo (Unsafe User Input) 🚨</h2>
+    <label for="userInput">Enter your name:</label>
+    <input type="text" id="userInput" />
+    <button onclick="displayMessage()">Submit</button>
+
+    <h3>Output:</h3>
+    <div id="output"></div>
+
+    <script>
+        function displayMessage() {
+            // Getting user input
+            let userText = document.getElementById("userInput").value;
+
+            // ⚠️ UNSAFE: Directly injecting input without sanitization
+            document.getElementById("output").innerHTML = `Hello, ${userText}!`;
+        }
+    </script>
+</body>
+</html>

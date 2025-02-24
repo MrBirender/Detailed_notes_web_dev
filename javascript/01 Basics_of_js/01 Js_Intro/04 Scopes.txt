@@ -1,0 +1,60 @@
+Question1. How many scopes are there in js?
+Answer: There are total 5 types of scopes in it:
+1. Global Scope: The variables declared outside of any function or block are belong to the Global scope.
+
+2. Function Scope: The variables declared inside a function are belong to the Function scope.
+
+3. Block Scope: variables declared with let and const are belong to the Block scope.
+block ex: if-else, switch, for, while, do-while, try-catch, etc.
+
+4. lexical Scope (closures): Function can access variables from there parent scope even after the parent has completed execution.
+
+5. Module Scope: when variables declared using js modules are belong to the Module scope unless they are exported.
+
+var x = 5;
+
+function foo() {
+    console.log(x); // ❓
+    var y = 10;
+    console.log(y); // ❓
+}
+foo();  // 5, 10
+
+but it will give undefined if 
+var x = 5;
+
+function foo() {
+    console.log(x); // ❓
+    var x = 10;
+    console.log(x); // ❓
+}
+foo(); // undefined , 10
+
+***** Why Global x is Ignored?
+JavaScript follows the Scope Chain rule:
+If a variable exists in the local scope, it is used first.
+The global scope is only checked if the variable is NOT declared inside the function.
+Since var x; is hoisted inside foo(), JavaScript never looks at x = 5 from the global scope. *******
+
+***Conclusion
+Function scope overrides global scope if a variable exists inside the function.
+var is hoisted, meaning the function "knows" about x, but it's undefined until assigned.
+If var x was not inside foo(), JavaScript would have used the global x.***
+
+
+** what will be output of this***
+
+for (var i = 1; i <= 3; i++) {
+    setTimeout(() => {
+        console.log(i);  
+    }, 1000);
+}
+
+Here we are using var which is function scoped and it doesn't respect the block scope.
+it will print 4, 3times after 1 second.
+because on every iteration setTimeout is going to have a refrence to the same value of i and it is going to handover to the web api to handle it asynconously.
+and and the for loop finsihes the exectuiion because it is syncronus . when the loop finsihes the value of i will be 4 and fails the condition and when settimeout will look for i it will print 4. three times.
+
+but, in the case of let it will have the block scope and will print 1,2,3.
+because on evey iteration setTimeout will have a seperate value of i beacuse of the clousres. 
+
