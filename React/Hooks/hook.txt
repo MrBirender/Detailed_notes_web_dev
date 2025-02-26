@@ -13,3 +13,12 @@ one: when i use it an useEffect hooks to update its current value wihtour the de
 create the infinite loop.
 
 two:we can use this hook to select dom element and manipulate them for like styles and much more. does it works similar to querySelector() etc.
+
+
+useMemo hook?
+usecase1 => if my code container a fucntion which performs heavy calculation and by defalult it runs of every render, so what i need to rap that fucntion call inside the usememo hook? so it will store its result and don't let the function run utill it calls .
+
+in use callback hook?
+there is a memo hook or something if i used this fucntion on export of a component 
+and when the component is used in another component then, it will not cause the auto re-render.
+
