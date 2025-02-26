@@ -1,0 +1,15 @@
+What is the use of react hooks and why do we use them ?
+when react hooks were introduced and why ?
+why do react needs to take control over ui updation?
+
+HOW REACT BATCHES THE UI UPDATES AND WHY BATCHES ARE NOT FORMED WITH FUNCIONAL INCREMENT OF CHANGES?
+
+What are the use cases of useEffect hook ?
+what are side effects ? or does useEffect handles the lifecycle of an component.
+
+
+use case of useRef hook ?
+one: when i use it an useEffect hooks to update its current value wihtour the dependency array. it does NOT
+create the infinite loop.
+
+two:we can use this hook to select dom element and manipulate them for like styles and much more. does it works similar to querySelector() etc.
