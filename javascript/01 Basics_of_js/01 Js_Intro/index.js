@@ -1,4 +1,8 @@
 
+
+
+
+
 // 1. "33" => 33 as in number
 // 2. "33abc" => NaN print in console but it shows number in its type check because nan is unique number 
 // in js memory.

@@ -1,0 +1,153 @@
+
+9. How js works from writing the code till the execution?
+
+### Example revision based on these suggestions:
+---
+
+**1. Parsing Phase**:  
+This phase involves **syntax analysis**, **hoisting**, and **scope determination**. The JavaScript engine 
+scans the code and converts it into an **Abstract Syntax Tree (AST)**, which represents the logical structure
+ of the code. During this phase, **hoisting** occurs, meaning that variable and function declarations are moved to the
+  top of their scope before the code starts execution. For example:  
+
+let name = 'Sachin';
+
+The AST will break it down into nodes like `let`, `name`, `=`, `'Sachin'`, and `;`. The `let` declaration is hoisted,
+ but its value assignment happens later.
+
+---
+
+**2. JIT Compilation Phase**:  
+In this phase, the JavaScript engine converts the **Abstract Syntax Tree** into **bytecode** or **machine code** that 
+can be understood by the computer. **Just-In-Time (JIT) compilation** means that the code is compiled **during runtime**. 
+The engine optimizes the code by **inlining functions**, removing unused code, and making other adjustments to make it
+  more efficient.
+
+---
+
+**3. Execution Phase**:  
+This is where the compiled code runs step by step. During execution, **variables are resolved**, and functions are
+ called. The **call stack** keeps track of the functions being executed, and the **event loop** ensures asynchronous 
+ code like `setTimeout` or Promises is handled properly. The code runs according to the scope and context determined 
+ earlier.
+
+Here are detailed explanations for your doubts:  
+
+---
+
+### 1. **What does single-threaded mean? Does it mean it has a single call stack?**  
+**Answer:** Yes, JavaScript is single-threaded, meaning it has **only one call stack** to handle code execution.  
+- The **call stack** is a data structure that keeps track of function calls.  
+- Being single-threaded means JavaScript can execute **one piece of code at a time**.  
+- This design simplifies code execution and avoids complex issues like race conditions found in multi-threaded environments.  
+
+However, asynchronous operations (like `setTimeout`, `fetch`) are handled by **Web APIs** outside the call stack, and their callbacks are pushed back to the call stack when ready.  
+
+---
+
+### 2. **Is Stack a Data Structure?**  
+**Answer:** Yes.  
+- A **stack** is a linear data structure that follows the **LIFO (Last In, First Out)** principle.  
+- In JavaScript, the **call stack** works on the same principle. The most recent function call is executed first and popped off the stack when done.  
+
+---
+
+### 3. **What is an Anonymous Function in the Call Stack?**  
+**Answer:**  
+- An **anonymous function** is a function without a name.  
+- In the call stack, if a function is invoked without being assigned to a named identifier, it appears as `(anonymous)` in the stack trace.  
+
+In the example you gave:  
+```javascript
+function foo() {
+  throw new Error('Oops!');
+}
+function boo() {
+  foo();
+}
+function too() {
+  boo();
+}
+too();
+```
+The stack trace shows how the error propagates through the call stack. If an error occurs inside an anonymous function, it will show `(anonymous)` in the trace.  
+
+---
+
+### 4. **Range Error: Maximum Call Stack Size Exceeded**  
+This error occurs when functions call themselves recursively without a proper base case, causing an **infinite loop of function calls** until the stack overflows.  
+Example:  
+```javascript
+function recurse() {
+  recurse(); // infinite recursion
+}
+recurse();
+```
+Here, each call to `recurse()` adds a new frame to the stack until it exceeds the maximum stack size.  
+
+---
+
+### 5. **Does Async Operations Use Web APIs as Another Thread?**  
+**Answer:** Yes, kind of.  
+- JavaScript itself is **single-threaded**, but the browser environment (or Node.js) provides **Web APIs** to handle asynchronous operations.  
+- When you make an async call (like `setTimeout`, `fetch`), JavaScript offloads this task to the Web API, which operates outside the main thread.  
+- Once the operation completes, its callback is pushed to the **task queue**, and the **event loop** manages pushing it back to the call stack when it's empty.  
+
+This mechanism makes JavaScript behave **asynchronously** even though it's single-threaded.  
+
+---
+
+### 6. **What Are Various APIs in the Web API?**  
+**Answer:**  
+- **Timers:** `setTimeout()`, `setInterval()`, `requestAnimationFrame()`  
+- **HTTP Requests:** `fetch()`, `XMLHttpRequest (XHR)`  
+- **DOM Events:** Event listeners for clicks, scrolls, etc.  
+- **Geolocation API**, **WebSockets**, **File API**, etc.  
+
+---
+
+### 7. **Does the Event Loop Check if the Call Stack is Empty Before Pushing Callbacks?**  
+**Answer:** Yes.  
+- The **event loop** continuously checks if the call stack is empty.  
+- When it's empty, the event loop pushes callbacks from the **task queue** to the call stack for execution.  
+- This mechanism ensures non-blocking, asynchronous behavior.  
+
+---
+
+### 8. **What Happens with `setTimeout` with 0 ms?**  
+**Answer:**  
+- Even with `setTimeout(() => console.log('Hello'), 0)`, the callback is **not executed immediately**.  
+- It is handled by the Web API and pushed to the **task queue**. The event loop will move it to the call stack **only after** the current stack is empty.  
+
+So, it's a **minimum delay** of 0 ms, but actual execution depends on the call stack's state.  
+
+---
+
+### 9. **Is `setTimeout` a Guaranteed Timer?**  
+**Answer:** No, it's not guaranteed.  
+- The delay in `setTimeout` is the **minimum time** before the callback gets pushed to the queue.  
+- If the call stack is busy, the callback will be delayed beyond the specified time.  
+
+Example:  
+```javascript
+setTimeout(() => console.log('1'), 1000);
+setTimeout(() => console.log('2'), 1000);
+setTimeout(() => console.log('3'), 1000);
+setTimeout(() => console.log('4'), 1000);
+```
+Here, all callbacks are scheduled for after 1000 ms, but they will execute **one after another**, depending on the event loop and the call stack's availability.  
+
+---
+
+### 10. **How Does Rendering Work in Relation to the Call Stack?**  
+**Answer:**  
+- The browser uses the **render queue** to handle visual updates.  
+- Rendering is typically handled during the **"render phase"** of the event loop.  
+- After the call stack is empty, the browser gets a chance to render UI changes.  
+- This happens approximately **every 16 ms** (~60 frames per second) for smooth animations.  
+
+If the call stack is blocked (e.g., by heavy computations), the browser can't render, causing **jank** or **lag**.  
+
+---
+
+Let me know if you'd like further clarification on any of these points! 🚀

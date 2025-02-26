@@ -1,8 +1,8 @@
+let name = 'birender' // PRIMITIVE
+let newName = name
 
-/* Question 1 */
-const b = "1" + 2 + 2
-console.log(typeof b);
+ consol
 
-/* Question 2 */
-const a = '1'- 1 + 2
-console.log(typeof a);
+let obj = {name: 'maya', age: ' 27'} //NON-PRIMITIVE
+
+let newObj = obj
