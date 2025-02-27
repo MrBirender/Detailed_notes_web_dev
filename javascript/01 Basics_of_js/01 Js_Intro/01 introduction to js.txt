@@ -1,130 +1,135 @@
 /*************  ✨ Codeium Command 🌟  *************/
 1. // why we use nodejs in the vs code . give at least one replacment for nodejs.
--- Answer: we use nodejs in vs Code to run js outside the browser, earlier it was only
-possible in the browser itself. but now it has opened the door for server side development.
-[Deno is the replacment for node.]
+      -- Answer: we use nodejs in vs Code to run js outside the browser, earlier it was only
+      possible in the browser itself. but now it has opened the door for server side development.
+      [Deno is the replacment for node.]
 
 what is nodejs?
 
-Node.js is an open-source, cross-platform, runtime environment built on Google Chrome's V8 JavaScript engine.
-It allows developers to use JavaScript to write server-side applications, which means you can build the backend of web 
-applications or even entire software solutions using JavaScript.
+    Node.js is an open-source, cross-platform, runtime environment built on Google Chrome's V8 JavaScript engine.
+    It allows developers to use JavaScript to write server-side applications, which means you can build the backend of web 
+    applications or even entire software solutions using JavaScript.
 
--- type node in the console and hit enter then it will give me the nodejs enviorment where i can perfrom operation 
-in the cosnole on vs code outside the browser.
+    -- type node in the console and hit enter then it will give me the nodejs enviorment where i can perfrom operation 
+    in the cosnole on vs code outside the browser.
 
 
 
 2. // what is vs code is there any other replacment for it.
--- Answer: vsCode is a free code editor by Microsoft. Sublime and Atom- (by github) are the alternatives.
+    -- Answer: vsCode is a free code editor by Microsoft. Sublime and Atom- (by github) are the alternatives.
 
 3. / what is git and github and the codespace option in git is for what and why to stop git machine after use?
--- Answer:  git is a local version control of your project, it allows you to create versions of your project
-on your computer.Git allows you to create branches to try out new features withtout affecting the main
-project. Git works offline so, all of your changes will be availble locally unless you share them.
+    -- Answer:  git is a local version control of your project, it allows you to create versions of your project
+    on your computer.Git allows you to create branches to try out new features withtout affecting the main
+    project. Git works offline so, all of your changes will be availble locally unless you share them.
 
 
-->  Github: it is a cloud based storage of your local git repositry and it acts as a central repostiry where
-anyone can clone and contribute to it. with it's bakcup of the local repositry we can access it from anywhere
-and from any machine.
+  ->  Github: it is a cloud based storage of your local git repositry and it acts as a central repostiry where
+  anyone can clone and contribute to it. with it's bakcup of the local repositry we can access it from anywhere
+  and from any machine.
 
---> codespace in github is the develpment enviorment.
+  --> codespace in github is the develpment enviorment.
 
 4. what is difference between git and gitBash?
---Answer: Git bash is a command line application that gives user , access to unix like shell making it
-easier to use git.
+      --Answer: Git bash is a command line application that gives user , access to unix like shell making it
+      easier to use git.
 
--- gitbash is a unix like interface because unix/linux was one of the oldest OS for develpors which provided
-a complete control over sytem , it was used by reseachers, scientists and develpers but windows was build for
-the different customers, it was for general people, it was bases on GUI. this is why we use gitbash to create
+      -- gitbash is a unix like interface because unix/linux was one of the oldest OS for develpors which provided
+      a complete control over sytem , it was used by reseachers, scientists and develpers but windows was build for
+      the different customers, it was for general people, it was bases on GUI. this is why we use gitbash to create
 the same interface for the develpers.
 
 
-5. // what is the difference between var, const, let and why i should not use var in my code
-*difference on the basis:
-1. scopping
-2. hoisting
+  5. // what is the difference between var, const, let and why i should not use var in my code
+          *difference on the basis:
+          1. scopping
+          2. hoisting
 
 
-#### **1️⃣ Scoping**  
-- `var` is **function-scoped**, meaning it is only restricted within the function where it is declared. However, if declared inside a block (like an `if` statement or loop), it **leaks out of the block** and remains accessible outside.  
-- `let` and `const` are **block-scoped**, meaning they are confined within the block `{}` where they are declared and cannot be accessed outside.  
-- If a `var` variable is declared inside a function, it does not leak, but if declared inside a block (outside a function), it does.  
+          #### **1️⃣ Scoping**  
+          - `var` is **function-scoped**, meaning it is only restricted within the function where it is declared. However, if declared inside a block (like an `if` statement or loop), it **leaks out of the block** and remains accessible outside.  
+          - `let` and `const` are **block-scoped**, meaning they are confined within the block `{}` where they are declared and cannot be accessed outside.  
+          - If a `var` variable is declared inside a function, it does not leak, but if declared inside a block (outside a function), it does.  
 
 #### **2️⃣ Hoisting**  
-- Hoisting is the process where JavaScript moves **variable and function declarations** to the top of their scope before executing the code.  
-- `var` is hoisted **and initialized with `undefined`**, meaning it can be accessed before its declaration, but its value will be `undefined` until assigned.  
-- `let` and `const` are hoisted **but not initialized**, meaning they exist in a **Temporal Dead Zone (TDZ)** from the start of the scope until their declaration. Accessing them before declaration results in a **ReferenceError**.  
-- Function **declarations** are fully hoisted along with their body, meaning they can be called before being defined.  
-- Function **expressions** (where functions are assigned to variables) are not hoisted with their body. If declared using `var`, they get initialized with `undefined`, and if declared with `let` or `const`, accessing them before declaration results in a **ReferenceError**.  
+      - Hoisting is the process where JavaScript moves **variable and function declarations** to the top of their scope before executing the code.  
+      - `var` is hoisted **and initialized with `undefined`**, meaning it can be accessed before its declaration, but its value will be `undefined` until assigned.  
+      - `let` and `const` are hoisted **but not initialized**, meaning they exist in a **Temporal Dead Zone (TDZ)** from the start of the scope until their declaration. Accessing them before declaration results in a **ReferenceError**.  
+      - Function **declarations** are fully hoisted along with their body, meaning they can be called before being defined.  
+      - Function **expressions** (where functions are assigned to variables) are not hoisted with their body. If declared using `var`, they get initialized with `undefined`, and if declared with `let` or `const`, accessing them before declaration results in a **ReferenceError**.  
 
 #### **3️⃣ Why Should You Avoid `var`?**  
-- **Does not respect block scope**, leading to unexpected behavior.  
-- **Hoisted with `undefined`**, which can cause unpredictable results.  
-- **Allows redeclaration in the same scope**, increasing the chances of unintentional overwrites.  
-- `let` and `const` ensure **better scoping, safer behavior, and cleaner code**.  
+      - **Does not respect block scope**, leading to unexpected behavior.  
+      - **Hoisted with `undefined`**, which can cause unpredictable results.  
+      - **Allows redeclaration in the same scope**, increasing the chances of unintentional overwrites.  
+      - `let` and `const` ensure **better scoping, safer behavior, and cleaner code**.  
 
-Using `let` and `const` improves code reliability, reduces errors, and enhances maintainability. 🚀
+      Using `let` and `const` improves code reliability, reduces errors, and enhances maintainability. 🚀
 
 
 
 6. // can i store a variable in the memeory without using var, let and const
-Answer: yes data can be stored but it is bad practice it will give error in usestrict mode in js;
+      Answer: yes data can be stored but it is bad practice it will give error in usestrict mode in js;
 
-/* tc39.es ecma script is the offical documentaion for js.
+      /* tc39.es ecma script is the offical documentaion for js.
 mdn is from mozilla group. */
 
 7. what are the data types in js and what if we do type check on them.  
-1.Primitive
-2.Non- primitive
+      1.Primitive
+      2.Non- primitive
 
 
-1️⃣ Primitive Data Types (Immutable & Stored by Value)
-There are 7 primitive types:
+      1️⃣ Primitive Data Types (Immutable & Stored by Value)
+      There are 7 primitive types:
 
-Number → Represents numerical values (e.g., 1, 3.14, -42).
-String → Represents text data (e.g., "hello", 'world').
-Boolean → Represents true or false.
-Undefined → A variable declared but not assigned any value.
-Null → Represents an intentional absence of value.
-BigInt → Used for very large integers (BigInt(9007199254740991n)).
-Symbol → Unique and immutable value, often used as object keys.
-
-
-
-=>2️⃣Type Checking for Primitives (typeof Operator)
-    Data Type	typeof Result
-    Number	"number"
-=> sub type of number: 
-    NaN is NOT a separate data type. It is a special value within the Number type that represents an invalid mathematical operation. 🚀
-
-    String	"string"
-    Boolean	"boolean"
-    Undefined	"undefined"
-    Null	"object" (Bug in JavaScript)
-    BigInt	"bigint"
-    Symbol	"symbol"
-    
-    
-=> Non-Primitive Data Types (Mutable & Stored by Reference)
-    There are 3 main non-primitive types:
-
-    Object → A collection of key-value pairs { name: "John", age: 25 }.
-    Array → A special type of object that holds ordered values [1, 2, 3].
-    Function → A callable object function greet() { return "Hello"; }.
+      Number → Represents numerical values (e.g., 1, 3.14, -42).
+      String → Represents text data (e.g., "hello", 'world').
+      Boolean → Represents true or false.
+      Undefined → A variable declared but not assigned any value.
+      Null → Represents an intentional absence of value.
+      BigInt → Used for very large integers (BigInt(9007199254740991n)).
+      Symbol → Unique and immutable value, often used as object keys.
 
 
-=> Type Checking for Non-Primitives (typeof Operator)
-    Data Type	typeof Result
-    Object	"object"
-    Array	"object" (Arrays are a type of object)
-    Function	"function" (A callable object)
 
-=> Important Notes & Common Mistakes
-    typeof null returns "object" → This is a known JavaScript bug from the early days.
-    Arrays are objects → To check if a value is an array, use Array.isArray(arr).
-    Functions are objects too → But typeof specifically returns "function".
-    typeof NaN returns "number" → NaN (Not a Number) is still considered a number in JavaScript.
+      =>2️⃣Type Checking for Primitives (typeof Operator)
+          Data Type	typeof Result
+          Number	"number"
+      => sub type of number: 
+          NaN is NOT a separate data type. It is a special value within the Number type that represents an invalid mathematical operation. 🚀
+
+          String	"string"
+          Boolean	"boolean"
+          Undefined	"undefined"
+          Null	"object" (Bug in JavaScript)
+            explaination: Internally, JavaScript uses a specific internal type tag (a number) to         represent different types. 
+                For most objects, this tag was a unique identifier that indicated it was an object. However, for null, 
+                the tag that was used was the same tag used for objects. As a result, when the typeof operator was implemented,
+                it would return "object" because the internal tag for null was mistakenly treated the same as for regular objects.
+                Thus, typeof null was returned as "object", even though null was not actually an object.
+                BigInt	"bigint"
+                Symbol	"symbol"
+          
+          
+      => Non-Primitive Data Types (Mutable & Stored by Reference)
+          There are 3 main non-primitive types:
+
+          Object → A collection of key-value pairs { name: "John", age: 25 }.
+          Array → A special type of object that holds ordered values [1, 2, 3].
+          Function → A callable object function greet() { return "Hello"; }.
+
+
+      => Type Checking for Non-Primitives (typeof Operator)
+          Data Type	typeof Result
+          Object	"object"
+          Array	"object" (Arrays are a type of object)
+          Function	"function" (A callable object)
+
+      => Important Notes & Common Mistakes
+          typeof null returns "object" → This is a known JavaScript bug from the early days.
+          Arrays are objects → To check if a value is an array, use Array.isArray(arr).
+          Functions are objects too → But typeof specifically returns "function".
+          typeof NaN returns "number" → NaN (Not a Number) is still considered a number in JavaScript.
 
 
 
@@ -159,18 +164,18 @@ Question:** How stored by value and store by refrence works:###
 
 ***when the value is reassigned in the refrence type, it doesn't affect the previous value:
 
-let arr1 = [1, 2, 3];
-let arr2 = arr1; // Both 'arr1' and 'arr2' reference the same array
+          let arr1 = [1, 2, 3];
+          let arr2 = arr1; // Both 'arr1' and 'arr2' reference the same array
 
-arr2.push(4);    // Modify the array via 'arr2'
+          arr2.push(4);    // Modify the array via 'arr2'
 
-console.log(arr1); // [1, 2, 3, 4] (affected)
-console.log(arr2); // [1, 2, 3, 4] (affected)
+          console.log(arr1); // [1, 2, 3, 4] (affected)
+          console.log(arr2); // [1, 2, 3, 4] (affected)
 
-arr2 = [5, 6, 7]; // Reassign 'arr2' to a new array
+          arr2 = [5, 6, 7]; // Reassign 'arr2' to a new array
 
-console.log(arr1); // [1, 2, 3, 4] (unchanged)
-console.log(arr2); // [5, 6, 7] (new array)
+          console.log(arr1); // [1, 2, 3, 4] (unchanged)
+          console.log(arr2); // [5, 6, 7] (new array)
 
 => to get rid of the refrence data types' mutable concept we need deep and shallow cloning. 
 
@@ -185,248 +190,68 @@ get deeper in this concept.
 *****************************************************************************************
 ### **Understanding Stack and Heap Memory**  
 
-Stack and Heap are **memory management regions** in a computer’s **RAM**. They are not data structures in the traditional sense (like arrays or linked lists), nor are they just pieces of code designed for optimization. Instead, they are physical locations in **RAM** where data is stored and managed efficiently during program execution.  
+          Stack and Heap are **memory management regions** in a computer’s **RAM**. They are not data structures in the traditional sense (like arrays or linked lists), nor are they just pieces of code designed for optimization. Instead, they are physical locations in **RAM** where data is stored and managed efficiently during program execution.  
 
----
+          ---
 
-### **Stack Memory**  
-- **Location**: Resides in the **RAM**.  
-- **Purpose**: Used for storing **function execution context, local variables, and primitive values**.  
-- **Structure**: Works like a **stack data structure (LIFO - Last In, First Out)**.  
-- **Speed**: **Faster** compared to heap memory because allocation and deallocation are automatic.  
-- **Management**: Memory is allocated when a function is called and automatically **freed** when the function returns.  
+          ### **Stack Memory**  
+          - **Location**: Resides in the **RAM**.  
+          - **Purpose**: Used for storing **function execution context, local variables, and primitive values**.  
+          - **Structure**: Works like a **stack data structure (LIFO - Last In, First Out)**.  
+          - **Speed**: **Faster** compared to heap memory because allocation and deallocation are automatic.  
+          - **Management**: Memory is allocated when a function is called and automatically **freed** when the function returns.  
 
-**Key Characteristics:**  
-- Stores **primitive values** and function call frames.  
-- Has a **fixed size**, so it can overflow if too much memory is used (stack overflow).  
-- **Efficient and fast** due to automatic memory allocation and deallocation.  
+          **Key Characteristics:**  
+          - Stores **primitive values** and function call frames.  
+          - Has a **fixed size**, so it can overflow if too much memory is used (stack overflow).  
+          - **Efficient and fast** due to automatic memory allocation and deallocation.  
 
----
+          ---
 
-### **Heap Memory**  
-- **Location**: Also resides in the **RAM**.  
-- **Purpose**: Used for storing **objects, arrays, and functions (non-primitive data types)**.  
-- **Structure**: Does not follow a structured order like a stack; data is stored **dynamically** at any available memory location.  
-- **Speed**: **Slower** than stack memory because allocation and deallocation happen manually via garbage collection.  
-- **Management**: Memory is **allocated dynamically** and remains allocated until it is explicitly freed (or garbage-collected).  
+          ### **Heap Memory**  
+          - **Location**: Also resides in the **RAM**.  
+          - **Purpose**: Used for storing **objects, arrays, and functions (non-primitive data types)**.  
+          - **Structure**: Does not follow a structured order like a stack; data is stored **dynamically** at any available memory location.  
+          - **Speed**: **Slower** than stack memory because allocation and deallocation happen manually via garbage collection.  
+          - **Management**: Memory is **allocated dynamically** and remains allocated until it is explicitly freed (or garbage-collected).  
 
-**Key Characteristics:**  
-- Stores **non-primitive values** (objects, arrays, functions).  
-- Provides **flexibility**, as memory is allocated dynamically.  
-- Requires **manual memory management**, though JavaScript's garbage collector handles cleanup.  
-- Can lead to **memory leaks** if objects are not properly dereferenced.  
+          **Key Characteristics:**  
+          - Stores **non-primitive values** (objects, arrays, functions).  
+          - Provides **flexibility**, as memory is allocated dynamically.  
+          - Requires **manual memory management**, though JavaScript's garbage collector handles cleanup.  
+          - Can lead to **memory leaks** if objects are not properly dereferenced.  
 
----
+          ---
 
-### **Summary: Stack vs. Heap**
-| Feature | Stack Memory | Heap Memory |
-|---------|-------------|-------------|
-| **Speed** | Fast | Slower |
-| **Storage** | Function execution context, local variables, primitive values | Objects, arrays, functions (non-primitives) |
-| **Size** | Fixed size | Dynamic size |
-| **Access** | LIFO (Last In, First Out) | Random, dynamic allocation |
-| **Allocation** | Automatic (managed by JS engine) | Manual (managed via garbage collection) |
-| **Risk** | Stack overflow (if too much recursion or large variables) | Memory leaks (if objects are not dereferenced) |
+          ### **Summary: Stack vs. Heap**
+          | Feature | Stack Memory | Heap Memory |
+          |---------|-------------|-------------|
+          | **Speed** | Fast | Slower |
+          | **Storage** | Function execution context, local variables, primitive values | Objects, arrays, functions (non-primitives) |
+          | **Size** | Fixed size | Dynamic size |
+          | **Access** | LIFO (Last In, First Out) | Random, dynamic allocation |
+          | **Allocation** | Automatic (managed by JS engine) | Manual (managed via garbage collection) |
+          | **Risk** | Stack overflow (if too much recursion or large variables) | Memory leaks (if objects are not dereferenced) |
 
----
+          ---
 
-### **Are Stack and Heap Physical or Logical?**  
-Stack and heap are **not separate physical components**; they are **logical divisions** within the **RAM**. The **operating system** and the **JavaScript engine** manage them based on program execution needs.
+          ### **Are Stack and Heap Physical or Logical?**  
+          Stack and heap are **not separate physical components**; they are **logical divisions** within the **RAM**. The **operating system** and the **JavaScript engine** manage them based on program execution needs.
 
-- **Stack is used for structured, temporary storage.**  
-- **Heap is used for flexible, long-term storage.**  
+          - **Stack is used for structured, temporary storage.**  
+          - **Heap is used for flexible, long-term storage.**  
 
-Both work together to ensure efficient memory management and program execution.
+          Both work together to ensure efficient memory management and program execution.
 
 
 ***********************************************************************************************
 
 
-8.unusual results after type check on data types in js.
-Answer: 
-console.log(typeof null); // Output: "object"
-null is a primitive data types but it gives obj on type check due to a historical bug in js.
-
-Internally, JavaScript uses a specific internal type tag (a number) to represent different types. 
-For most objects, this tag was a unique identifier that indicated it was an object. However, for null, 
-the tag that was used was the same tag used for objects. As a result, when the typeof operator was implemented,
- it would return "object" because the internal tag for null was mistakenly treated the same as for regular 
- objects.
-
-Thus, typeof null was returned as "object", even though null was not actually an object.
-
-2. console.log(typeof []); // Output: "object"
-Explanation: Arrays are technically objects in JavaScript, so typeof returns "object", which might be
- misleading when you're trying to differentiate between plain objects and arrays.
-console.log(Array.isArray([])); // true
-console.log(Array.isArray({})); // false
-
-3.console.log(typeof function() {}); // Output: "function"
-Explanation: Functions are a special type of object, and typeof returns "function" for them. This can be useful
- for checking if a variable is a function.
-
-4.console.log(typeof NaN); // Output: "number"
-Explanation: NaN (Not-a-Number) is technically of type "number" in JavaScript, even though it is not a valid
- number. This can be confusing.
-console.log(Number.isNaN(NaN)); // true
-console.log(Number.isNaN(42));  // false
-
-5.let x;
-console.log(typeof x); // Output: "undefined"
-Explanation: undefined is a primitive value and typeof correctly identifies it as "undefined".
- However, you need to ensure that avariable is not unintentionally undefined in your checks.
-let x;
-console.log(x === undefined); // true
 
 
-************************************************************************************************************************
-No need to cram! You can break it down systematically by following a logical **decision tree** to
+*************************************************************************
 
- predict what conversions happen. Here’s a simple approach to help you predict the result of `==` 
- without memorizing everything:
-
----
-
-### **The Decision Tree for `==`**
-1. **Are the two types the same?**
-   - If yes, no coercion happens; compare directly.
-     ```javascript
-     5 == 5; // true
-     "hello" == "hello"; // true
-     ```
-   - If no, move to the next step.
-
----
-
-2. **Is either value `null` or `undefined`?**
-   - `null` and `undefined` are **only equal to each other** and nothing else.
-     ```javascript
-     null == undefined; // true
-     null == 0; // false
-     ```
-
----
-
-3. **Is one of the values a boolean?**
-   - Convert the boolean to a **number** (`true → 1`, `false → 0`).
-     ```javascript
-     true == 1; // true
-     false == 0; // true
-     true == "1"; // true (true → 1, "1" → 1)
-     ```
-
----
-
-4. **Is one of the values a string?**
-   - Convert the string to a **number**, if the other value is a number.
-     ```javascript
-     "5" == 5; // true ("5" → 5)
-     "hello" == 5; // false ("hello" → NaN)
-     ```
-
----
-
-5. **Is one of the values an object (like an array or object)?**
-   - Convert the object to a **primitive**:
-     1. Call `.valueOf()` on the object.
-     2. If `.valueOf()` doesn’t return a primitive, call `.toString()`.
-   - Compare the resulting primitive with the other value.
-     ```javascript
-     [1] == 1; // true ([1] → "1" → 1)
-     [] == ""; // true ([] → "" → "")
-     {} == "[object Object]"; // false
-     ```
-
----
-
-6. **Default Case:**
-   - Coerce both values to **numbers**, then compare.
-     ```javascript
-     "10" == true; // false ("10" → 10, true → 1)
-     ```
-
----
-
-### **Let’s Apply This Approach to Examples**
-
-| Expression         | Explanation                                      | Result  |
-|---------------------|--------------------------------------------------|---------|
-| `5 == "5"`         | `"5" → 5`                                        | `true`  |
-| `null == undefined`| Both are loosely equal.                          | `true`  |
-| `true == 1`        | `true → 1`                                       | `true`  |
-| `false == 0`       | `false → 0`                                      | `true`  |
-| `[1] == 1`         | `[1] → "1" → 1`                                  | `true`  |
-| `[] == ""`         | `[] → ""`                                        | `true`  |
-| `0 == false`       | `false → 0`                                      | `true`  |
-| `null == 0`        | No coercion; `null` only equals `undefined`.      | `false` |
-
----
-
-### **Pro Tip: Stop Using `==`**
-If you're finding `==` tricky, avoid it! Use `===` (strict equality), which does **not** perform type coercion:
-```javascript
-5 === "5"; // false
-null === undefined; // false
-true === 1; // false
-```
-
----
-
-### **Practice to Solidify Your Understanding**
-Try testing yourself with these:
-1. `true == "1"`
-2. `null == 0`
-3. `[2] == "2"`
-4. `undefined == false`
-5. `"5" == false`
-
-Let me know if you want me to explain any specific case! 😊
 
 ***********************************************************************************************************
 
-
-6.console.log(NaN === NaN); // Output: false
-Explanation: NaN is the only value in JavaScript that is not equal to itself, due to the fact that it's 
-considered "Not a Number."
-
-7.console.log(0 == false); // Output: true
-console.log(0 === false); // Output: false
-Explanation: == performs type coercion (changing data types to perform an operation), so 0 and false are 
-considered equal in loose comparison, but they are different types and unequal when compared strictly (===).
-
-8.console.log("" == 0); // Output: true
-console.log("" === 0); // Output: false
-Explanation: When comparing with ==, an empty string is coerced to 0, which can lead to unexpected results.
- However, with strict equality ===, the comparison correctly returns false.
-
-9.console.log([] == false); // Output: true
-console.log([] == 0);     // Output: true
-Explanation: Empty arrays ([]) are coerced to an empty string when compared with ==, and then the empty string
- is coerced to false or 0. This can lead to confusing results.
-
-10.Explanation: Empty arrays ([]) are coerced to an empty string when compared with ==, and then the empty 
-string is coerced to false or 0. This can lead to confusing results.
-Explanation: Even though Infinity represents an infinitely large number, it is still of type "number".
-
-11.console.log(0 === -0); // Output: true
-console.log(Object.is(0, -0)); // Output: false
-Explanation: JavaScript considers 0 and -0 to be the same value when compared using ===, but they are
- distinct when checked with Object.is().
-
-12.const arr1 = [];
-const arr2 = [];
-
-console.log(arr1 == arr2);  // Output: false
-console.log(arr1 === arr2); // Output: false
-In JavaScript, when comparing two arrays (or objects) using either == or ===, reference comparison is performed
-not value comparison. This means that even though arr1 and arr2 are both empty arrays, they are still two 
-separate objects in memory, and JavaScript will consider them different because they reference different 
-locations in memory.
-
-
-but if :const arr1 = [];
-const arr2 = arr1;
-
-console.log(arr1 == arr2) // it will give true
-console.log(arr1 === arr2) // it will give true
 
