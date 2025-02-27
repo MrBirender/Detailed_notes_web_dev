@@ -22,3 +22,6 @@ in use callback hook?
 there is a memo hook or something if i used this fucntion on export of a component 
 and when the component is used in another component then, it will not cause the auto re-render.
 
+useReducer hook ?
+it is like useState but it is more complex. unlike useState it doesn't provide state and setter function but it provides a state and the dispatch function , a usereducer hook takes two inputs a reducer and the a intial state.
+
