@@ -1,40 +1,20 @@
-import React from "react";
-import { useReducer } from "react";
-
+import React from 'react'
+import useLocalStorage from './components/useLocalStorage'
 const App = () => {
-  const initialState = { count: 0 };
+const [name, setName] = useLocalStorage('userName', 'Stranger')
+const [id, setId] = useLocalStorage('userId', '001')
 
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "INCREMENT":
-        return { count: state.count + 1 };
-        
-      case "DECREMENT":
-        return { count: state.count - 1 };
-
-      default:
-        return state;
-    }
-  };
-
-  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div className="absolute h-full flex flex-col gap-12 items-center justify-center w-full bg-black   text-white text-2xl">
-      <p>count: {state.count} </p>
-      <button
-        onClick={() => dispatch({ type: "INCREMENT" })}
-        className="px-4 py-2 mt-6 border bg-black rounded-lg"
-      >
-        Increment
-      </button>
-      <button
-        onClick={() => dispatch({ type: "DECREMENT" })}
-        className="px-4 py-2 mt-6 border bg-black rounded-lg"
-      >
-        Decrement
-      </button>
-    </div>
-  );
-};
+    <div className='flex flex-col pt-24 items-center h-screen bg-black text-white text-4xl '>
+      <input value={name} className='border p-4' type="text" onChange={(e)=> setName(e.target.value)} />
 
-export default App;
+      <p className='mt-6 text-6xl '>Hello {name} !</p>
+
+      <input value={id} className='border p-4' type="text" onChange={(e)=> setId(e.target.value)} />
+
+      <p className='mt-6 text-6xl '>Your id is {id}!</p>
+    </div>
+  )
+}
+
+export default App

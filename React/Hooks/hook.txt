@@ -25,3 +25,12 @@ and when the component is used in another component then, it will not cause the 
 useReducer hook ?
 it is like useState but it is more complex. unlike useState it doesn't provide state and setter function but it provides a state and the dispatch function , a usereducer hook takes two inputs a reducer and the a intial state.
 
+in this hook we can update a sigle state in response to different actions. but this is also possible in usestate hook.so what is the differnce.
+
+useLayoutEffect hook ?
+it is similat to the useEffect hook but it runs before the browser paints the screen unlike useEffect which runs after the browser paints the screen.
+
+for what reasons react documentaion doesn't suggest the useLayoutEffect hook ?
+
+custom hooks ?
+these are just js fucntion which can be used to reuse the code.
