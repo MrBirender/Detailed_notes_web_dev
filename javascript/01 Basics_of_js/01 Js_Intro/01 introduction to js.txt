@@ -177,17 +177,47 @@ Question:** How stored by value and store by refrence works:###
           console.log(arr1); // [1, 2, 3, 4] (unchanged)
           console.log(arr2); // [5, 6, 7] (new array)
 
-=> to get rid of the refrence data types' mutable concept we need deep and shallow cloning. 
-
-get deeper in this concept.
 
 
 
 
-********************************************** know more about deep and shallow copy*****************************************************************************
 
+***********************************************shallowcopy and deepcopy ***********************************
+As we know non-primitive data is mutable because it works of refrence structure and when we have to work with that there are high changes of mutability of the original data. To get rid of the problem we came up with these two solution deepcopy and shallowcopy.
+
+**Shallow Copy:**
+      it copies the outer layer and give it a new space in memory but still points to the nested data with a refrence.
+
+      common methods to do shallow copy:
+      for Arrays: 
+       1. spread operator
+       2. slice()
+       3. concat
+       4. array.from
+       5. map
+
+       for objects:
+       1. Object.assign()
+       2. Object.create()
+       3. spred operator
+
+**Deep Copy:**
+      it copies the nested data as well and give it a new space in memory.    
+
+      for both objects and arrays: 
+      1. structuredClone() 
+            cons: doesn't support funciton and special objects
+      2. JSON.parse(JSON.stringify())
+            cons: loses funciton , undefined, date, map,set
+      3. recursive cloning (manually)
+            cons: requires manual handling for every thing like date, map ,set
+      4. Lodash’s cloneDeep()
+         needs to install external library npm i lodash
 
 *****************************************************************************************
+
+
+
 ### **Understanding Stack and Heap Memory**  
 
           Stack and Heap are **memory management regions** in a computer’s **RAM**. They are not data structures in the traditional sense (like arrays or linked lists), nor are they just pieces of code designed for optimization. Instead, they are physical locations in **RAM** where data is stored and managed efficiently during program execution.  

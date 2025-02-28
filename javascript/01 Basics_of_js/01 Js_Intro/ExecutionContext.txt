@@ -1,40 +1,5 @@
-Q1.what are the types of memories in js stacks and heap. which one works for primitive 
-data types and for refrence data types?
-Answer:
-### **Types of Memory in JavaScript:**
 
-1. **Stack:**
-   - Used for **primitive data types** (`number`, `string`, `boolean`, etc.).
-   - Stores data in a **Last In, First Out (LIFO)** manner.
-   - Memory is fixed and managed automatically.
-   - Example:
-     ```javascript
-     let a = 10; // Stored directly in the stack
-     let b = a;  // Copy of `a` stored in a separate stack location
-     b = 20;
-     console.log(a); // Output: 10
-     console.log(b); // Output: 20
-     ```
 
-2. **Heap:**
-   - Used for **reference data types** (`object`, `array`, etc.).
-   - Stores objects in dynamically allocated memory, while the STACK holds the reference (pointer) to the
-    heap.
-   - Example:
-     ```javascript
-     let obj1 = { name: "Alice" }; // Object stored in the heap
-     let obj2 = obj1;              // Reference to the same heap object
-     obj2.name = "Bob";
-     console.log(obj1.name); // Output: Bob
-     ```
-
----**** Primitives: Stored by value in the stack.
-Non-primitives: Stored by reference in the stack, but the actual data (like objects or arrays) is stored in
-the heap.
-Your understanding is correct: 
-primitives store the original value in the stack, while non-primitives store a reference to the data in 
-the heap.
-****-----
 
 
 ******************************************************************************************************************************

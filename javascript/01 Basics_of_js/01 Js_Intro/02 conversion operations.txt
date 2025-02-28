@@ -1,7 +1,7 @@
 What happens when we compare data in js?
-answer: there are two ways to compare data;
-      1. strict checking : '5' === 5 // it is false
-      2. loose checking: '5' == 5 // it is true
+        answer: there are two ways to compare data;
+              1. strict checking : '5' === 5 // it is false
+              2. loose checking: '5' == 5 // it is true
 
 
 => because of the second comparsion js does type cohersion(Automatic conversion of one data type to another.)
@@ -9,92 +9,97 @@ answer: there are two ways to compare data;
 How cohersion happens in js , what are the basis ?
 
 
-Answer: There are mainly two types of cohersion implict and explicit.
-implicit: when we do comparsion with == or do mathematical operaitions like (+ - *  / etc).
-exlicit: when we convert intentionaly using inbuilt methods like Number(), String(), Boolean().
+        Answer: There are mainly two types of cohersion implict and explicit.
+        implicit: when we do comparsion with == or do mathematical operaitions like (+ - *  / etc).
+        exlicit: when we convert intentionaly using inbuilt methods like Number(), String(), Boolean().
 
 
 What happens during implicit cohersion.
 Answer: actually on every comparsion js has to give some output and to do so it does cohersion to make  the two participants of same data type , so it can compare easily.
 
-Acutally it is further divided into two parts: 
-1. when compare to find if they are equal or not.
-ex: console.log('5' == 5) // true
+      Acutally it is further divided into two parts: 
+      1. when compare to find if they are equal or not.
+      ex: console.log('5' == 5) // true
 
-2. when we perform mathematical operation between two different data types; 
-ex: console.log('5' + 5) // 55 string
+      2. when we perform mathematical operation between two different data types; 
+      ex: console.log('5' + 5) // 55 string
 
 => basis of cohersions: 
-1. it always convert everthing in to number data type before comparison or perform some mathematical operation except addition. in this case it converts number to string and performs concatination.
+        1. it always convert everthing in to number data type before comparison or perform some mathematical operation except addition. in this case it converts number to string and performs concatination.
 
-finding while doing cohesion:
-1. undefined can't be cohersed to anything.
-2. null is always coherced to 0 in all operations. NOTE: but when we do equality check with null and undefined they are not equal to anything instead to each other.
+        finding while doing cohesion:
+        1. undefined can't be cohersed to anything.
+        2. null is always coherced to 0 in all operations. NOTE: but when we do equality check with null and undefined they are not equal to anything instead to each other.
 
-console.log(null == undefined) // true
-console.log(null == 0) // false
-console.log(undefined == 0) // false
-console.log(null + 0) = // 0 (null => 0 + 0 => 0)
-console.log(undefined + 1) // nan (undefined can't be coherced)
+        console.log(null == undefined) // true
+        console.log(null == 0) // false
+        console.log(undefined == 0) // false
+        console.log(null + 0) = // 0 (null => 0 + 0 => 0)
+        console.log(undefined + 1) // nan (undefined can't be coherced)
 
 // => when comparing primitive and non-primitive:
- In this case it works in three steps: 
- 1. input.valueOf() // if itdoesn't return primitive then next
- 2. input.toString() // 
- 3. if any of these doesn't return primitive then throws error.
+          In this case it works in three steps: 
+          1. input.valueOf() // if itdoesn't return primitive then next
+          2. input.toString() // 
+          3. if any of these doesn't return primitive then throws error.
 
  => in case of array: 
- console.log([] == 0)
- step1. console.log([].vlaueOf())
- // it return an empty array.
- so we need to go for next step
+          console.log([] == 0)
+          step1. console.log([].vlaueOf())
+          // it return an empty array.
+          so we need to go for next step
 
- step2. [].toString() it will return empty string or if anyting inside it , will be returned as string.
- for ex: [1, 2, 3].toString() => '1, 2, 3'
+          step2. [].toString() it will return empty string or if anyting inside it , will be returned as string.
+          for ex: [1, 2, 3].toString() => '1, 2, 3'
 
 
  => in case of object: 
- console.log({} == 0)
+        console.log({} == 0)
 
-  step1. console.log([].vlaueOf())
- // it return an empty object.
-    so we need to go for next step
+          step1. console.log([].vlaueOf())
+        // it return an empty object.
+            so we need to go for next step
 
-   step2. [].toString() it will return '[object object]'
-   it works diffrently.
+          step2. [].toString() it will return '[object object]'
+          it works diffrently.
 
 
 => Bonus Tip: 
-    {} is and block in browser console. 
-    for ex: {} == 0 will give sntax error:
-    to evalueat it use ({} ==0) false
+          {} is and block in browser console. 
+          for ex: {} == 0 will give sntax error:
+          to evalueat it use ({} ==0) false
 
 
-    {} this is an object in nodejs.
-    for ex: {}==0 this will directly give false.
+          {} this is an object in nodejs.
+          for ex: {}==0 this will directly give false.
 
 
 6.console.log(NaN === NaN); // Output: false
-Explanation: NaN is the only value in JavaScript that is not equal to itself, due to the fact that it's 
-considered "Not a Number."
+        Explanation: NaN is the only value in JavaScript that is not equal to itself, due to the fact that it's 
+        considered "Not a Number."
 
 
-11.console.log(0 === -0); // Output: true
-console.log(Object.is(0, -0)); // Output: false
-Explanation: JavaScript considers 0 and -0 to be the same value when compared using ===, but they are
- distinct when checked with Object.is().
+        11.console.log(0 === -0); // Output: true
+        console.log(Object.is(0, -0)); // Output: false
+        Explanation: JavaScript considers 0 and -0 to be the same value when compared using ===, but they are
+        distinct when checked with Object.is().
 
 
 => HERE COHERSION WILL NOT HAPPEDN BECAUSE BOTH THE DATA TYPES ARE SAME:
-console.log([] == []) 
-console.log([] === [])
+        console.log([] == []) 
+        console.log([] === [])
 
-console.log({} == {})
-console.log({} === {})
+        console.log({} == {})
+        console.log({} === {})
 
-This condition will always return 'false' since JavaScript compares objects by reference, not value
+        This condition will always return 'false' since JavaScript compares objects by reference, not value
 
 *************************************************************************************************************
+
+
+
+
+
 Q2. what are the difference between *prefix and postfix operator:
 Here’s a concise summary:
 
