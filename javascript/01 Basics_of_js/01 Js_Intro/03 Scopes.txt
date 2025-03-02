@@ -1,6 +1,6 @@
 Question1. How many scopes are there in js?
 Answer: There are total 5 types of scopes in it:
-1. Global Scope: The variables declared outside of any function or block are belong to the Global scope.
+1. Global Scope: The variables declared outside of any function or block  belong to the Global scope.
 
 2. Function Scope: The variables declared inside a function are belong to the Function scope.
 
@@ -24,6 +24,7 @@ but it will give undefined if
 var x = 5;
 
 function foo() {
+    // var x = undefined; in hoisting or in memory
     console.log(x); // ❓
     var x = 10;
     console.log(x); // ❓

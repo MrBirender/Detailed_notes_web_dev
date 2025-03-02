@@ -1,141 +1,107 @@
+Question. What is the control flow in JavaScript?
+    Answer: 
+        control flow can be broadly classified into three categories: 
+        1. condition statements
+        2. loop iterations and higher order fucntions.
+        3. jumping statement
 
-#=> Types of Control Flow in JavaScript
-Control flow can be broadly categorized as:
+        => conditional statements: 
+                1. if Else (it can check ranges and conditions)
+                2. ternary (short hand of if else)
+                3. switch case (it only checks the exact values)
 
-1. Sequential Execution: Code runs line by line.
-2. Conditional Execution: Code runs based on conditions.
-3. Loops and Iteration: Code runs repeatedly while a condition is true.
-4. Error Handling: Code manages exceptions gracefully.
+       
 
-Q1. Sequential Execution: Code runs line by line?
-Answer: As we write the code it will run line by line from top to bottom and then it will move 
-to next line. 
+       => loops and Hofs:
+            Loops are control flow structures used to execute a block of code multiple times.
 
-Q2. Conditional Execution: Code runs based on conditions?
-Answer: Conditional statement is a control flow that allows you to execute a block of code 
-if a certain condition is met.
+            Higher-Order Functions (HOFs) are functions that take another function as an argument or return a function.
 
-example: 1. if else conditions
-    2. switch case conditions
-    3. ternary operator
-    4. null coalescing operator
-
-    => subtopics: 
-    What’s the difference between if-else and switch statements?
-    Answer: if-else is used for multiple conditions, while switch is used for single condition.
-
-    When would you use switch over if-else?
-    Answer: When you have a single condition to check, switch is more efficient than if-else.
-
-    Can you nest if-else inside a switch?
-    Answer: No, nested if-else statements are not allowed in switch statements.
+            loops are of 5 types: 
+                1. for loop
+                2  for in loop
+                3. for of loop
+                4. while loop
+                5. do while loop
 
 
-Q3. Loops and Iteration: Code runs repeatedly while a condition is true.
-Answer: Loops and Iteration is a control flow that allows you to execute a block of code 
-repeatedly until a certain condition is met.
+            Hofs are 6 types: 
+                1. forEach (doesn't return  a new array)
+                        => Even though forEach is an HOF, it is grouped with loops in classification because:
 
-   => subtopics:
-   types of loops with there code example:
-   forLoop, whileLoop, doWhileLoop, forEachLoop, forOfLoop, forInLoop
+                        * It performs iteration, just like loops.
+                        * It is a built-in way to loop through an array.
+                        * It replaces traditional loops (for, while) in many cases.
 
-   => aboutLoops:
-   What’s the difference between for and while loops?
-    Answer: A for loop is used when you know the number of iterations, while a while loop is used
-    when you don't know the number of iterations.
+                2. map (it returns)
+                3. filter (it returns)
+                4. reduce
+                5. some
+                6. every
 
-
-    When should you use for...of vs for...in?
-    Answer: for...of is used when you want to iterate over an iterable object, such as an array
-    or a string, while for...in is used when you want to iterate over the properties of an object 
-    or an array.
-
-
-    How does a do-while loop differ from a while loop?
-    Answer: A do-while loop is executed at least once, even if the condition is false, while a while
-    loop is executed only when the condition is true.
+        So, while array-specific HOFs like map, filter, reduce, etc., work only on arrays, the concept of HOFs is not limited to arrays.
+        ex: setTimeout & setInterval (Take a function as an argument)
+            Event listeners (element.addEventListener)
+            Promise methods (then, catch, finally)
+            Functional Programming Methods (Custom HOFs like compose, pipe)
 
 
-    Can you break or continue a loop? Demonstrate.
-    Answer: Yes, you can break or continue a loop.
-    Demonstration: 
 
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) {
-            break;
-            console.log(i);
-        }
-    }
+    {=> Are HOFs Slower than Regular Loops?
+            Yes, in general, HOFs like forEach, map, filter are slower than traditional loops (for, while).
 
-    for continue: 
+            Why Are HOFs Slower?
+            Function Call Overhead – HOFs require an extra function call for each iteration.
+            Callback Execution – Each element is passed through a callback, which adds overhead.
+            Lack of Optimizations – Traditional loops (for, while) are optimized at a lower level by JavaScript engines.
+            Performance Benchmark
+            For large datasets, for loops are significantly faster than HOFs like forEach and map.
 
-    for (let i = 0; i < 5; i++) {
-        if (i === 3) {
-            continue;
-            console.log(i);
-        }
-    }
+            js
+            Copy
+            Edit
+            const arr = Array(1_000_000).fill(1);
 
-    => continue, break , return:
-    What’s the difference between break and continue?
-    Answer: break is used to exit a loop, while continue is used to skip the current iteration 
-    of a loop.
-
-    Can you use break and continue in nested loops?
-    Answer: Yes, you can use break and continue in nested loops.
-    example: 
-
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
-            if (j === 3) {
-                break;
+            // Using for loop (Fastest)
+            console.time("for loop");
+            let sum1 = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum1 += arr[i];
             }
-        }
-    }
-    What does the return statement do, and where is it used?
-    Answer: The return statement is used to exit a function and return a value to the caller.
- 
+            console.timeEnd("for loop");
 
-Q4. Error Handling: Code manages exceptions gracefully.
-Answer: Error handling is a process of handling unexpected errors that occur in a program.
+            // Using forEach (Slower)
+            console.time("forEach");
+            let sum2 = 0;
+            arr.forEach(num => sum2 += num);
+            console.timeEnd("forEach");
 
-    try catch finally and throw:
+            // Using reduce (Slowest)
+            console.time("reduce");
+            let sum3 = arr.reduce((acc, num) => acc + num, 0);
+            console.timeEnd("reduce");
+            Expected Results (approximate for large arrays):
 
-    try catch finally with an example write a simple code which gives an output in it:
+            for loop: ~5ms
+            forEach: ~15ms
+            reduce: ~20ms
+            Takeaway:
 
-    try {
-        // Code that may throw an error
-        const result = 10 / 0;
-    } catch (error) {
-        console.error("An error occurred:", error);
-    } finally {
-        console.log("Execution finished");
-    }
+            Use loops (for, while) when performance is critical.
+            Use HOFs (map, filter, reduce) for cleaner and more readable code.
+            Would you like to explore more about when to use each? 🚀
 
-    throw:
-    function checkNumber(num) {
-  if (num < 0) throw new Error("Number must be positive");
+
 }
 
-  subtopics:
-    What is the difference between try-catch and if-else for handling errors?
-    Answer: try-catch is used to handle errors gracefully, while if-else is used to handle errors
-    ungracefully.
+       => jumping statement: 
+                1. break
+                2. continue
+                3. return 
+                4. error handling (try -catch)
 
 
-    Can you nest try-catch blocks?
-    Answer: Yes, you can nest try-catch blocks.
 
-    What is the purpose of the finally block?
-    Answer: The finally block is used to execute code that should be executed regardless
-    of whether a try block throws an error or not.
-
-Q. Asynchronous Control Flow: Code executes asynchronously.
-Answer: methods to do asynchronous taks in js:
-
-   callback: its types = setInterval, setTimeout, setImmediate
-   promises: its type = then, catch, finally
-   async await: its type = async await
 
 
 Question to practice this topic:
