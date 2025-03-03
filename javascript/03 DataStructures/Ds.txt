@@ -22,3 +22,7 @@ Question: what are the algorithms?
 
          external algorithms:
          ex: bubble sort, selection sort, insertion sort, merge sort, quick sort, heap sort.
+
+
+         Question: what is maps and sets and is there any other data type in js.?
+    Answer: set, map, weakMap ,weakSet, typedArray, arrayBuffer are the other data strucutres.

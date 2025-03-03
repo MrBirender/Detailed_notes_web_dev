@@ -1,3 +1,5 @@
+practice all possible Question based on loops and hofs.
+
 
 ## **1. Types of Loops in JavaScript**
         1. **Basic Questions**
@@ -27,8 +29,7 @@
 
 
 
-Question: what is maps and sets and is there any other data type in js.?
-    Answer: set, map, weakMap ,weakSet, typedArray, arrayBuffer are the other data strucutres.
+
 
 const map = new Map()
 map.set("IN", "India")
