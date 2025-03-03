@@ -1,0 +1,24 @@
+Question: What is the difference between datatypes and datastructures?
+         datatypes: 
+            as the name suggest it defines by how many types we can store data.
+            ex: string, number, boolean, null, undefined, symbol, bigint, object, function. 
+
+         dataStructures: 
+            a data structure is a way how we store and organise data for efficient access and modification.
+            
+
+         built in data structures: 
+            arrays, objects, sets, maps, weakMap, weakSet.
+
+         external data structues: 
+            queue, stack, linked list, binary tree, binary search tree, heap.
+
+Question: what are the algorithms?
+         algorithms are the set of steps to solve a problem.
+
+         inbuilt in js:
+           ex: sort, math.max math.min , set, map
+        
+
+         external algorithms:
+         ex: bubble sort, selection sort, insertion sort, merge sort, quick sort, heap sort.

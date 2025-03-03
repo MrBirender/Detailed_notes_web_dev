@@ -102,40 +102,25 @@ Question. What is the control flow in JavaScript?
 
 
 
+Question: what are null colisens operators?
+    Answer: it is an logical operator that is used to check if the left hand value is     null or undefined. if it is so then it will give the right hand value.
+      note: it doesn't work for the all falsy values as or || operator does. 
+       ex: console.log(null, undefined ?? 'default value');
+       console.log("", 0, false: 'default value'); // "", 0, false
+
+
+
+
+
+
+
 
 
 Question to practice this topic:
-FizzBuzz Problem: Print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.
-Nested Loops with Break: Implement a matrix search that exits all loops upon finding an element.
-Asynchronous Data Fetching: Show loading, fetch data, and handle errors.
-
-
-
-
-   
-
-
-
-
-
-if esle if and else: conditional statement.
-what is need of conditonal statement in js
-
-switch case: conditional statement: what is difference between if else and switch case
-what if we miss one of the break keyword
-truthy and falsy values 
-
-const email = "birender@google.com"; // "", []
-
-if(email){
-    console.log("valid email");
-    // we have supposed that everting in email is a truthy value. but its not the case
-    "" gives invalid email , [] gives valid email 
-}else{
-    console.log("invalid email");
-}
+        FizzBuzz Problem: Print "Fizz" for multiples of 3, "Buzz" for multiples of 5, and "FizzBuzz" for multiples of both.
+        Nested Loops with Break: Implement a matrix search that exits all loops upon finding an element.
+        Asynchronous Data Fetching: Show loading, fetch data, and handle errors.
 
 FASLY VALUES: false, 0, "", null, undefined, NaN, bigint 0n
 TRUTHY VALUES: true, 1, "0", " ", [], {}, function(){} 
 
-null colisens operator and ternary operator are different in js
