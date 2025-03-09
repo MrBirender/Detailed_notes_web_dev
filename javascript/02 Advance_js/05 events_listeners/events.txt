@@ -1,18 +1,187 @@
-Q1. all types of events in js.
-Q2. what is the third argument in addEventListener? true or false?
-Answer. when it set to true is captures the outer elements which is capturgin. first and when it is false
-it checks the inner elements first which is bubbling.
-e.stopPropagation() with false
-Q3. what is attach event.
-study e.target every thing it has and which is used oftenly in projects
-Q4. what is event object. most used event properties in js
-practice event based interview questions
+Questions: Why Do We Need Events in JavaScript?
+    Events are essential because they help us create interactive web applications. Without events, web pages would be static, meaning they wouldn’t respond to user interactions like clicks, key presses, mouse movements, form submissions, etc. Events allow JavaScript to listen and respond dynamically to user actions.   
+
+
+
+Question: ### **Types of JavaScript Events**
+    JavaScript provides **over 200 events** that can be categorized into different types:
+
+        #### **1. Mouse Events**
+        These events are triggered when a user interacts with the mouse.
+        - `click` → When an element is clicked.
+        - `dblclick` → When an element is double-clicked.
+        - `mousedown` → When a mouse button is pressed.
+        - `mouseup` → When a mouse button is released.
+        - `mousemove` → When the mouse is moved.
+        - `mouseover` → When the mouse enters an element.
+        - `mouseout` → When the mouse leaves an element.
+        - `contextmenu` → When the right mouse button is clicked.
+
+        #### **2. Keyboard Events**
+        These events occur when the user interacts with the keyboard.
+        - `keydown` → When a key is pressed down.
+        - `keyup` → When a key is released.
+        - `keypress` → When a key is pressed and released (deprecated, use `keydown` instead).
+
+        #### **3. Form Events**
+        These events help manage user interactions with forms.
+        - `submit` → When a form is submitted.
+        - `reset` → When a form is reset.
+        - `change` → When an input field’s value changes.
+        - `focus` → When an input field gains focus.
+        - `blur` → When an input field loses focus.
+        - `input` → When the value of an input field changes.
+
+        #### **4. Window & Document Events**
+        These events relate to the browser window and document.
+        - `load` → When the page is fully loaded.
+        - `DOMContentLoaded` → When the HTML document is loaded, but not images or stylesheets.
+        - `resize` → When the browser window is resized.
+        - `scroll` → When the page is scrolled.
+        - `beforeunload` → Before the page is closed or refreshed.
+        - `unload` → When the page is closed.
+
+        #### **5. Clipboard Events**
+        These events handle copying and pasting actions.
+        - `copy` → When the user copies content.
+        - `cut` → When the user cuts content.
+        - `paste` → When the user pastes content.
+
+        #### **6. Drag & Drop Events**
+        These events manage draggable elements.
+        - `dragstart` → When dragging starts.
+        - `drag` → When an element is dragged.
+        - `dragend` → When dragging ends.
+        - `dragover` → When a draggable element is moved over a valid drop target.
+        - `drop` → When a draggable element is dropped.
+
+        #### **7. Touch Events (Mobile)**
+        These events are triggered on touch-enabled devices.
+        - `touchstart` → When a touch starts.
+        - `touchmove` → When a finger moves across the screen.
+        - `touchend` → When a touch ends.
+        - `touchcancel` → When a touch is interrupted.
+
+        #### **8. Media Events**
+        These events are used in media elements like `<audio>` and `<video>`.
+        - `play` → When media starts playing.
+        - `pause` → When media is paused.
+        - `ended` → When media playback finishes.
+        - `volumechange` → When the volume changes.
+
+        #### **9. Animation & Transition Events**
+        These events track CSS animations and transitions.
+        - `animationstart` → When a CSS animation starts.
+        - `animationend` → When a CSS animation ends.
+        - `transitionstart` → When a CSS transition starts.
+        - `transitionend` → When a CSS transition ends.
+
+        #### **10. WebSocket Events (For Real-time Communication)**
+        These events handle WebSocket connections.
+        - `open` → When a WebSocket connection is opened.
+        - `message` → When a message is received from the server.
+        - `close` → When a WebSocket connection is closed.
+        - `error` → When a WebSocket encounters an error.
+
+        ---
+
+### **Total Number of JavaScript Events**
+JavaScript has **over 200 different events** across various categories. However, the most commonly used events are **click, keydown, input, change, submit, load, and mousemove**.
+
+
+
+Question: What is the difference between the eventlistener and onclick?
+
+
+
+Question: What is event propogation?
+        Answer: ### **Definition of Event Propagation**  
+                **Event propagation** in JavaScript is the mechanism that determines the order in which event handlers are executed when an event occurs on nested elements. It consists of **three phases**:  
+
+                1. **Capturing Phase (Event Capturing)** → The event starts from the **outermost element** (window/document) and travels down to the **target element**. 
+
+                2. **Target Phase** → The event reaches the **target element** where the event was triggered.  
+
+                3. **Bubbling Phase (Event Bubbling)** → The event then propagates **upwards** from the target element back to the **outermost element**.  
+
+                💡 **By default, events use the bubbling phase, but the capturing phase can be enabled by passing `true` as the third argument in `addEventListener()`.**  
+
+
+
+Question: what is event bubbling?
+        Answer: Event bubbling is a phase of event propagation in JavaScript where an event starts at the target element and then moves upward through its ancestor elements until it reaches the document (or root).
+
+        💡 By default, events in JavaScript use bubbling unless specified otherwise.
+
+
+Question: What is event caputring / Trickling ?
+        Anwer: this is an another way of event propagation, here event listener works from outer most element to , target  element, where the click happened.
+
+        two ways to selcec this from the eventlistener function:
+        1. parent.addEventListener("click", func, true); by passing as a boolean
+
+        2. parent.addEventListener("click", func, {capture: true}); by passing as an object both will do the same thing, preffer this if need to pass more than one key value pair.
+        exL {capture: true, once:true, passive: true}
+
+
+
+Quesiton: How you can stop bubbling and capturing/tricking to the clicked element or the desired location?
+        Answer: by passing the event and calling e.stopPropagation() to the all members if want to limit to the origin or calling it at an paricular location to customize the call.
+
+        Note: you have to pass the e.stopPropagation() one generation before to stop the propogation  in the next gen. other wise it will not work.
+
+        ex: div.addEventListener('click', function(e){
+                e.stopPropagation()
+                console.log("hai")
+        })
+
+        body.addEventListener('click', function(e){
+                
+                console.log("hai")
+        })
+
+        Here i am passing stop fucntion to the div and it will stop the propogation to the next element which means eventlistener on body will not trigger.
+
+
+       interview  Quesiton => what if you have three element, div, form , button form top to bottom .
+       you have to control the propogation so, when it starts it should print form first and then  button and div at last.
+       answer: 
+                button.addEventListener('click', function(e){
+                        alert(e.currentTarget.tagName)
+                })
+
+                div.addEventListener('click', function(e){
+                alert(e.currentTarget.tagName)
+                
+                })
+
+                form.addEventListener('click', function(e){
+                alert(e.currentTarget.tagName)
+                }, true)
+
+        JUST BY ENABLING THE caputring TO FORM IT WILL BE DONE. because BUTTON IS INSIDE THE FORM AND WHEN FORM IS FOLLOWING THE caputring PATTERN THEN IT WILL EXECUTE FROM TOP TO BOTTOM AND WHEN IT FINISHES THEN IT WILL GO FOR BUBBLING AND WILL PRINT DIV AT last.
+
+
+
+Question: what is the difference between event.target, this.target and event.currentTarget?
+        Answer: 
+        event.target = it will give you the original target where the bubbling or caputring started.
+
+        event.currentTarget = it will give the current active element, which comes in the way of event propogation.
+
+        this.target = it also works like the event.currentTarget and gives the active element in the journey of propagation.
+
+        doubt:: if this.target and event.currentTarget are working same then what is the need of other one.
+
+
+
+
+
 
 Q4.what is event spillover.
 Answer: event spillover is the process of passing an event from one 
 element to another element.
 
-### a completely event based project can be done
+Question: differenciate between the array and node list?
 
-Q5. what is event delegation . event bubbling and event capturing event propogation
-study more about prevent default and stop propogation
+how to close a model by clicking on to the negative space?

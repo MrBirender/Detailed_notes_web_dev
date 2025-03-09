@@ -69,7 +69,7 @@ the same interface for the develpers.
 
 
 6. // can i store a variable in the memeory without using var, let and const
-      Answer: yes data can be stored but it is bad practice it will give error in usestrict mode in js;
+      Answer: yes data can be stored but it is bad practice it will give error in use strict mode in js;
 
       /* tc39.es ecma script is the offical documentaion for js.
 mdn is from mozilla group. */

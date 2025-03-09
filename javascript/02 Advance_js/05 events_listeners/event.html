@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propogation</title>
+    <style>
+        button{
+            width: 200px;
+            height: 100px;
+        }
+
+        #parent{
+            background-color: red;
+            height: 100vh;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <form >
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;" id="parent">
+        <button id="child">Click Me 1</button>
+        <!-- <button id="child">Click Me 2</button>
+        <button id="child">Click Me 3</button>
+        <button id="child">Click Me 4</button>
+        <button id="child">Click Me 5</button>
+        <button id="child">Click Me 6</button>
+        <button id="child">Click Me 7</button>
+        <button id="child">Click Me 8</button> -->
+      </div>
+    </form>
+  </body>
+  <script>
+    const div = document.getElementById("parent");
+    // const buttons = document.querySelectorAll("#child");
+    const button = document.getElementById("child");
+    const body = document.querySelector("body");
+    const form  = document.querySelector('form')
+    
+
+    button.addEventListener('click', function(e){
+      
+      
+      alert(e.currentTarget.tagName)
+    })
+    div.addEventListener('click', function(e){
+      alert(e.currentTarget.tagName)
+      
+    })
+    form.addEventListener('click', function(e){
+      alert(e.currentTarget.tagName)
+    }, true)
+   
+  </script>
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Deligation</title>
+    <style>
+      .box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        /* max-width: 80%; */
+      }
+
+      .child {
+        height: 200px;
+        width: 200px;
+        background-color: aquamarine;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Deligation</h1>
+    <div class="box">
+      <div class="child">Mobile</div>
+      <div class="child">Laptop</div>
+      <div class="child">Watch</div>
+      <div class="child">Tv</div>
+      <div class="child">Bike</div>
+      <div class="child">click 6</div>
+      <div class="child">click 7</div>
+      <div class="child">click 8</div>
+      <div class="child">click 9</div>
+      <div class="child">click 10</div>
+    </div>
+  </body>
+  <script>
+    const box = document.querySelector('.box')
+
+    box.addEventListener('click', (e)=> {
+      if(event.target.textContent === 'Mobile' || event.target.closest('DIV')){
+        window.location.href += '/' + e.target.tagName
+      }
+    })
+  </script>
+</html> -->

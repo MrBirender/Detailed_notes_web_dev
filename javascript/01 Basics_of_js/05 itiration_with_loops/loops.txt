@@ -6,7 +6,7 @@ practice all possible Question based on loops and hofs.
           - Write a loop to reverse an array.
           - Sum all even numbers in an array using a loop.
           - Find duplicates in an array using loops.
-
+ 
         2. **Comparison**
           - What is the difference between `for`, `for...in`, and `for...of`?
           - Why should you avoid `for...in` with arrays?
@@ -22,23 +22,5 @@ practice all possible Question based on loops and hofs.
         5. **Real-world Problems**
           - Write a loop to flatten a nested array.
           - Iterate over an object and calculate the sum of numeric values.
-
-
-
-
-
-
-
-
-
-const map = new Map()
-map.set("IN", "India")
-map.set("US", "United States")
-
-
-
-
-
-
 
 what is palindrome practice? and pattern practice
