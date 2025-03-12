@@ -1,0 +1,50 @@
+Question: What is React?
+    Answer: React is a js library used of building user interfaces , particulary for the single page applications where you need a fast, interactive ui.
+
+Key Features of React: 
+    1. COMPONENT BASED ARCHITECTURE: 
+    2. VIRTUAL DOM (DOCUMENT OBJECT MODEL)
+    3. DECLARAIVE SYNTAX.
+    4. JSX (JAVASCRIPT AND XML)
+    5. UNIDIRECTIONAL DATA FLOW
+    6. HOOKS (FUNCTIONAL COMPONENT)
+    7. ECOSYSTEM AND TOOLS
+
+
+
+### **Question: How JavaScript and React Work Behind the Scenes?**  
+**Answer:**  
+        When working with a **Vanilla JavaScript** project, we manually update the DOM using DOM manipulation methods like `.innerHTML`, `.innerText`, `.textContent`, etc.  
+
+        ➡️ This manipulation does **not re-render the entire page**. JavaScript efficiently identifies the affected area and updates only that part of the DOM.  
+
+        ---
+
+### **React’s Approach:**  
+        React and JavaScript both aim to update only the necessary parts of the DOM, but the key difference lies in:  
+        ✅ **Efficiency** — How React optimizes updates.  
+        ✅ **Automation** — How React reduces manual effort.  
+
+        ---
+
+### **How React Works:**  
+        1. **Virtual DOM Creation:**  
+        - React creates a **lightweight copy** of the original DOM called the **Virtual DOM** (a JavaScript object that mimics the real DOM structure).  
+
+        2. **Change Detection:**  
+        - Whenever there’s a change in the UI (due to state/props updates), React creates a **new Virtual DOM**.  
+        - React then compares the **previous Virtual DOM** with the **new Virtual DOM** using a process called the **Diffing Algorithm**.  
+
+        3. **Efficient DOM Updates:**  
+        - After identifying the changes, React efficiently updates only the affected parts of the **Real DOM** using DOM manipulation methods like `.innerHTML`, `.innerText`, etc.  
+
+        4. **Reconciliation Process:**  
+        - To further improve performance, React optimizes updates by batching multiple changes together. This process is known as **Reconciliation**, which prevents unnecessary re-rendering and improves performance.
+
+        ---
+
+### **Key Difference in Simple Terms:**  
+        🔹 **JavaScript** → Manually detects and updates the DOM.  
+        🔹 **React** → Automatically tracks changes, efficiently updates the DOM, and optimizes performance using the **Virtual DOM** and **Reconciliation**.  
+
+        This automation makes React powerful for building complex, high-performance web applications. 🚀

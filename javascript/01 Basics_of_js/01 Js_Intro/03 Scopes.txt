@@ -6,8 +6,14 @@ Answer: There are total 5 types of scopes in it:
 
 3. Block Scope: variables declared with let and const are belong to the Block scope.
 block ex: if-else, switch, for, while, do-while, try-catch, etc.
+ 
+4,Lexical Scope:
 
-4. lexical Scope (closures): Function can access variables from there parent scope even after the parent has completed execution.
+        Determines how variables are accessed based on where functions are defined in the code.
+        Does not depend on when or where the function is called — only where it's written.
+        ✅ Closure:
+
+        A closure is when a function remembers and continues to access variables from its outer scope even after that outer function has finished executing.
 
 5. Module Scope: when variables declared using js modules are belong to the Module scope unless they are exported.
 

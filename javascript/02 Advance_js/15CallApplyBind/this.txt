@@ -1,0 +1,46 @@
+Question: What is the use of call, apply and bind in js?
+      Answer: These methods are used to the context of this in js functions.
+
+call: call is used when you now the exact numbers of arguments which are going to be passed.
+      ex: 
+        function greet(city, country) {
+            console.log(`Hello, I am ${this.name} from ${city}, ${country}`);
+        }
+
+        const user = { name: "Birender" };
+
+        greet.call(user, "Gurgaon", "India"); 
+        // Output: Hello, I am Birender from Gurgaon, India
+
+
+apply: this work same as call does but with this we can pass an array of arguments:
+
+        function greet(city, country) {
+            console.log(`Hello, I am ${this.name} from ${city}, ${country}`);
+        }
+
+        const user = { name: "Birender" };
+
+        greet.apply(user, ["Gurgaon", "India"]); 
+        // Output: Hello, I am Birender from Gurgaon, India
+
+
+
+bind: it doesn't invoke imediately but returns a function with the specefied this value which can be called later.
+
+        function greet(city) {
+            console.log(`Hi, I am ${this.name} from ${city}`);
+        }
+
+        const user = { name: "Birender" };
+
+        const greetUser = greet.bind(user, "Gurgaon");
+
+        greetUser(); 
+        // Output: Hi, I am Birender from Gurgaon
+
+
+Note: this never points to the function insted it points to the context of that function
+
+
+

@@ -1,0 +1,16 @@
+{
+  "name": "15callapplybind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bind.js",
+  "scripts": {
+    "test": "nodemon Questions.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

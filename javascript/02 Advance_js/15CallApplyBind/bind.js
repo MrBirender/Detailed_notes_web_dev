@@ -1,4 +1,4 @@
-// check it later to understand its funality
+// check it later to understand its functionality
 
 class Vehicle {
     constructor(name, fuel) {
