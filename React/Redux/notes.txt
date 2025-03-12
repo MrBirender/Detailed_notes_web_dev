@@ -1,0 +1,4 @@
+What are statless components?
+what is the actual difference between useState and useReducer when it comes to managing state?
+
+why we should make reducer make fucntion otuside the body of the components.
