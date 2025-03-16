@@ -1,0 +1,26 @@
+Question: what is the meaning of regex symbols ?
+Regex (Regular Expressions) is a powerful tool for pattern matching and text manipulation in JavaScript. It helps to find, match, replace, or extract parts of a string efficiently.
+
+
+       Answer: Common Regex Patterns
+    Pattern	Description	Example Match
+    \d	Matches any digit (0-9)	"abc123" → 1
+    \D	Matches any non-digit	"abc123" → abc
+    \w	Matches any word character (a-z, A-Z, 0-9, _)	"hello_123" → hello_123
+    \W	Matches any non-word character	"hello@123" → @
+    \s	Matches whitespace (spaces, tabs, new lines)	"hello world" → space
+    \S	Matches non-whitespace characters	"hello world" → helloworld
+    .	Matches any character except new line	"abc" → a b c
+    ^	Matches start of string	^hello matches "hello world", but not "world hello"
+    $	Matches end of string	world$ matches "hello world", but not "world hello"
+    +	Matches one or more occurrences	\d+ matches "12345" as "12345"
+    *	Matches zero or more occurrences	a*b matches "b", "ab", "aaab"
+    ?	Matches zero or one occurrence	colou?r matches "color" and "colour"
+
+
+
+Question: learn how to write regex for an given condtion like email checking.
+
+^ = means from start
+$ = means from end
+

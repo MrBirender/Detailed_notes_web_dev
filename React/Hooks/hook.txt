@@ -1,6 +1,12 @@
 What is the use of react hooks and why do we use them ?
+     Answer: React hooks are special fucntions that allows you to use state inside the funcional component without writting class components.
 when react hooks were introduced and why ?
-why do react needs to take control over ui updation?
+    Answer: Before version 16.8 state mangement and lifecycle methods were only possible in the class components , which made the process complex.
+
+what is state in react?
+  Answer: state refers to an object that holds the data and information regarding the component. this state can be changed with user interaction with the web page and when it does react re-renders the component to reflect those changes.
+
+
 
 HOW REACT BATCHES THE UI UPDATES AND WHY BATCHES ARE NOT FORMED WITH FUNCIONAL INCREMENT OF CHANGES?
 

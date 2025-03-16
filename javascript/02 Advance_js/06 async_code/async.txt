@@ -1,3 +1,29 @@
+
+History of Asynchronous JavaScript
+        1. Early JavaScript & Synchronous Execution
+        JavaScript was originally designed as a synchronous language.
+        Code executes line by line, and each operation must complete before the next one starts.
+        Problem: Blocking operations (like fetching data from a server) could freeze the entire browser.
+        2. Callbacks (ES5 & Earlier) – The First Solution
+        Callbacks were introduced to handle asynchronous tasks.
+        Instead of waiting for an operation to complete, JavaScript would "call back" a function once it was done.
+        Example: Handling user actions or fetching data using setTimeout() or XMLHttpRequest.
+        3. Callback Hell – The Downside of Callbacks
+        When multiple async operations depended on each other, nesting callbacks led to messy and unreadable code.
+        Example: Fetching user data → Getting user posts → Getting comments on posts (each inside another callback).
+        4. Promises (ES6, 2015) – A Better Way
+        Promises solved callback hell by chaining asynchronous operations with .then() and .catch().
+        Allowed better error handling and code readability.
+        5. Async/Await (ES8, 2017) – Making Async Look Synchronous
+        Introduced as a cleaner way to handle asynchronous operations.
+        Allows writing async code that looks and behaves like synchronous code.
+        Uses try-catch for error handling instead of .catch().
+        6. Promise.all, Promise.race, Promise.allSettled
+        Methods to handle multiple promises at once.
+        Improved efficiency when dealing with multiple API calls or parallel tasks.
+
+
+
 js in syncronous and single threaded language.
 Being slow why it doesn't feel slow while working
 

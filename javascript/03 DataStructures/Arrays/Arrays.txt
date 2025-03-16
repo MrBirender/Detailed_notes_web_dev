@@ -1,0 +1,43 @@
+Beginner Level
+
+    Remove Duplicates from an Array
+
+    Problem: Given an array, remove duplicate elements to return an array of unique values.
+
+    Concepts: Array, Set
+
+    Solution: Utilize a Set to store unique elements and convert it back to an array.
+
+
+Count Occurrences of Array Elements
+
+        Problem: Count how many times each element appears in an array.
+
+        Concepts: Array, Map
+
+        Solution: Use a Map to tally occurrences of each element.
+
+=> data reading filtering and mapping using hofs:
+
+// Sample Data (3 Patients with 3-4 Readings Each)
+let patient1 = [
+    { temperature: 101, bp: { systolic: 120, diastolic: 80 } },
+    { temperature: 104, bp: { systolic: 118, diastolic: 79 } }, // High Fever
+    { temperature: 99, bp: { systolic: 122, diastolic: 81 } }
+];
+
+let patient2 = [
+    { temperature: 98, bp: { systolic: 140, diastolic: 90 } },
+    { temperature: 97, bp: { systolic: 85, diastolic: 55 } }, // Hypotension
+    { temperature: 100, bp: { systolic: 135, diastolic: 88 } }
+];
+
+let patient3 = [
+    { temperature: 100, bp: { systolic: 190, diastolic: 125 } }, // Hypertension Crisis
+    { temperature: 99, bp: { systolic: 145, diastolic: 95 } },
+    { temperature: 101, bp: { systolic: 150, diastolic: 100 } }
+];
+
+let patients = [patient1, patient2, patient3];
+
+console.log(findCriticalPatients(patients));

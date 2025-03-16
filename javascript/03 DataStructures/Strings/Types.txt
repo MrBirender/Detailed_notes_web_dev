@@ -1,0 +1,83 @@
+Quesitons: Why we should convert str to array to perform operations and then arrat to str. Does it take more space and time when we do operations only with str.
+answer: 
+
+
+
+
+### ✅ **Problems Solvable Using Basic DSA (Object, Array, Map, Set, WeakMap, WeakSet)**  
+#### **1. Basic String Manipulation**  
+   - ✅ Reverse a string → **Array (`split()`, `reverse()`, `join()`)**  
+   - ✅ Check if a string is a palindrome → **Two-pointer, Array**  
+   - ✅ Convert case (upper/lower) → **String methods (`toUpperCase()`, `toLowerCase()`)**  
+   - ✅ Remove spaces/special characters → **Regex, Array (`split()`, `filter()`)**  
+
+#### **2. Searching & Matching**  
+   - ✅ Find the first non-repeating character → **Map for frequency count**  
+   - ✅ Find the first repeating character → **Set for uniqueness**  
+   - ✅ Find the index of a substring → **String methods (`indexOf()`, `lastIndexOf()`)**  
+   - ✅ Check if a string contains a substring → **`includes()`, `match()`, `test()`**  
+   - ✅ Find occurrences of a substring → **Loop + `indexOf()`**  
+
+#### **3. Sorting & Rearranging**  
+   - ✅ Sort characters in a string → **Array (`split()`, `sort()`, `join()`)**  
+   - ✅ Sort words in a sentence → **Array (`split(" ")`, `sort()`, `join(" ")`)**  
+   - ❌ Rearrange a string into lexicographically next permutation (**Needs advanced logic**)  
+
+#### **4. Pattern Matching & Regex**  
+   - ✅ Validate email, URL, phone number → **Regex (`test()`, `match()`)**  
+   - ✅ Extract specific patterns (hashtags, mentions, IPs) → **Regex (`match()`)**  
+   - ✅ Find and replace substrings → **`replace()` method**  
+
+#### **5. Anagrams & Permutations**  
+   - ✅ Check if two strings are anagrams → **Object (frequency count) or sorting**  
+   - ✅ Find all anagrams of a string in another → **Sliding Window + Map**  
+   - ❌ Generate all permutations of a string (**Needs recursion & backtracking**)  
+
+#### **6. Compression & Encoding**  
+   - ✅ Run-length encoding → **Loop + Object (character count)**  
+   - ✅ Implement a custom string compression algorithm → **Object, Array (`split()`, `join()`)**  
+   - ✅ Decode a compressed string → **Loop-based reconstruction**  
+
+#### **7. String Transformations**  
+   - ✅ Convert sentence into camelCase, snake_case, kebab-case → **Regex + `replace()`**  
+   - ✅ Convert a Roman numeral to an integer and vice versa → **Map (Roman numeral mapping)**  
+   - ✅ Convert a number to a worded string → **Map (Number mapping, recursion)**  
+
+#### **8. String Arithmetic**  
+   - ✅ Add two large numbers as strings → **Array (manual addition like school method)**  
+   - ✅ Multiply two numbers represented as strings → **Array (manual multiplication logic)**  
+   - ✅ Convert a string-based number to an integer → **`parseInt()` or custom logic**  
+
+---
+
+### ❌ **Problems That Require Advanced Techniques (Not Fully Solvable with Basic DSA)**  
+#### **9. Substrings & Subsequences**  
+   - ❌ Find all substrings of a string (**Needs recursion**)  
+   - ❌ Find all unique substrings of a given length (**Trie or Hashing**)  
+   - ❌ Find the longest palindrome substring (**Dynamic Programming or Expand Around Center**)  
+   - ❌ Find the longest common substring (**DP-based solution**)  
+   - ❌ Find the longest common subsequence (**Recursion + Memoization**)  
+
+#### **10. Two-Pointer & Sliding Window Problems**  
+   - ❌ Find the longest substring without repeating characters (**Sliding Window**)  
+   - ❌ Find the smallest window containing all characters of another string (**Sliding Window**)  
+   - ❌ Find the longest repeating character replacement window (**Sliding Window**)  
+
+#### **11. String-based Data Structures**  
+   - ❌ Implement a Trie for prefix-based searching (**Trie Data Structure**)  
+   - ❌ Find the longest common prefix in an array of strings (**Trie or Sorting**)  
+   - ❌ Auto-complete feature using Trie (**Trie**)  
+
+#### **12. Special String Operations**  
+   - ✅ Implement `strStr()` (similar to `indexOf()`) → **Loop + `substring()`**  
+   - ✅ Check if a string follows a given pattern → **Regex, Object (mapping pattern)**  
+   - ✅ Implement a custom `split()` function → **Loop + String methods**  
+   - ✅ Implement a custom `join()` function → **Loop + String concatenation**  
+
+---
+
+### 🔥 **Final Breakdown**  
+✅ **26 Problems can be solved using Objects, Arrays, Map, Set, WeakMap, WeakSet**  
+❌ **12 Problems require advanced techniques like Dynamic Programming, Sliding Window, or Trie**  
+
+Would you like to start solving **basic problems** or explore **advanced techniques** next? 🚀
