@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callBacks</title>
+  </head>
+  <body>
+    <h1>callBacks in js</h1>
+  </body>
+  <script>
+    console.log("start");
+
+    function subscribe(channel, cb) {
+      setTimeout(() => {
+        return cb(`subscirbe to the ${channel}`);
+      }, 1000);
+    }
+
+    function like(video, cb) {
+      setTimeout(() => {
+        return cb(` ${video} video Liked`);
+      }, 1000);
+    }
+
+    function share(video, cb) {
+      setTimeout(() => {
+        return cb(` ${video} video shared`);
+      }, 1000);
+    }
+
+    subscribe("rythum relam", (msg) => {
+      console.log(msg);
+      like("js basics", function (msg) {
+        console.log(msg);
+        share('js advance', function(msg){
+            console.log(msg)
+        })
+      });
+    });
+
+    console.log("end");
+  </script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h1>Promises in js</h1>
+  </body>
+  <script>
+    function subscribe(channel) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(`Subscribe to the ${channel}`);
+        }, 1000);
+      });
+    }
+
+    function like(video) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(`Subscribe to the ${video}`);
+        }, 1000);
+      });
+    }
+
+    function share(video) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject(`Subscribe to the ${video}`);
+        }, 100);
+      });
+    }
+
+    // subscribe("rythum realm").then((res) => {
+    //   console.log(res);
+    //   return like('js basics')
+    // }).then((res)=> {
+    //     console.log(res)
+    //     return share('advance js')
+    // }).then((res)=> console.log(res))
+
+
+    // Promise.all([
+    //   subscribe('rythum relam'),
+    //   like('js basics'),
+    //   share('js advance')
+    // ]).then((res)=> console.log(res)).catch((err)=> console.log(`promises rejected or failed ${err}`))
+
+
+    // Promise.race([
+    //   subscribe('rythum relam'),
+    //   like('js basics'),
+    //   share('js advance')
+    // ]).then((res)=> console.log(res)).catch((err)=> console.log(`promises rejected or failed ${err}`))
+
+
+    // Promise.allSettled([
+    //   subscribe('rythum relam'),
+    //   like('js basics'),
+    //   share('js advance')
+    // ]).then((res)=> console.log(res)).catch((err)=> console.log(`promises rejected or failed ${err}`))
+
+    Promise.any([
+      subscribe('rythum relam'),
+      like('js basics'),
+      share('js advance')
+    ]).then((res)=> console.log(res)).catch((err)=> console.log(`promises rejected or failed ${err}`))
+
+
+
+    /* Promise.all,=> if one fails then all will fail
+    
+    Promise.race, => return the first completed promise resolve or rejected. 
+    
+    Promise.any,=> it will give the first fullfield promise. if all are rejected only then it will give the all promsies failied.
+    
+    Promise.allSettled,=> 
+    it will give the status of all promises fulfilles or rejected  */
+  </script>
+</html>

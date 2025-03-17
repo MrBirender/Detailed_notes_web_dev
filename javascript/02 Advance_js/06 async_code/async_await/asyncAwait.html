@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Async Await in js</h1>
+  </body>
+  <script>
+    function subscirbe(channel) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`subscribe to the ${channel}`)
+        },1000);
+      });
+    }
+
+    function like(video){
+        return new Promise((resolve, reject)=> {
+            setTimeout(() => {
+                resolve(`like this ${video} video`)
+            }, 1000);
+        })
+    }
+
+    function share(video){
+        return new Promise((resolve, reject)=> {
+            setTimeout(() => {
+                resolve(`share this ${video} video`)
+            }, 1000);
+        })
+    }
+
+    async function conusmePromise(){
+        const msg1 = await subscirbe('rythum realm')
+        console.log(msg1)
+        const msg2 = await like('js basics')
+        console.log(msg2)
+        const msg3 = await share('js advance')
+        console.log(msg3)
+
+        // console.log(msg1, msg2, msg3)
+    } 
+
+    conusmePromise()
+  </script>
+</html>
