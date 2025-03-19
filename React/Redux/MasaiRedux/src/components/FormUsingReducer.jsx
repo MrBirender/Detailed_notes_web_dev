@@ -1,130 +1,113 @@
-import React, { useEffect, useReducer } from 'react'
-import '../App.css';
+import React, { useReducer } from 'react';
 
-/* reducer and inital state */
-const initialState  = {
+const initialState = {
     name: '',
     age: '',
     gender: '',
     address: {
         houseNumber: '',
         street: '',
-        cordinates: {
+        coordinates: {
             lat: '',
             long: '',
         }
     }
-}
+};
 
-function reducer(state, action){
-    switch(action.type){
-        case 'updateName':
-        case 'updateAge':
-        case 'updateGender': {
-            return {
-                ...state,
-                ...action.payload
-            }
-        }
-        case 'updateStreet':
-        case 'updateHouseNumber': {
-            return {
-                ...state,
-                address: {
-                    ...state.address,
-                    ...action.payload
-                }
-            }
-        }
+function reducer(state, action) {
+    const { field, value } = action.payload;
 
-        case 'updateLong':
-        case 'updateLat': {
-            return {
-                ...state,
-                address: {
-                    ...state.address,
-                    cordinates: {
-                        ...state.address.cordinates,
-                        ...action.payload
-                    }
-                }
+    if (field.includes('.')) {
+        // Handle nested fields dynamically (e.g., address.houseNumber or address.coordinates.lat)
+        const keys = field.split('.');
+        return {
+            ...state,
+            [keys[0]]: {
+                ...state[keys[0]],
+                ...(keys.length === 2
+                    ? { [keys[1]]: value }
+                    : {
+                        [keys[1]]: {
+                            ...state[keys[0]][keys[1]],
+                            [keys[2]]: value
+                        }
+                    })
             }
-        }
-
-        
-        default: {
-            throw new Error('please define the valid action type')
-        }
-           
+        };
     }
+
+    return { ...state, [field]: value };
 }
+
 const FormUsingReducer = () => {
-    const [userDetails, dispatch] = useReducer(reducer, initialState)
+    const [userDetails, dispatch] = useReducer(reducer, initialState);
 
-    // useEffect(()=> {
-    //     console.log(userDetails)
-    // },[])
+    const handleChange = (e) => {
+        dispatch({
+            type: 'UPDATE_FIELD',
+            payload: { field: e.target.name, value: e.target.value }
+        });
+    };
 
-  /* on form submit */
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(userDetails)
-  }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(userDetails);
+    };
 
-  return (
-    <form onSubmit={handleSubmit} className='space-y-6'>
-        {/* for name */}
-      <label htmlFor='name' className='flex gap-2 '>
-         <span className='text-lg'>Name: </span>
-        <input id='name' onChange={(e) => dispatch({type:'updateName', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='Enter Your Name' />
-      </label>
+    const { name, age, gender, address: { houseNumber, street, coordinates: { lat, long } } } = userDetails;
 
-      {/* for age */}
-      <label htmlFor='age' className='flex gap-2 '>
-         <span className='text-lg'>Age: </span>
-        <input id='age' onChange={(e) => dispatch({type:'updateAge', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='Enter Your Age' />
-      </label>
+    return (
+        <form onSubmit={handleSubmit} className='space-y-6'>
+            {/* Name */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Name: </span>
+                <input value={name} name='name' onChange={handleChange} className='border p-1' type="text" placeholder='Enter Your Name' />
+            </label>
 
-       {/* for Gender */}
-       <label htmlFor='gender' className='flex gap-2 '>
-         <span className='text-lg'>Gender: </span>
-        <select id="gender" className='border p-1' onChange={(e)=> dispatch({type:'updateGender', payload: {[e.target.id]: e.target.value}})}>
-            <option className='bg-black' value="">Select Gender</option>
-            <option className='bg-black' value="male">Male</option>
-            <option className='bg-black' value="female">Female</option>
-            <option className='bg-black' value="others">Others</option>
-        </select>
-      </label>
+            {/* Age */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Age: </span>
+                <input value={age} name='age' onChange={handleChange} className='border p-1' type="text" placeholder='Enter Your Age' />
+            </label>
 
-      {/* address HN */}
-      <label htmlFor='houseNumber' className='flex gap-2 '>
-         <span className='text-lg'>houseNumber: </span>
-        <input id='houseNumber' onChange={(e) => dispatch({type:'updateHouseNumber', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='House Number' />
-      </label>
+            {/* Gender */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Gender: </span>
+                <select value={gender} name="gender" className='border p-1' onChange={handleChange}>
+                    <option className='bg-black' value="">Select Gender</option>
+                    <option className='bg-black' value="male">Male</option>
+                    <option className='bg-black' value="female">Female</option>
+                    <option className='bg-black' value="others">Others</option>
+                </select>
+            </label>
 
-      {/* street */}
-      <label htmlFor='street' className='flex gap-2 '>
-         <span className='text-lg'>street: </span>
-        <input id='street' onChange={(e) => dispatch({type:'updateStreet', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='street' />
-      </label>
+            {/* House Number */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>House Number: </span>
+                <input value={houseNumber} name='address.houseNumber' onChange={handleChange} className='border p-1' type="text" placeholder='House Number' />
+            </label>
 
-      {/* cordinates lats */}
-      <label htmlFor='lat' className='flex gap-2 '>
-         <span className='text-lg'>Latitude: </span>
-        <input id='lat' onChange={(e) => dispatch({type:'updateLat', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='Enter Latitudes' />
-      </label>
+            {/* Street */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Street: </span>
+                <input value={street} name='address.street' onChange={handleChange} className='border p-1' type="text" placeholder='Street' />
+            </label>
 
-       {/* cordinates longs */}
-       <label htmlFor='long' className='flex gap-2 '>
-         <span className='text-lg'>Longitude: </span>
-        <input id='long' onChange={(e) => dispatch({type:'updateLong', payload:{[e.target.id]: e.target.value}})} className='border p-1 ' type="text" placeholder='Enter Longitudes' />
-      </label>
+            {/* Latitude */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Latitude: </span>
+                <input value={lat} name='address.coordinates.lat' onChange={handleChange} className='border p-1' type="text" placeholder='Enter Latitude' />
+            </label>
 
+            {/* Longitude */}
+            <label className='flex gap-2'>
+                <span className='text-lg'>Longitude: </span>
+                <input value={long} name='address.coordinates.long' onChange={handleChange} className='border p-1' type="text" placeholder='Enter Longitude' />
+            </label>
 
+            <button type='submit' className='p-2 bg-blue-500 text-white'>Submit</button>
+        </form>
+    );
+};
 
-      <button type='submit'>Submit</button>
-    </form>
-  )
-}
-
-export default FormUsingReducer
+export default FormUsingReducer;
