@@ -1,0 +1,34 @@
+Question1. what is currying?
+        Answer: it is a concept in functional programming where a function expecting multiple argumnets is being transformed into a sequence of funcitions each taking one parameter at a time.
+
+The term "currying" in programming comes from the name of a mathematician and logician Haskell Curry. He played a significant role in the development of combinatory logic, which is a foundation of functional programming.
+
+
+Why should currying be used?
+        Following are the reasons why currying is good :
+
+        ✅ It makes a function pure which makes it expose to less errors and side effects.
+
+        ✅ It helps in avoiding the same variable again and again.
+
+        ✅ It is a checking method that checks if you have all the things before you proceed.
+
+        ✅ It divides one function into multiple functions so that one handles one set of responsibility.
+
+
+=> what is partial programming ?
+
+ Answer: in this we use some of pre fix parameters for other depending on the userInput directly or getting through the parent funtion .
+
+ // A function that takes 3 arguments
+function multiply(a, b, c) {
+  return a * b * c;
+}
+
+// Partially applying the function by fixing the first argument (a)
+function partialMultiplyBy2(b, c) {
+  return multiply(2, b, c);
+}
+
+// Usage
+console.log(partialMultiplyBy2(3, 4)); // Output: 24
