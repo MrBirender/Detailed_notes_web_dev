@@ -24,3 +24,10 @@ Question: learn how to write regex for an given condtion like email checking.
 ^ = means from start
 $ = means from end
 
+a new way of testing the list.
+function hasVowel(str) {
+    return /[aeiou]/i.test(str);  // The regex checks for any vowel (case insensitive)
+}
+
+here 'i' is to make it case sensitive means it is going to check for both the cases like upper and lower.
+
