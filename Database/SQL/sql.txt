@@ -1,0 +1,62 @@
+It is a relational databse management system. It is used to store and manage data in a structured way. When we need to communicate with the database , it can be done using queries like, CRUD, Join etc. everything is a query and after each query need to add ';' so mysql can understand that it is the end of the query.
+
+Quesiton: How to select tables from different database?
+Answer: either you can headover to that base by doublecliking or running a command or you can give the refrence to that data base like: 
+ex: dataBaseName.tableName
+
+you can select data seperatlty from table instead selecting everyting at once and can perform actions like calculation while slecting and it will give a new table with calculated restult.
+
+Calculation will follow the PEMDAS RULES:
+PRENTHESIS EXPONENTS ETC.
+
+use DISTICNT word while selecting and you will get only unique values:
+EX: SELECT DISTICNT gender FROM table_name;
+
+with WHERE key word we can query the data using operators like <, >, = , <=, >=, != etc. can also filter out birthdates just by raping them in the quotes '1999-05-16' and ask the greater or smaller symbol.
+
+can work with logical operators: AND OR NOT WE NEED TO COMBINE THESE OPERATORS WITH THE where KEYWORD.
+
+LIKE staments if we need to look for some  special pattern in database ex: starting and ending letter match or not match, those letter are same or different.
+
+like works with the two symbols:
+1. % it means anything
+2. _ it means specific
+
+ex: 'a%' it should start with a and can have anything after it.
+%a% it means word can start with any char and can end with any char but it should have a in the middle.
+
+a__ it means any 3 chars but the first one should be a.
+
+a___% it means any 4 chars but the first one should be a.
+
+
+Grouping and Aggregation:
+we can group the same entries and reduce there occurence, like if i have 5 males and 5 females entries in the table then by grouping i will get only two entries male and female .
+Note: grouping should be done on the same row as we selcected.
+
+if we perform aggregator fucntions on the any column of the table it will give results related to the all members but if we use aggregator with grouping we can get results based on the groups.
+ex: gender grouping :
+male: 33.33
+female:42.000 // it will give average of the new groups.
+we can also use Max , min, count etc
+
+
+ORDER BY = It is used to change the sequence of the particular column either in asending or decending. 
+
+Note - do not select the column with there number in the table like if age is the third column. always select with the column name itself.
+
+when using order by on gender and data type was given using ENUM('male', 'female')
+because then it will count the number of charahters before sorting
+
+
+Having KEYWORD is used for a situation where we have grouped the data based on avg(age) and after grouping i need to do filter the result based on the average age. so to achieve this i can use having keyword. to check if the data is there only then perform the calculation.
+
+
+LIMIT KEYWORD is used to limit the number of rows returned by the query.
+EX: LIMIT 2, 1 // IT Means start from row two and go upto next one.
+its' combination with other queries will give more accurate results.
+
+ALIAS = IT is used to rename the column or table in place of any longName to save us from repeating .
+
+ex: avg(age) as avg_age or it can be written as avg(age) avg_age;
+
