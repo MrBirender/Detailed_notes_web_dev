@@ -30,4 +30,11 @@ function hasVowel(str) {
 }
 
 here 'i' is to make it case sensitive means it is going to check for both the cases like upper and lower.
+^" = means from start and match stirng
+"$ = means from end and match stirng
+| = means or
+g = means global means it will match all the occurences of the string.
 
+const str = '"hello"';
+const result = str.replace(/^"|"$/g, '');
+console.log(result); // hello

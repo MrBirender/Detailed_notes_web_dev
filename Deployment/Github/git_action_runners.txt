@@ -1,0 +1,63 @@
+### **🔥 GitHub Actions Runners – Summary**  
+
+**🔹 What is a GitHub Actions Runner?**  
+A **runner** is a **virtual machine (VM) or self-hosted machine** that executes the jobs in a GitHub Actions workflow.  
+
+---
+
+## **🔹 Types of Runners**
+### **1️⃣ GitHub-Hosted Runners (Default)**
+✅ Managed by GitHub  
+✅ Pre-configured with OS, tools, and dependencies  
+✅ Supports **Ubuntu, macOS, and Windows**  
+✅ Free for public repositories (limited minutes for private repos)  
+
+📌 **Example:**  
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Uses GitHub-hosted Ubuntu VM
+```
+
+---
+
+### **2️⃣ Self-Hosted Runners**
+✅ Runs on **your own server, VM, or local machine**  
+✅ More control over dependencies and environment  
+✅ Needed for **long-running or private workflows**  
+✅ No GitHub usage limits  
+
+📌 **Example:**  
+```yaml
+jobs:
+  deploy:
+    runs-on: self-hosted  # Uses your own machine as a runner
+```
+
+---
+
+## **🔹 Key Features of Runners**
+| Feature | GitHub-Hosted | Self-Hosted |
+|---------|--------------|-------------|
+| **Setup** | Pre-configured | Manual installation required |
+| **Cost** | Free (limits for private repos) | You pay for infrastructure |
+| **Custom Dependencies** | Limited | Fully customizable |
+| **Performance** | Standard | Faster (depends on your machine) |
+| **Persistence** | Fresh VM per run | Persistent (can store files) |
+
+---
+
+## **🔹 How to Use Self-Hosted Runners?**
+1️⃣ **Register a self-hosted runner** from **GitHub Repo → Settings → Actions → Runners**  
+2️⃣ **Download & install** the runner  
+3️⃣ **Start the runner** on your machine  
+4️⃣ Use `runs-on: self-hosted` in your workflow  
+
+---
+
+### **🎯 Final Takeaway**  
+✅ **Use GitHub-hosted runners** for simple deployments  
+✅ **Use self-hosted runners** for complex, long-running, or private workflows  
+✅ Runners execute workflow jobs in a **secure, isolated environment**  
+
+Let me know if you need help setting one up! 🚀

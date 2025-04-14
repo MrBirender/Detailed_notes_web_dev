@@ -1,0 +1,15 @@
+what is the use of app.use(express.json());
+    arsing it , to the req.body.
+
+what are cookies and how these works?
+        answer: cookies are small text files store on the client side.
+        when we send cookies after checking the user is authenticated or not then it is by default stored in the users browser and when that users hits any sort of request from his side then it is sent to the server and the server can access it.
+
+   cokkies are restriceted to the particular domain they are genereated for as i have genereated i cookie for a particular domain then only i can access that cookie.
+
+   ex: google uses a genral domain name for its cookies.
+   as we can notice when we try to login any of the google product then it is automatically logged in into others product. because they are sharing a common cokkie.
+
+   cons: it is restriceted to browser itself and not for the mobile.
+
+   token is return by the user using headers but cokkie  is return automatic.

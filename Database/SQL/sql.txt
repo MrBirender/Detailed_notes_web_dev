@@ -4,7 +4,7 @@ Quesiton: How to select tables from different database?
 Answer: either you can headover to that base by doublecliking or running a command or you can give the refrence to that data base like: 
 ex: dataBaseName.tableName
 
-you can select data seperatlty from table instead selecting everyting at once and can perform actions like calculation while slecting and it will give a new table with calculated restult.
+you can select data seperatlty from table instead selecting everyting at once and can perform actions like calculation while slecting and it will give a new column with calculated restult.
 
 Calculation will follow the PEMDAS RULES:
 PRENTHESIS EXPONENTS ETC.
@@ -43,10 +43,10 @@ we can also use Max , min, count etc
 
 ORDER BY = It is used to change the sequence of the particular column either in asending or decending. 
 
-Note - do not select the column with there number in the table like if age is the third column. always select with the column name itself.
+Note - do not select the column with there number in the table like if age is the third column. always select with the column name itself. because if we delete any column then column number will be affected and we will give result for some other column.
 
 when using order by on gender and data type was given using ENUM('male', 'female')
-because then it will count the number of charahters before sorting
+because then it will look for the order they are provided in the table like if mail is listed first then it will return the data in that order.
 
 
 Having KEYWORD is used for a situation where we have grouped the data based on avg(age) and after grouping i need to do filter the result based on the average age. so to achieve this i can use having keyword. to check if the data is there only then perform the calculation.
@@ -59,4 +59,82 @@ its' combination with other queries will give more accurate results.
 ALIAS = IT is used to rename the column or table in place of any longName to save us from repeating .
 
 ex: avg(age) as avg_age or it can be written as avg(age) avg_age;
+
+Questions1. what are joins ?
+    In sql joins are used to rows from two or more tables based on the related column between them. it allows you to extract data from the relational database by establishing realtions between them using primary and foriegn keys.
+
+=> INNER JOINS
+    it can be stated like JOIN OR INNER JOIN .
+    it just returns the rows which are going to satisfy the conditon stated from either of the table and exclude rest of these.
+
+    ex: SELECT * FROM table1 JOIN table2 ON table1.emp_id  = table2.emp_id.
+    if one of the table missing one employee with id and it is there in the other table then it will be ommited in the result.
+
+    when we are selcting two differnt column from both of the table it is not neccesary to have both column names to be exactly same. if they are different it is going to work exactly same but the data in those columns should be same otherwise there will be no point of joining .
+    but if the column name are similar we need to write them with the dot notation to there parent table otherwise it will give ambigious error. or mysql will not able to differnciate between those two values.
+
+=> Self JOIN
+    it is used to join a table with itself.
+
+=> OUTER JOINS
+    => LEFT JOIN
+    it returns everthing from the left table and exact mathces from the right table.
+
+    => RIGHT JOIN
+    it returns everthing from the right table and exact mathces from the left table.
+
+    => FULL JOIN
+
+
+=> How to join more than to tables together ?
+    we can join more than two tables by using the join keyword multiple times.
+
+Question what is  the difference between the joins and unions?
+        Answer = join are used to combine one or more columns while unions used to combine one or more than one rows.
+
+        ex: 
+        SELECT firstName , lastName FROM employee_demographics
+        UNION // it is DISTICNT by default if you want all data with duplicates so use UNION ALL
+        SELECT firstName , lastName FROM employee_salary;
+
+
+Quesiton: what are string fucntions pratcice all that.
+
+What are the case statments in sql?
+Answer: these are just like the control flow statements in js , similar to switch case.
+case
+    when condition then result
+    when condition then result
+    when condition then result
+    else result
+end case
+
+what are the subqueirs in sql?
+    Answer: these are just nested or innter query looking same like outer query but covered inside PRENTHESIS . subqueries are going to be executed first then the outer query will be executed.
+
+    => how to use subquery in the select statment ?
+
+
+what are the window funtions?
+    Answer: 
+
+what are CTE'S in sql?
+
+what are temp tables in sql?
+
+
+what are stored_procedure?
+
+what are triggers and event?
+
+Question=> How to do data cleaning ?
+   steps: 1. remove duplicates
+          2. standardize data
+          3. remove null values or blank
+          4. remove any columns or row needed.
+
+    Approach: 
+    1. first copy the imported data into the new table using two  steps:
+     a. Like and Insert Into
+
 
