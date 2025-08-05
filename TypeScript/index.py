@@ -1,0 +1,4 @@
+
+name = 'birender'
+
+print(name)
