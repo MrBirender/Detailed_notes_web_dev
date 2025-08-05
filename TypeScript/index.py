@@ -1,4 +1,0 @@
-
-name = 'birender'
-
-print(name)
