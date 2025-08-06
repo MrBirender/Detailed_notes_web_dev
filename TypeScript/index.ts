@@ -8,7 +8,7 @@ console.log(add(2, 5));
 
 type userData = {
   name:string
-  age:number
+  age?:number
   cordinates:point
 
 }
@@ -19,7 +19,7 @@ type point = {
 }
 
 function giveCordinates (pt: point):userData{
-return  {name:'birender', age:3, cordinates:pt}
+return  {name:'birender',  cordinates:pt}
 }
 
 console.log(giveCordinates({x:14.44, y:55.88}))
